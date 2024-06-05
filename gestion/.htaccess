@@ -1,0 +1,4 @@
+Authname "gestion"
+AuthType Basic
+AuthUserFile /opt/lampp/etc/.htpasswd-users
+require valid-user
