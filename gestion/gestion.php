@@ -21,9 +21,8 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
                 <a class="right" href="./../admin/administration.php"> Administration</a>
                 </section>
             </section>
-            <section class="container">
-                <section class="content"> <a class="active" href="./../index.php"> revenir a l\'acceuil</a></section>
-            </section>';
+            </body>
+            </html>';
     exit;
 } else {
     echo "<p>Bonjour, {$_SERVER['PHP_AUTH_USER']}.</p>";
