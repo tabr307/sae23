@@ -7,13 +7,13 @@ if (isset($_POST['envoi'])) { // si l'utilisateur appuie sur le bouton d'envoi
         $mdp = $_POST['mdp']; // récupération du mot de passe non haché
 
         // Préparation de la requête pour récupérer l'utilisateur
-        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE pseudo = ?');
+        $recupUser = $bdd->prepare('SELECT * FROM `administration` WHERE `pseudo` = ?');
         $recupUser->execute(array($pseudo));
         $user = $recupUser->fetch();
 
         if ($user && password_verify($mdp, $user['mdp'])) { // vérification du mot de passe
             $_SESSION['pseudo'] = $pseudo;
-            header('Location: index.php');
+            header('Location: administration.php');
             exit();
         } else {
             echo "Vos informations sont incorrectes";
