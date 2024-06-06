@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;','rt','enzolebg');
+$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;', 'rt', 'enzolebg');
 if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){ //si les champs ne sont pas vides
         $pseudo = htmlspecialchars($_POST['pseudo']); //défini la variable pseudo en se protégant des injections grâce au htmlspecialchars
@@ -21,20 +21,31 @@ if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
     }
 }
 ?>
-
+   
 <!DOCTYPE html>
 <html>
 <head>
     <title>Connexion</title>
     <meta charset='utf-8'>
-</head>
-<body>
-    <form method="POST" action="" align="center">
-        <input type="text" name="pseudo" autocomplete="off">
-        <br><br>
-        <input type="password" name="mdp" autocomplete="off">
-        <br><br>
-        <input type="submit" name="envoi">
-    </form>
+    <link href="./styles/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    </head>
+    <body>
+        <section class="navbar">
+            <a class="active" href="index.php"><img src="./ressources/logo.png" id="image1"alt="logo"></a> 
+            <section class="links">
+            <a class="right" href="#"> Gestion de Projet</a> 
+            <a class="right" href="consultation.php"> Consultation</a> 
+            <a class="right" href="gestion.php"> Gestion</a> 
+            <a class="right" href="login.php"> Administration</a>
+            </section>
+        </section>
+        <form method="POST" action="" align="center">
+            <input type="text" name="pseudo" autocomplete="off">
+            <br><br>
+            <input type="password" name="mdp" autocomplete="off">
+            <br><br>
+            <input type="submit" name="envoi">
+        </form>
 </body>
 </html>
