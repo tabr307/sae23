@@ -13,7 +13,7 @@
             <a class="right" href="#"> Gestion de Projet</a> 
             <a class="right" href="consultation.php"> Consultation</a> 
             <a class="right" href="gestion.php"> Gestion</a> 
-            <a class="right" href="test/login.php"> Administration</a>
+            <a class="right" href="login.php"> Administration</a>
             </section>
         </section>
         <section class="container">
