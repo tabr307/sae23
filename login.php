@@ -1,31 +1,22 @@
 <?php
 session_start();
-try {
-    $bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8', 'rt', 'enzolebg');
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
+$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;','rt','enzolebg');
+if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
+    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){ //si les champs ne sont pas vides
+        $pseudo = htmlspecialchars($_POST['pseudo']); //défini la variable pseudo en se protégant des injections grâce au htmlspecialchars
+        $mdp = sha1($_POST['mdp']); //défini la variable mdp en la chiffrant avec du sha1
+        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE login = ? AND mdp = ?'); //récupère l'utilisateur dans la table administration auquel correspond les champs donnés
+        $recupUser->execute(array($pseudo, $mdp)); //renvoie un tableau avec nos champs
 
-if(isset($_POST['envoi'])){ // Si l'utilisateur appuie sur le bouton d'envoi
-    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){ // Si les champs ne sont pas vides
-        $pseudo = htmlspecialchars($_POST['pseudo']); // Défini la variable pseudo en se protégeant des injections grâce au htmlspecialchars
-        $mdp = sha1($_POST['mdp']); // Défini la variable mdp en la chiffrant avec du sha1
-        
-        // Corrige le nom de la table et des colonnes
-        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE login = ? AND mdp = ?');
-        $recupUser->execute(array($pseudo, $mdp)); // Renvoie un tableau avec nos champs
-
-        if($recupUser->rowCount() > 0){ // Si on a au moins un utilisateur correspondant, on le connecte
-            $user = $recupUser->fetch();
-            $_SESSION['pseudo'] = $user['login'];
-            $_SESSION['mdp'] = $user['mdp'];
-            $_SESSION['id'] = $user['id'];
+        if($recupUser->rowCount() > 0){ // si on a au moins un des deux champs de notre tableau qui est rempli, ce qui prouve que l'utilisateur est dans notre table, alors on le connecte
+            $_SESSION['pseudo'] = $pseudo;
+            $_SESSION['mdp'] = $mdp;
+            $_SESSION['id'] = $recupUser->fetch()['id'];
             header('Location: index.php');
         }else{
             echo "Vos informations sont incorrectes";
         }
-    }else{ // Si les champs sont vides, on demande à l'utilisateur de les remplir
+    }else{//si les champs sont vides on demande a l'utilisateur de les remplir
         echo "Veuillez compléter tous les champs";
     }
 }
