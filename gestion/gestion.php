@@ -47,7 +47,11 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
             </section>
         </section>
         <section class="container">
-            <section class="content"></section>
+            <section class="content">aaaaaaaaaaaaaonoeznokznojnjnzfl,nzoefjnzofn
+                zend_logo_guidfz
+                zend_logo_guidfzfz
+                filesizefe
+            </section>
         </section>
         <aside id="last">
             <hr />
