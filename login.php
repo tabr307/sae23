@@ -39,6 +39,7 @@ if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
             <a class="right" href="gestion.php"> Gestion</a> 
             <a class="right" href="login.php"> Administration</a>
             </section>
+            <br><br><br><br><br><br>
         </section>
         <form method="POST" action="" align="center">
             <input type="text" name="pseudo" autocomplete="off">
