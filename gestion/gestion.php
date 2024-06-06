@@ -1,4 +1,15 @@
 <!DOCTYPE html>
+<?php
+if (!isset($_SERVER['PHP_AUTH_USER'])) {
+    header('WWW-Authenticate: Basic realm="My Realm"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo '<a class="active" href="./../index.php">Revenir a l\'acceuil</a>';
+    exit;
+} else {
+    echo "<p>Bonjour, {$_SERVER['PHP_AUTH_USER']}.</p>";
+    echo "<p>Votre mot de passe est {$_SERVER['PHP_AUTH_PW']}.</p>";
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">
