@@ -12,7 +12,7 @@ if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
             $_SESSION['pseudo'] = $pseudo;
             $_SESSION['mdp'] = $mdp;
             $_SESSION['id'] = $recupUser->fetch()['id'];
-            header('Location: administration.php');
+            header('Location: index.php');
         }else{
             echo "Vos informations sont incorrectes";
         }
