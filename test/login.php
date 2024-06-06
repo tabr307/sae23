@@ -1,118 +1,40 @@
 <?php
+session_start();
+$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;','rt','enzolebg');
+if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
+    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){ //si les champs ne sont pas vides
+        $pseudo = htmlspecialchars($_POST['pseudo']); //défini la variable pseudo en se protégant des injections grâce au htmlspecialchars
+        $mdp = sha1($_POST['mdp']); //défini la variable mdp en la chiffrant avec du sha1
+        $recupUser = $bdd->prepare('SELECT * FROM aministration WHERE pseudo = ? AND mdp = ?'); //récupère l'utilisateur dans la table administration auquel correspond les champs donnés
+        $recupUser->execute(array($pseudo, $mdp)); //renvoie un tableau avec nos champs
 
-include("config.php");
-
-$message = '';
-
-if (isset($_POST['username']) && isset($_POST['password'])) {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-
-    $sql = "SELECT * FROM users WHERE username = :username";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute(['username' => $username]);
-    $user = $stmt->fetch();
-
-    if ($user && password_verify($password, $user['password'])) {
-        session_start();
-        $_SESSION['user_id'] = $user['id'];
-        header('Location: dashboard.php');
-    } else {
-        $message = 'Mauvais identifiants';
+        if($recupUser->rowCount() > 0 ){ // si on a au moins un des deux champs de notre tableau qui est rempli, ce qui prouve que l'utilisateur est dans notre table, alors on le connecte
+            $_SESSION['pseudo'] = $pseudo;
+            $_SESSION['mdp'] = $mdp;
+            $_SESSION['id'] = $recupUser->fetch()['id'];
+            header('Location: administration.php');
+        }else{
+            echo "Vos informations sont incorrectes";
+        }
+    }else{//si les champs sont vides on demande a l'utilisateur de les remplir
+        echo "Veuillez compléter tous les champs";
     }
 }
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-.login-container {
-    max-width: 400px;
-    margin: 100px auto;
-    background-color: #fff;
-    padding: 20px 30px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
-
-h2 {
-    margin-top: 0;
-    color: #333;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #555;
-}
-
-input[type="text"], input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-input[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-p {
-    color: red;
-    font-weight: bold;
-}
-
-    </style>
+    <meta charset='utf-8'>
 </head>
 <body>
-
-<div class="login-container">
-    <h2>Connexion</h2>
-
-    <?php if (!empty($message)): ?>
-        <p style="color:red"><?= $message ?></p>
-    <?php endif; ?>
-
-    <form action="login.php" method="post">
-        <div>
-            <label for="username">Nom d'utilisateur:</label>
-            <input type="text" id="username" name="username">
-        </div>
-
-        <div>
-            <label for="password">Mot de passe:</label>
-            <input type="password" id="password" name="password">
-        </div>
-
-        <div>
-            <input type="submit" value="Se connecter">
-        </div>
+    <form method="POST" action="" align="center">
+        <input type="text" name="pseudo" autocomplete="off">
+        <br>
+        <input type="password" name="mdp" autocomplete="off">
+        <br><br>
+        <input type="submit" name="envoie">
     </form>
-</div>
-
 </body>
 </html>
