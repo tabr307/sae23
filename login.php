@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;','rt','');
+$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;','rt','enzolebg');
 if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){ //si les champs ne sont pas vides
         $pseudo = htmlspecialchars($_POST['pseudo']); //défini la variable pseudo en se protégant des injections grâce au htmlspecialchars
