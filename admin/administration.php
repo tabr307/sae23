@@ -4,7 +4,7 @@
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
-    echo 'Texte utilisé si le visiteur utilise le bouton d\'annulation';
+    echo '<a class="active" href="./../index.php">Revenir a l\'acceuil</a>';
     exit;
 } else {
     echo "<p>Bonjour, {$_SERVER['PHP_AUTH_USER']}.</p>";

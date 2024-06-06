@@ -3,7 +3,27 @@
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
-    echo '<a class="active" href="./../index.php">Revenir a l\'acceuil</a>';
+    echo '<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Gestion</title>
+            <link href="./../styles/main.css" rel="stylesheet">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        </head>
+        <body>
+            <section class="navbar">
+                <a class="active" href="./../index.php"><img src="./../ressources/logo.png" id="image1"alt="logo"></a> 
+                <section class="links">
+                <a class="right" href="#"> Gestion de Projet</a> 
+                <a class="right" href="./../consult/consultation.php"> Consultation</a> 
+                <a class="right" href="gestion.html"> Gestion</a> 
+                <a class="right" href="./../admin/administration.php"> Administration</a>
+                </section>
+            </section>
+            <section class="container">
+                <section class="content"></section>
+            </section>';
     exit;
 } else {
     echo "<p>Bonjour, {$_SERVER['PHP_AUTH_USER']}.</p>";
