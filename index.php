@@ -11,9 +11,9 @@
             <a class="active" href="index.php"><img src="./ressources/logo.png" id="image1"alt="logo"></a> 
             <section class="links">
             <a class="right" href="#"> Gestion de Projet</a> 
-            <a class="right" href="./consult/consultation.php"> Consultation</a> 
-            <a class="right" href="./gestion/gestion.php"> Gestion</a> 
-            <a class="right" href="./admin/administration.php"> Administration</a>
+            <a class="right" href="consultation.php"> Consultation</a> 
+            <a class="right" href="gestion.php"> Gestion</a> 
+            <a class="right" href="test/login.php"> Administration</a>
             </section>
         </section>
         <section class="container">
