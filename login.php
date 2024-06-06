@@ -9,9 +9,9 @@ if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
         $recupUser->execute(array($pseudo, $mdp)); //renvoie un tableau avec nos champs
 
         if($recupUser->rowCount() > 0 ){ // si on a au moins un des deux champs de notre tableau qui est rempli, ce qui prouve que l'utilisateur est dans notre table, alors on le connecte
-            $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['mdp'] = $mdp;
-            $_SESSION['id'] = $recupUser->fetch()['id'];
+            //$_SESSION['pseudo'] = $pseudo;
+            //$_SESSION['mdp'] = $mdp;
+            //$_SESSION['id'] = $recupUser->fetch()['id'];
             header('Location: administration.php');
         }else{
             echo "Vos informations sont incorrectes";
