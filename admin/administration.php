@@ -2,10 +2,10 @@
 session_start();
 
 // Configuration de la base de données
-$host = 'localhost';
-$dbname = 'nom_de_ta_base_de_donnees';
-$username = 'nom_utilisateur_bdd';
-$password = 'mot_de_passe_bdd';
+$host = '83.113.15.31'; // Adresse du serveur de la base de données (généralement localhost)
+$dbname = 'sae23'; // Nom de la base de données
+$username = 'rt'; // Nom d'utilisateur de la base de données
+$password = 'enzolebg'; // Mot de passe de la base de données
 
 // Connexion à la base de données
 try {
