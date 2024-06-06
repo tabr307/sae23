@@ -8,12 +8,12 @@
     </head>
     <body>
         <section class="navbar">
-            <a class="active" href="index.html"><img src="./ressources/logo.png" id="image1"alt="logo"></a> 
+            <a class="active" href="index.php"><img src="./ressources/logo.png" id="image1"alt="logo"></a> 
             <section class="links">
             <a class="right" href="#"> Gestion de Projet</a> 
-            <a class="right" href="./consult/consultation.html"> Consultation</a> 
-            <a class="right" href="./gestion/gestion.html"> Gestion</a> 
-            <a class="right" href="./admin/administration.html"> Administration</a>
+            <a class="right" href="./consult/consultation.php"> Consultation</a> 
+            <a class="right" href="./gestion/gestion.php"> Gestion</a> 
+            <a class="right" href="./admin/administration.php"> Administration</a>
             </section>
         </section>
         <section class="container">
