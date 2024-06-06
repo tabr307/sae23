@@ -1,4 +1,28 @@
 <!DOCTYPE html>
+
+<?php
+function authenticate() {
+    header('WWW-Authenticate: Basic realm="Test Authentication System"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo "Vous devez entrer un identifiant et un mot de passe valides pour accéder
+    à cette ressource.\n";
+    exit;
+}
+
+if ( !isset($_SERVER['rt']) ||
+     ($_POST['SeenBefore'] == 1 && $_POST['OldAuth'] == $_SERVER['rt'])) {
+    authenticate();
+} else {
+    echo "<p>Bienvenue : " . htmlspecialchars($_SERVER['rt']) . "<br />";
+    echo "Ancien : " . htmlspecialchars($_REQUEST['OldAuth']);
+    echo "<form action='' method='post'>\n";
+    echo "<input type='hidden' name='SeenBefore' value='1' />\n";
+    echo "<input type='hidden' name='OldAuth' value=\"" . htmlspecialchars($_SERVER['rt']) . "\" />\n";
+    echo "<input type='submit' value='Re Authenticate' />\n";
+    echo "</form></p>\n";
+}
+?>
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -8,12 +32,12 @@
     </head>
     <body>
         <section class="navbar">
-            <a class="active" href="./../index.html"><img src="./../ressources/logo.png" id="image1"alt="logo"></a> 
+            <a class="active" href="./../index.php"><img src="./../ressources/logo.png" id="image1"alt="logo"></a> 
             <section class="links">
             <a class="right" href="#"> Gestion de Projet</a> 
-            <a class="right" href="./../consult/consultation.html"> Consultation</a> 
-            <a class="right" href="./../gestion/gestion.html"> Gestion</a> 
-            <a class="right" href="administration.html"> Administration</a>
+            <a class="right" href="./../consult/consultation.php"> Consultation</a> 
+            <a class="right" href="./../gestion/gestion.php"> Gestion</a> 
+            <a class="right" href="administration.php"> Administration</a>
             </section>
         </section>
         <section class="container">
