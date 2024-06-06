@@ -34,7 +34,7 @@ if(isset($_POST['envoi'])){ //si utilisateur appuie sur le bouton d'envoi
         <br>
         <input type="password" name="mdp" autocomplete="off">
         <br><br>
-        <input type="submit" name="envoie">
+        <input type="submit" name="envoi">
     </form>
 </body>
 </html>
