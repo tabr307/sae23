@@ -1,64 +1,118 @@
 <?php
-   session_start();
-   @$login=$_POST["rt"];
-   @$pass=md5($_POST["enzolebg"]);
-   @$valider=$_POST["valider"];
-   $erreur="";
-   if(isset($valider)){
-      include("connexion.php");
-      //$sel=$pdo->prepare("select * from utilisateurs where login=? and pass=? limit 1");
-      $sel->execute(array($login,$pass));
-      $tab=$sel->fetchAll();
-      if(count($tab)>0){
-         $_SESSION["Enzomumu"]=ucfirst(strtolower($tab[0]["enzo"])).
-         " ".strtoupper($tab[0]["Mumu"]);
-         $_SESSION["autoriser"]="oui";
-         header("location:session.php");
-      }
-      else
-         $erreur="Mauvais login ou mot de passe!";
-   }
+
+include("config.php");
+
+$message = '';
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM users WHERE username = :username";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute(['username' => $username]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        session_start();
+        $_SESSION['user_id'] = $user['id'];
+        header('Location: dashboard.php');
+    } else {
+        $message = 'Mauvais identifiants';
+    }
+}
 ?>
+
 <!DOCTYPE html>
-<html>
-   <head>
-      <meta charset="utf-8" />
-      <style>
-         *{
-            font-family:arial;
-         }
-         body{
-            margin:20px;
-         }
-         input{
-            border:solid 1px #2222AA;
-            margin-bottom:10px;
-            padding:16px;
-            outline:none;
-            border-radius:6px;
-         }
-         .erreur{
-            color:#CC0000;
-            margin-bottom:10px;
-         }
-         a{
-            font-size:12pt;
-            color:#EE6600;
-            text-decoration:none;
-            font-weight:normal;
-         }
-         a:hover{
-            text-decoration:underline;
-         }
-      </style>
-   </head>
-   <body onLoad="document.fo.login.focus()">
-      <h1>Authentification [ <a href="inscription.php">Créer un compte</a> ]</h1>
-      <div class="erreur"><?php echo $erreur ?></div>
-      <form name="fo" method="post" action="">
-         <input type="text" name="login" placeholder="Login" /><br />
-         <input type="password" name="pass" placeholder="Mot de passe" /><br />
-         <input type="submit" name="valider" value="S'authentifier" />
-      </form>
-   </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p {
+    color: red;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h2>Connexion</h2>
+
+    <?php if (!empty($message)): ?>
+        <p style="color:red"><?= $message ?></p>
+    <?php endif; ?>
+
+    <form action="login.php" method="post">
+        <div>
+            <label for="username">Nom d'utilisateur:</label>
+            <input type="text" id="username" name="username">
+        </div>
+
+        <div>
+            <label for="password">Mot de passe:</label>
+            <input type="password" id="password" name="password">
+        </div>
+
+        <div>
+            <input type="submit" value="Se connecter">
+        </div>
+    </form>
+</div>
+
+</body>
 </html>
