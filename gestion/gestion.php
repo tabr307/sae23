@@ -7,7 +7,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Gestion</title>
+            <title>Non connecté</title>
             <link href="./../styles/main.css" rel="stylesheet">
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         </head>
@@ -22,7 +22,7 @@ if (!isset($_SERVER['PHP_AUTH_USER'])) {
                 </section>
             </section>
             <section class="container">
-                <section class="content"></section>
+                <section class="content"> <a class="active" href="./../index.php"> revenir a l\'acceuil</a></section>
             </section>';
     exit;
 } else {
