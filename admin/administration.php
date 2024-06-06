@@ -1,25 +1,14 @@
 <!DOCTYPE html>
 
 <?php
-function authenticate() {
-    header('WWW-Authenticate: Basic realm="Test Authentication System"');
+if (!isset($_SERVER['rt'])) {
+    header('WWW-Authenticate: Basic realm="My Realm"');
     header('HTTP/1.0 401 Unauthorized');
-    echo "Vous devez entrer un identifiant et un mot de passe valides pour accéder
-    à cette ressource.\n";
+    echo 'Texte utilisé si le visiteur utilise le bouton d\'annulation';
     exit;
-}
-
-if ( !isset($_SERVER['rt']) ||
-     ($_POST['SeenBefore'] == 1 && $_POST['OldAuth'] == $_SERVER['rt'])) {
-    authenticate();
 } else {
-    echo "<p>Bienvenue : " . htmlspecialchars($_SERVER['rt']) . "<br />";
-    echo "Ancien : " . htmlspecialchars($_REQUEST['OldAuth']);
-    echo "<form action='' method='post'>\n";
-    echo "<input type='hidden' name='SeenBefore' value='1' />\n";
-    echo "<input type='hidden' name='OldAuth' value=\"" . htmlspecialchars($_SERVER['rt']) . "\" />\n";
-    echo "<input type='submit' value='Re Authenticate' />\n";
-    echo "</form></p>\n";
+    echo "<p>Bonjour, {$_SERVER['rt']}.</p>";
+    echo "<p>Votre mot de passe est {$_SERVER['enzolebg']}.</p>";
 }
 ?>
 
