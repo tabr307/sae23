@@ -7,7 +7,7 @@ if (isset($_POST['envoi'])) { // si l'utilisateur appuie sur le bouton d'envoi
         $mdp = $_POST['mdp']; // récupération du mot de passe non haché
 
         // Préparation de la requête pour récupérer l'utilisateur
-        $recupUser = $bdd->prepare('SELECT * FROM `administration` WHERE `pseudo` = ?');
+        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE pseudo = ?');
         $recupUser->execute(array($pseudo));
         $user = $recupUser->fetch();
 
