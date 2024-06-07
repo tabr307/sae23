@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<?php
+session_start();
+echo $_SESSION['pseudo'];
+?>
 
 
 <html>
