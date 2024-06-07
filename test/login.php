@@ -36,7 +36,7 @@
 
 session_start();
 $_SESSION["mdp"] = $_REQUEST["mdp"];  // Récupération du mot de passe
-$_SESSION["pseudo"] = $_REQUEST["pseudo"]
+$_SESSION["pseudo"] = $_REQUEST["pseudo"];
 $motdep = $_SESSION["mdp"];
 $iduser = $_SESSION["pseudo"];
 $_SESSION["auth"] = FALSE;
