@@ -1,29 +1,26 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;', 'rt', 'enzolebg');
-if (isset($_POST['envoi'])) { // si l'utilisateur appuie sur le bouton d'envoi
-    if (!empty($_POST['pseudo']) && !empty($_POST['mdp'])) { // si les champs ne sont pas vides
-        $pseudo = htmlspecialchars($_POST['pseudo']); // protection contre les injections
-        $mdp = $_POST['mdp']; // récupération du mot de passe non haché
+$bdd = new PDO('mysql:host=localhost;dbname=sae23;charset=utf8;','rt','enzolebg');
+if(isset($_POST['envoi'])){
+    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
+        $pseudo = htmlspecialchars($_POST['pseudo']);
+        $mdp = sha1($_POST['mdp']);
+        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE pseudo = ? AND mdp = ?');
+        $recupUser->execute(array($pseudo, $mdp));
 
-        // Préparation de la requête pour récupérer l'utilisateur
-        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE pseudo = ?');
-        $recupUser->execute(array($pseudo));
-        $user = $recupUser->fetch();
-
-        if ($user && password_verify($mdp, $user['mdp'])) { // vérification du mot de passe
+        if($recupUser->rowCount() > 0){
             $_SESSION['pseudo'] = $pseudo;
-            header('Location: administration.php');
-            exit();
-        } else {
-            echo "Vos informations sont incorrectes";
+            $_SESSION['mdp'] = $mdp;
+            echo $_SESSION['pseudo'];
+        }else{
+            echo "Votre mot de passe ou votre pseudo est incorrect";
         }
-    } else { // si les champs sont vides
-        echo "Veuillez compléter tous les champs";
+    }else {
+        echo "Veuillez compléter tous les champs...";
     }
 }
 ?>
-   
+
 <!DOCTYPE html>
 <html>
 <head>
