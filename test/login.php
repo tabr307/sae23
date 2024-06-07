@@ -14,15 +14,15 @@
 		include ("mysql.php");
 //--------------ca marche------------------------
 		$requete = "SELECT `mdp` FROM `administration`";
-		mysqli_query($id_bd, $requete)
+		$resultat = mysqli_query($id_bd, $requete)
 			or die("Execution de la requete impossible : $requete");
 
-		$ligne = mysqli_fetch_row(mysqli_query($id_bd, $requete));
+		$ligne = mysqli_fetch_row($resultat);
 		if ($motdep==$ligne[0])
 		 {
 			$_SESSION["auth"]=TRUE;		
             mysqli_close($id_bd);
-			echo "<script type='text/javascript'>document.location.replace('choix_type.php');</script>";
+			//echo "<script type='text/javascript'>document.location.replace('choix_type.php');</script>";
 		 }
 		else
 		 {
@@ -30,7 +30,7 @@
             session_destroy();   // Destruction de la session
             unset($_SESSION);    // Destruction du tableau de session
             mysqli_close($id_bd);
-            echo "<script type='text/javascript'>document.location.replace('login_error.php');</script>";
+            //echo "<script type='text/javascript'>document.location.replace('login_error.php');</script>";
 		 }
      } 
  ?>
