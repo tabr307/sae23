@@ -22,7 +22,7 @@
 		 {
 			$_SESSION["auth"]=TRUE;		
             mysqli_close($id_bd);
-			//echo "<script type='text/javascript'>document.location.replace('choix_type.php');</script>";
+			echo "<script type='text/javascript'>document.location.replace('choix_type.php');</script>";
 		 }
 		else
 		 {
