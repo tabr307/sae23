@@ -133,7 +133,9 @@ footer ul li:last-child
   text-align: right;
 }
 
-
+#titre32{
+  margin-top:5%;
+}
 .image{
   margin-left:25%;
   width: 20px;
