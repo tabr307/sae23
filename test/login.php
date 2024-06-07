@@ -44,7 +44,7 @@ $_SESSION["auth"] = FALSE;
 if (empty($motdep)) {
     echo("j'échoue continuellement")
 	//header("Location: login_error.php");
-    exit(); // Assurez-vous de terminer le script après la redirection
+    //exit(); // Assurez-vous de terminer le script après la redirection
 } else {
     /* Accès à la base */
     include("mysql.php");
