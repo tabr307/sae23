@@ -7,7 +7,7 @@
 	// Script de vérification du mot de passe d'administration, en utilisant la table Connexion
 
 	if(empty($motdep))
-		header("Location:index.php");
+		header("Location:consultation.php");
 	else
      {
 		/* Accès à la base */
