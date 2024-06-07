@@ -5,7 +5,7 @@ if(isset($_POST['envoi'])){
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
         $pseudo = htmlspecialchars($_POST['pseudo']);
         $mdp = sha1($_POST['mdp']);
-        $recupUser = $bdd->prepare('SELECT * FROM administration WHERE pseudo = ? AND mdp = ?');
+        $recupUser = $bdd->prepare('SELECT * FROM `administration` WHERE `pseudo` = ? AND `mdp` = ?');
         $recupUser->execute(array($pseudo, $mdp));
 
         if($recupUser->rowCount() > 0){
