@@ -1,5 +1,6 @@
 import paho.mqtt.client as mqtt
 import json
+import time
 
 # MQTT broker connexion configuration
 broker = 'mqtt.iut-blagnac.fr'
@@ -34,5 +35,3 @@ for room in rooms:
     topic = f"AM107/by-room/{room}/data"
     payload = get_mqtt_payload(topic)
     print(f"Payload for room {room}: {payload}")
-
-    print(payload['room'])
