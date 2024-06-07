@@ -17,7 +17,7 @@
 		mysqli_query($id_bd, $requete)
 			or die("Execution de la requete impossible : $requete");
 
-		$ligne = mysqli_fetch_row($resultat);
+		$ligne = mysqli_fetch_row(mysqli_query($id_bd, $requete));
 		if ($motdep==$ligne[0])
 		 {
 			$_SESSION["auth"]=TRUE;		
