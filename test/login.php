@@ -15,7 +15,7 @@
 //--------------ca marche------------------------
 		$requete = "SELECT `mdp` FROM `administration`";
 		echo $requete;
-		$resultat = mysqli_query($id_bd, $requete)
+		mysqli_query($id_bd, $requete)
 			or die("Execution de la requete impossible : $requete");
 
 		$ligne = mysqli_fetch_row($resultat);
