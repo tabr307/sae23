@@ -42,7 +42,7 @@ $_SESSION["auth"] = FALSE;
 // Script de vérification du mot de passe d'administration, en utilisant la table Connexion
 
 if (empty($motdep)) {
-    echo("j'échoue continuellement")
+    echo("j'échoue continuellement");
 	//header("Location: login_error.php");
     //exit(); // Assurez-vous de terminer le script après la redirection
 } else {
