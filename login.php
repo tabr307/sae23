@@ -4,7 +4,7 @@ $bdd = mysqli_connect("localhost", 'rt', 'enzolebg', 'sae23');
 if(isset($_POST['envoi'])){
     if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
         $pseudo = htmlspecialchars($_POST['pseudo']);
-        $mdp = sha1($_POSt['mdp']);
+        $mdp = sha1($_POST['mdp']);
 
         $recupUser = $bdd->prepare('SELECT mdp FROM administration WHERE pseudo = "enzo"');
         $recupUser->execute(array($pseudo, $mdp));
