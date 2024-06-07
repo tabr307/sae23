@@ -10,7 +10,7 @@
         <section class="navbar">
             <a class="active" href="index.php"><img src="./ressources/logo.png" id="image1"alt="logo"></a> 
             <section class="links">
-            <a class="right" href="#"> Gestion de Projet</a> 
+            <a class="right" href="gestion2projet.php"> Gestion de Projet</a> 
             <a class="right" href="consultation.php"> Consultation</a> 
             <a class="right" href="gestion.php"> Gestion</a> 
             <a class="right" href="login.php"> Administration</a>
