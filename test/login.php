@@ -14,7 +14,6 @@
 		include ("mysql.php");
 //--------------ca marche------------------------
 		$requete = "SELECT `mdp` FROM `administration`";
-		echo $requete;
 		mysqli_query($id_bd, $requete)
 			or die("Execution de la requete impossible : $requete");
 
