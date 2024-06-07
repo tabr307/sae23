@@ -49,7 +49,7 @@ if (empty($motdep)) {
     include("mysql.php");
 
     // Utilisation de requête préparée pour éviter les injections SQL
-    $requete = "SELECT `mdp` FROM `administration` WHERE `user` = ?"; // Assurez-vous que la colonne `user` existe dans votre table
+    $requete = "SELECT `mdp` FROM `administration` WHERE `pseudo` = ?"; // Assurez-vous que la colonne `user` existe dans votre table
     if ($stmt = mysqli_prepare($id_bd, $requete)) {
         mysqli_stmt_bind_param($stmt, "s", $username); // Remplacez `$username` par la variable contenant le nom d'utilisateur si nécessaire
         mysqli_stmt_execute($stmt);
