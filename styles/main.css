@@ -132,3 +132,9 @@ footer ul li:last-child
   float:right;
   text-align: right;
 }
+
+
+.image{
+  margin-left:25%;
+  width: 50%;
+}

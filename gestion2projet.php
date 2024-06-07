@@ -19,7 +19,7 @@
         <section class="container">
             <section class="content">
                 <h1> Le GANTT final</h1>
-                <img src="ressources/gantt.PNG" alt="gantt">
+                <img class=".image"  src="ressources/gantt.PNG" alt="gantt">
                 <p>Ici, nous observons le Gantt prévisionnel réalisé pour le livrable 1. <br>
                     En effet, nous avons essayé de planifier au mieux notre projet afin de ne pas perdre
                     du temps ou faire des erreurs inutiles. <br>
@@ -31,13 +31,13 @@
                 <h1>Screen GitHub</h1>
                 <p>
                     Je vous laisse chosir les bon screen à mettre
-                    <img src="ressources/github.PNG" alt="gihb">
+                    <img class=".image" src="ressources/github.PNG" alt="gihb">
                 </p>
                 <h1>Synthèses Personelles du groupe</h1>
                 <ul>
                 <p>
                 <h2>Synthèse Personelle d'Hélio LE DEUNFF</h2> 
-                <img src="ressources/helio.png" alt="helio"><br>
+                <img class=".image" src="ressources/helio.png" alt="helio"><br>
                 Pour ma part j'ai commencé par la création du gantt prévisionnel lors de la première séance. En effet, après avoir 
                 discuté avec tous les membres du groupe et la révision du cahier des charges, j'ai pu mettre
                 au point un Gantt correcte est approuvé par l'équipe. <br>
@@ -57,17 +57,17 @@
 
                 <p>
                     <h2>Synthèse Personelle de Mathys CAZETTES</h2>
-                    <img src="ressources/8155751-1400x933.jpg" alt="mathys">
+                    <img class=".image" src="ressources/8155751-1400x933.jpg" alt="mathys">
                 </p>
 
                 <p>
                     <h2>Synthèse Personelle de Valentin LALUE</h2>
-                    <img src="ressources/M6_0054095_0380bis-1140x856.jpg" alt="valentin">
+                    <img class=".image" src="ressources/M6_0054095_0380bis-1140x856.jpg" alt="valentin">
                 </p>
 
                 <p>
                     <h2>Synthèse Personelle de Enzo MULLER</h2>
-                    <img src=".ressources/images.jfif" alt="enzo">
+                    <img class=".image" src=".ressources/images.jfif" alt="enzo">
                 </p>
 
             </ul>
