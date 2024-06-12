@@ -7,7 +7,7 @@
 	// Script de vérification du mot de passe d'administration, en utilisant la table Connexion
 
 	if(empty($motdep))
-		echo"L\'un des deux champs est vide";
+		echo"L'un des deux champs est vide";
 	else
      {
 		/* Accès à la base */
