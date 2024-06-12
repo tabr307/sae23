@@ -28,6 +28,6 @@
             session_destroy();   // Destruction de la session
             unset($_SESSION);    // Destruction du tableau de session
             mysqli_close($id_bd);
-            echo "Le mot de passe est errone...";
+            echo "Le couple login/mot de passe est errone...";
 		 }
  ?>
