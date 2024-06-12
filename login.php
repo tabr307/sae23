@@ -1,7 +1,6 @@
 <?php
 	session_start();
-	$_SESSION["mdp"]=$_POST["mdp"];  // Récupération du mot de passe
-	$motdep=$_SESSION["mdp"];
+	
 	$_SESSION["auth"]=FALSE;
 
 	// Script de vérification du mot de passe d'administration, en utilisant la table Connexion
