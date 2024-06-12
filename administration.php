@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <?php
 session_start();
-echo "Bienvenue le goat";
 ?>
 
 
@@ -24,6 +23,7 @@ echo "Bienvenue le goat";
         </section>
         <section class="container">
             <section class="content">
+                <?php echo"Bienvenue $pseudal"?>
             </section>
         </section>
         <aside id="last">
