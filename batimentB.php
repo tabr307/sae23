@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Gestion</title>
+        <title>Gestion Bat E</title>
         <link href="styles/main.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
@@ -17,7 +17,8 @@
             </section>
         </section>
         <section class="container">
-            <section class="content">Bienvenue au batB
+            <section class="content">
+                <p class="bienvenue">Bienvenue au batB</p>
             </section>
         </section>
         <aside id="last">
