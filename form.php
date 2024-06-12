@@ -15,15 +15,16 @@
                 <a class="right" href="gestion/gestion.php"> Gestion</a> 
                 <a class="right" href="administration.php"> Administration</a>
         </section>
-        <form method="POST" action="login.php" align="center">
-	        <label for="mdp">Login :</label>
-            <input type="text" id="pseudo" name="pseudo">
-            <br><br>
-            <label for="mdp">Mot de passe :</label>
-	        <input type="password" id="mdp" name="mdp">
-            <br><br>
-	        <input type="submit" value="Se connecter">
-        </form>
-
+        <section class='formulaire'>
+            <form method="POST" action="login.php" align="center">
+                <label for="mdp">Login :</label>
+                <input type="text" id="pseudo" name="pseudo">
+                <br><br>
+                <label for="mdp">Mot de passe :</label>
+                <input type="password" id="mdp" name="mdp">
+                <br><br>
+                <input type="submit" value="Se connecter">
+            </form>
+        </section>
 </body>
 </html>
