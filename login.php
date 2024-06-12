@@ -1,25 +1,39 @@
 <?php
-session_start();
-$bdd = mysqli_connect("localhost", 'rt', 'enzolebg', 'sae23');
-if(isset($_POST['envoi'])){
-    if(!empty($_POST['pseudo']) AND !empty($_POST['mdp'])){
-        $pseudo = htmlspecialchars($_POST['pseudo']);
-        $mdp = sha1($_POST['mdp']);
+	session_start();
+	$_SESSION["mdp"]=$_REQUEST["mdp"];  // Récupération du mot de passe
+	$motdep=$_SESSION["mdp"];
+	$_SESSION["auth"]=FALSE;
 
-        $recupUser = $bdd->mysqli_query('SELECT mdp FROM administration WHERE pseudo = "enzo"');
-        $recupUser->execute(array($pseudo, $mdp));
-        if($recupUser->rowCount() > 0){
-            $_SESSION['pseudo'] = $pseudo;
-            $_SESSION['mdp'] = $mdp;
-            header('Location:administration.php');
-        }else{
-            echo 'Votre mot de passe ou pseudo est incorrect';
-        }
-    }else{
-        echo "Veuillez compléter tous les champs...";
-    }
-}
-?>
+	// Script de vérification du mot de passe d'administration, en utilisant la table Connexion
+
+	if(empty($motdep))
+		echo"L\'un des deux champs est vide";
+	else
+     {
+		/* Accès à la base */
+		include ("mysql.php");
+
+		$requete = "SELECT `mdp` FROM `administration`";
+		$resultat = mysqli_query($id_bd, $requete)
+			or die("Execution de la requete impossible : $requete");
+
+		$ligne = mysqli_fetch_row($resultat);
+		if ($motdep==$ligne[0])
+		 {
+			$_SESSION["auth"]=TRUE;		
+            mysqli_close($id_bd);
+			header('Location:administration.php');
+		 }
+		else
+		 {
+			$_SESSION = array(); // Réinitialisation du tableau de session
+            session_destroy();   // Destruction de la session
+            unset($_SESSION);    // Destruction du tableau de session
+            mysqli_close($id_bd);
+            echo "Le mot de passe est errone...";
+		 }
+     } 
+ ?>
 
 <!DOCTYPE html>
 <html>
