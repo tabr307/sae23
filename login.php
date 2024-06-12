@@ -1,12 +1,11 @@
 <?php
 	session_start();
-	$_SESSION["mdp"]=$_REQUEST["mdp"];  // Récupération du mot de passe
-	$motdep=$_SESSION["mdp"];
-	$_SESSION["auth"]=FALSE;
 
-	// Script de vérification du mot de passe d'administration, en utilisant la table Connexion
-		/* Accès à la base */
-		include ("mysql.php");
+	if (isset($_REQUEST["mdp"])) {
+		$_SESSION["mdp"] = $_REQUEST["mdp"];  // Récupération du mot de passe
+		$motdep = $_SESSION["mdp"];
+		$_SESSION["auth"] = FALSE;
+        include ("mysql.php");
 
 		$requete = "SELECT `mdp` FROM `administration`";
 		$resultat = mysqli_query($id_bd, $requete)
@@ -27,7 +26,14 @@
             mysqli_close($id_bd);
             echo "Le mot de passe est errone...";
 		 }
- ?>
+		// Le reste du code
+	} else {
+		// Si le mot de passe n'est pas défini, rediriger ou afficher un message d'erreur
+		echo"ça va pas";  // ou toute autre action appropriée
+		exit();
+	}
+?>
+
 
 <!DOCTYPE html>
 <html>
