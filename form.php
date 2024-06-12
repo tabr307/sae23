@@ -15,7 +15,10 @@
         </form> -->
         <form method="POST" action="login.php" align="center">
 	        <label for="mdp">Mot de passe:</label>
+            <input type="text" id="pseudo" name="pseudo">
+            <br><br>
 	        <input type="password" id="mdp" name="mdp">
+            <br><br>
 	        <input type="submit" value="Se connecter">
         </form>
 
