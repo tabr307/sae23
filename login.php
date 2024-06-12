@@ -5,11 +5,6 @@
 	$_SESSION["auth"]=FALSE;
 
 	// Script de vérification du mot de passe d'administration, en utilisant la table Connexion
-
-	if(empty($motdep))
-		echo"L'un des deux champs est vide";
-	else
-     {
 		/* Accès à la base */
 		include ("mysql.php");
 
@@ -32,7 +27,6 @@
             mysqli_close($id_bd);
             echo "Le mot de passe est errone...";
 		 }
-     } 
  ?>
 
 <!DOCTYPE html>
@@ -50,7 +44,7 @@
             <br><br>
             <input type="submit" name="envoi">
         </form> -->
-        <form method="post" action="login.php">
+        <form method="post" action="login.php" align="center">
 	        <label for="mdp">Mot de passe:</label>
 	        <input type="password" id="mdp" name="mdp">
 	        <input type="submit" value="Se connecter">
