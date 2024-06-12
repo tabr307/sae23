@@ -45,10 +45,16 @@
     </head>
     <body>
         </section>
-        <form method="POST" action="" align="center">
+        <!-- <form method="POST" action="" align="center">
             <input type="password" name="mdp" autocomplete="off">
             <br><br>
             <input type="submit" name="envoi">
+        </form> -->
+        <form method="post" action="login.php">
+	        <label for="mdp">Mot de passe:</label>
+	        <input type="password" id="mdp" name="mdp">
+	        <input type="submit" value="Se connecter">
         </form>
+
 </body>
 </html>
