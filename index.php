@@ -3,16 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <title>Acceuil</title>
-        <link href="./styles/main.css" rel="stylesheet">
+        <link href="styles/main.css" rel="stylesheet">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     </head>
     <body>
         <section class="navbar">
-            <a class="active" href="index.php"><img src="./ressources/logo.png" id="image1"alt="logo"></a> 
+            <a class="active" href="index.php"><img src="ressources/logo.png" id="image1"alt="logo"></a> 
             <section class="links">
             <a class="right" href="gestion2projet.php"> Gestion de Projet</a> 
             <a class="right" href="consultation.php"> Consultation</a> 
-            <a class="right" href="gestion.php"> Gestion</a> 
+            <a class="right" href="form.php"> Gestion</a> 
             <a class="right" href="form.php"> Administration</a>
             </section>
         </section>
@@ -31,7 +31,7 @@
                    - chaque gestionnaire possède un compte (login, mdp), grâce auquel il peut administrer son batiment<br>
                 </p>
                 <h1>Bâtiments Gérés</h1>                
-                <img src="./ressources/plan_iut.webp" alt="plan iut">
+                <img src="ressources/plan_iut.webp" alt="plan iut">
                 <p>Les bâtiments gérés sont pour l'instant les bâtiments <u>B, E et A, W, Q</u>.<br>
                     Les salles dont les capteurs émettent des données sont les salles <u>B110</u>, <u>B2048</u>, <u>B1200291923576</u>, <u>E2</u>, <u>E101</u>, <u>E102</u>, <u>E1385</u> </p>
                 <h1>Mentions Légales</h1>
