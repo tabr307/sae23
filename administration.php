@@ -24,7 +24,8 @@ session_start();
         <section class="container">
             <section class="content">
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                <?php echo"Bienvenue $pseudal"?>
+                <?php echo "Bienvenue "
+                echo $_SESSION['pseudo']?>
             </section>
         </section>
         <aside id="last">

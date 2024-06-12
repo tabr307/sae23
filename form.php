@@ -8,11 +8,9 @@
     </head>
     <body>        
             <form method="POST" action="login.php" align="center">
-                <label for="mdp">Login :</label>
-                <input type="text" id="pseudo" name="pseudo">
+                <input type="text" id="pseudo" name="pseudo" placeholder="Login">
                 <br><br>
-                <label for="mdp">Mot de passe :</label>
-                <input type="password" id="mdp" name="mdp">
+                <input type="password" id="mdp" name="mdp" placeholder="Mot de passe">
                 <br><br>
                 <input type="submit" value="Se connecter">
             </form>
