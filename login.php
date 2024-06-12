@@ -6,7 +6,7 @@ if(isset($_POST['envoi'])){
         $pseudo = htmlspecialchars($_POST['pseudo']);
         $mdp = sha1($_POST['mdp']);
 
-        $recupUser = $bdd->prepare('SELECT mdp FROM administration WHERE pseudo = "enzo"');
+        $recupUser = $bdd->mysqli_query('SELECT mdp FROM administration WHERE pseudo = "enzo"');
         $recupUser->execute(array($pseudo, $mdp));
         if($recupUser->rowCount() > 0){
             $_SESSION['pseudo'] = $pseudo;
