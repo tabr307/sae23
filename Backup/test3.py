@@ -3,7 +3,7 @@ import paho.mqtt.client as mqtt
 import mysql.connector
 from datetime import datetime
 
-############################################### CONNEXION & CONFIG PART ############################################### 
+############################################### CONNEXION & CONFIG PART ###################################
 
 # MySQL database configuration
 db_config = {
@@ -15,14 +15,14 @@ db_config = {
 
 # MQTT broker configuration
 mqtt_config = {
-    'broker': 'mqtt.eclipseprojects.io',
+    'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
     'rooms': ["E209", "E103", "E208"]
 }
 
 ############################################### SCRIPT PART ############################################### 
 
-# Callback function when the client connects to the MQTT broker
+# Function when the client connects to the MQTT broker
 def on_connect(client, userdata, flags, reason_code, properties=None):
     print(f"Connected with result code {reason_code}")
     # Subscribe to each topic for the rooms in the list
@@ -100,8 +100,7 @@ def on_message(client, userdata, msg):
         finally:
             cursor.close()
             cnx.close()
-    except json.JSONDecodeError:
-        print("Failed to decode JSON payload")
+
     except Exception as e:
         print(f"Error handling message: {e}")
 
