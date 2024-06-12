@@ -63,4 +63,5 @@ for room in rooms:
     print(f"Getting payload for topic {topic}")
     payload = get_mqtt_payload(topic)
     if payload is not None:
-        print(f"Payload for room {room
+        print(f"Payload for room {room})
+              
