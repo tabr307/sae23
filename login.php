@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <br><br>
             <input type="submit" name="envoi">
         </form> -->
-        <form method="post" action="login.php" align="center">
+        <form method="POST" action="login.php" align="center">
 	        <label for="mdp">Mot de passe:</label>
 	        <input type="password" id="mdp" name="mdp">
 	        <input type="submit" value="Se connecter">
