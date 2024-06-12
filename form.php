@@ -15,7 +15,8 @@
                 <a class="right" href="gestion/gestion.php"> Gestion</a> 
                 <a class="right" href="administration.php"> Administration</a>
         </section>
-        <section class='formulaire'>
+        
+        <section class="formulaire">
             <form method="POST" action="login.php" align="center">
                 <label for="mdp">Login :</label>
                 <input type="text" id="pseudo" name="pseudo">
