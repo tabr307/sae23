@@ -29,12 +29,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         // Le mot de passe n'est pas défini ou est vide, rediriger ou afficher un message d'erreur
-        header("Location:index.php");
+        echo"non defini";
         exit();
     }
 } else {
     // Si la requête n'est pas une soumission de formulaire, rediriger ou afficher un message d'erreur
-    header("Location:index.php");
+    echo"pas une soumission de formulaire";
     exit();
 }
 ?>
