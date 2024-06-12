@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 session_start();
-echo $_SESSION['pseudo'];
+echo "Bienvenue le goat";
 ?>
 
 
