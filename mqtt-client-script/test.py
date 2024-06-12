@@ -9,7 +9,7 @@ from datetime import datetime
 mqtt_config = {
     'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
-    'rooms': ["E209"]
+    'rooms': ["E004", "E210", "B112", "B109"]
 }
 
 # MySQL database configuration
@@ -22,17 +22,16 @@ db_config = {
 
 ############################################### SCRIPT PART ############################################### 
 
-# for room in mqtt_config['rooms']:
-def on_connect(client, userdata, flags, reason_code, properties):
+def on_connect(client, userdata, flags, reason_code, properties=None):
     print(f"Connected with result code {reason_code}")
     for room in mqtt_config['rooms']:
         topic = f"AM107/by-room/{room}/data"
-    client.subscribe(topic)
-    print(f"{topic}")
+        client.subscribe(topic)
+        print(f"Subscribed to topic: {topic}")
 
 def on_message(client, userdata, msg):
     payload = json.loads(msg.payload.decode())
-    print(f"Message received on topic {msg.topic} at {timestamp.time()} : {payload}")
+    print(f"Message received on topic {msg.topic} at {datetime.now().time()} : {payload}")
     # Extract data from the payload
     sensor_data = payload[0]
     device_info = payload[1]
@@ -41,13 +40,11 @@ def on_message(client, userdata, msg):
     cnx = mysql.connector.connect(**db_config)
     cursor = cnx.cursor()
 
-    timestamp = datetime.now()
-
     try:
         # Insert building data if it doesn't exist
-        add_batiment = ("INSERT INTO batiment (nom_batiment) VALUES (%s) "
+        add_batiment = ("INSERT INTO batiment (nom_batiment, login, mdp) VALUES (%s, %s, %s) "
                         "ON DUPLICATE KEY UPDATE id_batiment=LAST_INSERT_ID(id_batiment)")
-        cursor.execute(add_batiment, (device_info['Building'],))
+        cursor.execute(add_batiment, (device_info['Building'], device_info['login'], device_info['mdp']))
         id_batiment = cursor.lastrowid
         
         # Retrieve id_batiment if the building already exists
@@ -97,9 +94,8 @@ def on_message(client, userdata, msg):
     finally:
         cursor.close()
         cnx.close()
-        client.disconnect()
 
-mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc = mqtt.Client()
 mqttc.on_connect = on_connect
 mqttc.on_message = on_message
 
