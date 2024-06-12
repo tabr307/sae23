@@ -23,6 +23,7 @@ session_start();
         </section>
         <section class="container">
             <section class="content">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                 <?php echo"Bienvenue $pseudal"?>
             </section>
         </section>
