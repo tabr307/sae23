@@ -12,7 +12,7 @@
 		include ("mysql.php");
 
 		$requete = "SELECT * FROM `administration`";
-		$resultat = mysqli_query($id_bd, $requete)
+		$resultat = mysqli_query($id_bd, $requete);
 			or die("Execution de la requete impossible : $requete");
 
 		$ligne = mysqli_fetch_row($resultat);
