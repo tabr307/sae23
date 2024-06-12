@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$_SESSION["mdp"]=$_REQUEST["mdp"];  // Récupération du mot de passe
+	$_SESSION["mdp"]=$_POST["mdp"];  // Récupération du mot de passe
 	$motdep=$_SESSION["mdp"];
 	$_SESSION["auth"]=FALSE;
 
