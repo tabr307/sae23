@@ -46,8 +46,6 @@
     <body>
         </section>
         <form method="POST" action="" align="center">
-            <input type="text" name="pseudo" autocomplete="off">
-            <br>
             <input type="password" name="mdp" autocomplete="off">
             <br><br>
             <input type="submit" name="envoi">
