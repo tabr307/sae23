@@ -20,7 +20,7 @@
 		header('Location:administration.php');
 		}
 	else{
-		$requete2 = "SELECT pseudo, mdp, nom_batiment FROM `batiment` WHERE pseudo=$pseudal";
+		$requete2 = "SELECT pseudo, mdp, nom_batiment FROM `batiment` WHERE pseudo='$pseudal'";
 		$resultat2 = mysqli_query($id_bd, $requete2)
 		or die("Execution de la requete impossible : $requete2");
 		$ligne2 = mysqli_fetch_row($resultat2);
