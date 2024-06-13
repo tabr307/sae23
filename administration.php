@@ -21,9 +21,10 @@ session_start();
         </section>
         <section class="container">
             <section class="content">
-                <?php echo "Bienvenue";
+            <?php echo "Bienvenue";
                 echo $_SESSION['pseudo'];?>
-                 <form method="POST" action="login.php" align="center">
+                <br><br><br><br>
+                <form method="POST" action="login.php" align="center">
                     <input type="radio" name="table" value="table" id="bt_table">
                     <label for="reseau">une table</label>
                     <input type="radio" name="bd" value="bd" id="bt_bd">
