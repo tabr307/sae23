@@ -32,66 +32,45 @@
                 </p>
                 <h1>Bâtiments Gérés</h1>                
                 <img src="ressources/plan_iut.webp" alt="plan iut">
-                <p>Les bâtiments gérés sont pour l'instant les bâtiments <u>B, E et A, W, Q</u>.<br>
-                    Les salles dont les capteurs émettent des données sont les salles <u>B110</u>, <u>B2048</u>, <u>B1200291923576</u>, <u>E2</u>, <u>E101</u>, <u>E102</u>, <u>E1385</u> </p>
+                <p>Les bâtiments gérés sont pour l'instant les bâtiments <u>B ( info ) et E ( R&T )</u>.<br>
+                    Les salles dont les capteurs émettent des données sont les salles <u>E210</u>, <u>B112</u>, <u>E004</u>, <u>B109</u>.</p>
+                    Les mesures sont prises en charge sont <u>températures</u>, <u>co2</u>, <u>humidité</u> ainsi que la <u>luminosité</u>.
                 <h1>Mentions Légales</h1>
                 
                 <p>
                     <h3>1. Informations Générales</h3>
 
-                    Nom du site web : SAE23.com<br>
-                    URL du site web : SAE23.com<br>
-                    Responsable de publication : Mr le Deunffffffreééééére <br>
-                    Contact : address@mail.random<br>
+                    Nom du site web : SAE23<br>
+                    URL du site web : http://83.113.15.31/sae23<br>
+                    Responsable de publication : Valentin LALUE <br>
+                    Contact : valentin.lalue.iut@gmail.com<br>
 
-                    <h3>2. Hébergeur</h3>
+                    <h3>2. Propriété Intellectuelle</h3>
 
-                    Nom de l'hébergeur : [Nom de l'hébergeur]  <br>
-                    Adresse de l'hébergeur : [Adresse de l'hébergeur]  <br>
-                    Téléphone : [Numéro de téléphone de l'hébergeur]<br>
+                    L'ensemble du contenu présent sur le site sae23 incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de Messieurs Lalue, Muller, Cazettes et Vilanove à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.<br>
 
-                    <h3>3. Propriété Intellectuelle</h3>
+                    <h3>3. Conditions d'utilisation</h3>
 
-                    L'ensemble du contenu présent sur le site [Nom du site web], incluant, de façon non limitative, les graphismes, images, textes, vidéos, animations, sons, logos, gifs et icônes ainsi que leur mise en forme sont la propriété exclusive de [Nom du propriétaire] à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.<br>
+                    L'utilisation du site sae23 implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment, les utilisateurs du site [Nom du site web] sont donc invités à les consulter de manière régulière.
+                    <h3>4. Limitations de responsabilité</h3>
 
-                    <h3>4. Conditions d'utilisation</h3>
+                    Le site sae23 ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site sae23, et résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l’apparition d’un bug ou d’une incompatibilité.
 
-                    L'utilisation du site [Nom du site web] implique l'acceptation pleine et entière des conditions générales d'utilisation ci-après décrites. Ces conditions d'utilisation sont susceptibles d'être modifiées ou complétées à tout moment, les utilisateurs du site [Nom du site web] sont donc invités à les consulter de manière régulière.
+                    <h3>5. Liens hypertextes</h3>
 
-                    <h3>5. Protection des données personnelles</h3>
+                    Le site sae23 contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de Mr Lalue. Cependant, sae23 n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait.
 
-                    En conformité avec les dispositions de la loi n°78-17 du 6 janvier 1978 modifiée, relative à l'informatique, aux fichiers et aux libertés, le site [Nom du site web] a fait l'objet d'une déclaration auprès de la Commission Nationale de l'Informatique et des Libertés (www.cnil.fr).
+                    <h3>6. Droit applicable et attribution de juridiction</h3>
 
-                    <h3>6. Limitations de responsabilité</h3>
+                    Tout litige en relation avec l’utilisation du site sae23 est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Toulouse.
 
-                    Le site [Nom du site web] ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site [Nom du site web], et résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l’apparition d’un bug ou d’une incompatibilité.
+                    <h3>7. Contact</h3>
 
-                    <h3>7. Liens hypertextes</h3>
-
-                    Le site [Nom du site web] contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de [Nom du responsable]. Cependant, [Nom du site web] n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait.
-
-                    <h3>8. Droit applicable et attribution de juridiction</h3>
-
-                    Tout litige en relation avec l’utilisation du site [Nom du site web] est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de [Lieu de juridiction].
-
-                    <h3>9. Contact</h3>
-
-                    Pour toute question concernant les mentions légales du site, vous pouvez nous contacter à l'adresse suivante : [Adresse email de contact].
+                    Pour toute question concernant les mentions légales du site, vous pouvez nous contacter à l'adresse suivante : valentin.lalue.iut@gmail.com.
 
                 </p>
             </section>
         </section>
-        <aside id="last">
-            <hr />
-            <p><em> Validation de la page HTML5 - CSS3 </em></p>
-            <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Flalue.atwebpages.com%2FTP_R109%2Frwd.html" target="_blank"> 
-                <img class= "image-responsive" src="images/html5-validator-badge-blue.png" alt="HTML5 Valide !" />
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Flalue.atwebpages.com%2FTP_R109%2Fstyles%2Fstyle2RWD.css" target="_blank">
-                <img class= "image-responsive" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
-            </a>
-          </aside>
             
           <footer>
             <ul>
