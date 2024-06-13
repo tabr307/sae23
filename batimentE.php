@@ -21,15 +21,36 @@
                 <p class="bienvenue">Bienvenue au batE</p>
             </section>
 
-            <form method="POST" action=".php" align="center">
-                <input type="text" id="num salle" name="salle" placeholder="Entrez B108 ou B564">
-                <br><br>
-                <input type="text" id="type capteur" name="capteur" placeholder="Choisir un capteur">
-                <br><br>
-                <input type="text" id="plage temp" name="temp" placeholder="Entrez 30 min / 1h / 3h">
-                <br><br>
-                <input type="submit" value="Soumettre">
-            </form>
+            <form method="POST" action="batBaction.php" align="center">
+              
+              <!-- Champ de sélection pour la salle -->
+                  <label for="salle RT">Sélectionnez une salle :</label>
+                  <select id="salle" name="salle">
+                  <option value="salle1">Salle E004</option>
+                  <option value="salle2">Salle E210</option>
+                  </select>
+          <br><br>
+                  <!-- Champ de sélection pour le type de capteur -->
+                  <label for="capteur">Sélectionnez un type de capteur :</label>
+                  <select id="capteur" name="capteur">
+                  <option value="temperature">Température</option>
+                  <option value="humidité">Humidité</option>
+                  <option value="pression">Pression</option>
+                  <option value="luminosité">Luminosité</option>
+                  </select>
+          <br><br>
+  
+                  <!-- Champ de sélection pour la plage temporelle -->
+                  <label for="plage">Sélectionnez une plage temporelle :</label>
+                  <select id="plage" name="plage">
+                  <option value="30min">30 min</option>
+                  <option value="1h">1 heure</option>
+                  <option value="3h">3 heures</option>
+                  </select>
+          <br><br>
+  
+                  <button type="submit"> Soumettre </button>
+              </form>
 
         </section>
         <aside id="last">
