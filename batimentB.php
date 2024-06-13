@@ -28,7 +28,7 @@
             <!-- Champ de sélection pour la salle -->
                 <label for="salle Info">Sélectionnez une salle :</label>
                 <select id="salle" name="salle">
-                <option value="salle1">Salle E004</option>
+                <option value="salle1">Salle E0040</option>
                 <option value="salle2">Salle E210</option>
                 </select>
         <br><br>

@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Redirection vers le formulaire si l'accès n'est pas via POST
-    header("Location: Infogest.php");
+    header("Location: gestion.php");
     exit();
 }
 
