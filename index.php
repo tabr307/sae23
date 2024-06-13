@@ -18,7 +18,7 @@
         </section>
         <section class="container">
             <section class="content">
-                <h1 id="titre1">Quel est l'objectif de ce site ? LE deunff </h1>
+                <h1 id="titre1">Quel est l'objectif de ce site ?</h1>
                 <p>Le but de ce site web est de fournir, dans le cadre de la SAÉ23, une intérface de gestion des données de capteurs de plusieurs métriques dans les salles de l'IUT. 
                     Il s'agit donc d'offir aux gestionnaires des bâtiments de l'IUT une interface simple et efficace permettant la visualisation des données de capteurs. 
                     Les bâtiments ont chacuns leur gestionnaire qui peut donc accéder a l'interface de gestion via ses logins et mot de passe pour plus de sécurité. 
