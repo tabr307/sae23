@@ -16,7 +16,7 @@ mqtt_config = {
 db_config = {
     'user': 'python',
     'password': 'passp',
-    'host': '83.113.15.31',
+    'host': '83.113.15.31', # 83.113.15.31
     'database': 'sae23'
 }
 
@@ -27,8 +27,8 @@ def on_connect(client, userdata, flags, reason_code, properties):
     print(f"Connected with result code {reason_code}")
     for room in mqtt_config['rooms']:
         topic = f"AM107/by-room/{room}/data"
-    client.subscribe(topic)
-    print(f"{topic}")
+        client.subscribe(topic)
+        print(f"{topic}")
 
 def on_message(client, userdata, msg):
     payload = json.loads(msg.payload.decode())
@@ -96,7 +96,6 @@ def on_message(client, userdata, msg):
     finally:
         cursor.close()
         cnx.close()
-        client.disconnect()
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
