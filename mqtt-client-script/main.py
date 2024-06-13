@@ -32,6 +32,8 @@ def on_connect(client, userdata, flags, reason_code, properties):
 
 def on_message(client, userdata, msg):
     payload = json.loads(msg.payload.decode())
+    timestamp = datetime.now()
+
     print(f"Message received on topic {msg.topic} at {timestamp.time()} : {payload}")
     # Extract data from the payload
     sensor_data = payload[0]
@@ -40,8 +42,6 @@ def on_message(client, userdata, msg):
     # Connect to the MySQL database
     cnx = mysql.connector.connect(**db_config)
     cursor = cnx.cursor()
-
-    timestamp = datetime.now()
 
     try:
         # Insert building data if it doesn't exist
@@ -83,7 +83,6 @@ def on_message(client, userdata, msg):
         # Insert measurements
         add_mesure = ("INSERT INTO mesures (unite, valeur, heure, date, id_capteur) "
                       "VALUES (%s, %s, %s, %s, %s)")
-        timestamp = datetime.now()
         metrics = ['pressure', 'temperature', 'humidity', 'co2', 'illumination']
         for metric in metrics:
             cursor.execute(add_mesure, (metric, sensor_data[metric], timestamp.time(), timestamp.date(), id_capteur))
