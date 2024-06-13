@@ -29,7 +29,7 @@ session_start();
                     <input type="radio" name="bd" value="bd" id="bt_bd">
                     <label for="reseau">une base de données</label>
                     <input type="radio" name="val" value="val" id="bt_val">
-                    <label for="reseau">une valeur</label>
+                    <label for="reseau">une valeur</label><br>
                     <input type="submit" value="Soumettre">
                 </form>
         
