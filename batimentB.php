@@ -28,8 +28,8 @@
             <!-- Champ de sélection pour la salle -->
                 <label for="salle Info">Sélectionnez une salle :</label>
                 <select id="salle" name="salle">
-                <option value="salle1">Salle 1</option>
-                <option value="salle2">Salle 2</option>
+                <option value="salle1">Salle E004</option>
+                <option value="salle2">Salle E210</option>
                 </select>
         <br><br>
                 <!-- Champ de sélection pour le type de capteur -->
@@ -45,9 +45,9 @@
                 <!-- Champ de sélection pour la plage temporelle -->
                 <label for="plage">Sélectionnez une plage temporelle :</label>
                 <select id="plage" name="plage">
-                <option value="matin">Matin</option>
-                <option value="après-midi">Après-midi</option>
-                <option value="soir">Soir</option>
+                <option value="matin">30 min</option>
+                <option value="après-midi">1 heure</option>
+                <option value="soir">3 heures</option>
                 </select>
         <br><br>
 

@@ -20,6 +20,17 @@
             <section class="content">
                 <p class="bienvenue">Bienvenue au batE</p>
             </section>
+
+            <form method="POST" action=".php" align="center">
+                <input type="text" id="num salle" name="salle" placeholder="Entrez B108 ou B564">
+                <br><br>
+                <input type="text" id="type capteur" name="capteur" placeholder="Choisir un capteur">
+                <br><br>
+                <input type="text" id="plage temp" name="temp" placeholder="Entrez 30 min / 1h / 3h">
+                <br><br>
+                <input type="submit" value="Soumettre">
+            </form>
+
         </section>
         <aside id="last">
             <hr />
