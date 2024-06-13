@@ -26,8 +26,8 @@
             <!-- Champ de sélection pour la salle -->
                 <label for="salle">Sélectionnez une salle :</label>
                 <select id="salle" name="salle">
-                <option value="salle1">Salle B365</option>
-                <option value="salle2">Salle B520</option>
+                <option value="B112">Salle B112</option>
+                <option value="B109">Salle B109</option>
                 </select>
         <br><br>
                 <!-- Champ de sélection pour le type de capteur -->

@@ -26,8 +26,8 @@
               <!-- Champ de sélection pour la salle -->
                   <label for="salle RT">Sélectionnez une salle :</label>
                   <select id="salle" name="salle">
-                  <option value="salle1">Salle E004</option>
-                  <option value="salle2">Salle E210</option>
+                  <option value="E004">Salle E004</option>
+                  <option value="E210">Salle E210</option>
                   </select>
           <br><br>
                   <!-- Champ de sélection pour le type de capteur -->

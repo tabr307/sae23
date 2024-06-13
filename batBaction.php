@@ -10,7 +10,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
-    echo '<h1>Tableu du Gestionnaire </h1>';
+    include("mysql.php");
+
+    echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
     echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
     echo '<tr>';
@@ -18,7 +20,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '<td>' . $capteur . '</td>';
     echo '<td>' . $plage . '</td>';
     echo '</tr>';
+    echo '<tr>';
+    echo '<td>' . $salle . '</td>';
+    echo '<td>' .  $capteur . '</td>';
+    echo '<td>' .  $plage . '</td>';
+    echo '</tr>';
     echo '</table>';
+    
+    
+    
+    
+    
     echo '<style>
     table {
     border-collapse: collapse;
