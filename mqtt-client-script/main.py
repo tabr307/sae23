@@ -9,7 +9,7 @@ from datetime import datetime
 mqtt_config = {
     'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
-    'rooms': ["E209"]
+    'rooms': ["E004", "E210", "B112", "B109"]
 }
 
 # MySQL database configuration
