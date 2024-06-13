@@ -15,7 +15,7 @@ mqtt_config = {
 # MySQL database configuration
 db_config = {
     'user': 'python',
-    'password': 'passp',
+    'password': 'whzjWL5Z65yb8JYp',
     'host': '127.0.0.1',
     'database': 'sae23'
 }
