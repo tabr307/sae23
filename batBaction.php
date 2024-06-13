@@ -17,6 +17,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
     //$val1 = ;
+    $mesures_par_salle = [];
+
+while ($row = mysqli_fetch_assoc($resultat)) {
+    // Déterminer la salle en fonction de l'id_capteur
+    switch ($row['id_capteur']) {
+        case 1:
+            $salle = "B112";
+            break;
+        case 2:
+            $salle = "E210";
+            break;
+        case 3:
+            $salle = "E004";
+            break;
+        case 4:
+            $salle = "B109";
+            break;
+        default:
+            $salle = "Inconnue"; // Valeur par défaut si l'id_capteur ne correspond pas
+    }
+
+    // Ajouter la ligne de résultat au tableau de la salle correspondante
+    $mesures_par_salle[$salle][] = $row;
+}
 
     echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
