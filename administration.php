@@ -21,22 +21,17 @@ session_start();
         </section>
         <section class="container">
             <section class="content">
-            <?php echo "Bienvenue";
+            <?php echo "Bienvenue ";
                 echo $_SESSION['pseudo'];?>
                 <br><br><br><br>
                 <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
     <fieldset>
-       <legend>Vos coordonnées</legend> <!-- Titre du fieldset -->
-	   <p>
-           <label for="nom">Nom : </label>
-           <input type="text" name="nom" id="nom" size="30" autofocus />
-	   </p>
-	   <p>
-           <label for="email">Adresse E-mail : </label>
-           <input type="email" name="email" id="email" size="50" required />
-	   </p>
-	   <label for="portable">N° téléphone portable : </label>
-       <input type="tel" name="portable" id="portable" size="14" maxlength="14" />
+       <legend>Sur quoi souhaitez vous influer</legend> <!-- Titre du fieldset -->
+       <p>
+           <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">une table</label>
+           <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">la base de données</label>
+           <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">Une valeur </label>
+        </p>
     </fieldset>
     <br />
     <fieldset>
