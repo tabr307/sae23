@@ -34,9 +34,9 @@
                   <label for="capteur">Sélectionnez un type de capteur :</label>
                   <select id="capteur" name="capteur">
                   <option value="temperature">Température</option>
-                  <option value="humidité">Humidité</option>
+                  <option value="humidite">Humidité</option>
                   <option value="pression">Pression</option>
-                  <option value="luminosité">Luminosité</option>
+                  <option value="luminosite">Luminosité</option>
                   </select>
           <br><br>
   
