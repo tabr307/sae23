@@ -144,5 +144,35 @@ footer ul li:last-child
 }
 
 table{
-  margin-left: 25%;
+	width:400px;
+	margin:20px;
+	border-collapse: collapse;
 }
+
+caption{
+	background-color:black;
+	color:white;
+	padding:20px;
+	font-weight:bold;
+	
+}
+
+th{
+	background-color:grey;
+	color:white;
+	padding:10px;
+	border: 1px solid black;
+}
+
+td{
+	padding:10px;
+	background-color : white;
+	border: 1px solid black;
+}
+
+td:last-child{ 
+	width:100px;
+}
+
+.right{
+text-align:right;}
