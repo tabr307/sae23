@@ -33,6 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<td>" . $row['valeur'] . "</td>";
     echo "<td>" . $row['heure'] . "</td>";
     echo "<td>" . $row['date'] . "</td>";
+    echo "<td>" . $row['valeur'] . "</td>";
+    echo "<td>" . $row['heure'] . "</td>";
+    echo "<td>" . $row['date'] . "</td>";
+    echo "<td>" . $row['valeur'] . "</td>";
+    echo "<td>" . $row['heure'] . "</td>";
+    echo "<td>" . $row['date'] . "</td>";
+    echo "<td>" . $row['valeur'] . "</td>";
+    echo "<td>" . $row['heure'] . "</td>";
+    echo "<td>" . $row['date'] . "</td>";
     echo '</tr>';
 
     echo '</table>';
