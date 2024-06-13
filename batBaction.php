@@ -43,8 +43,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '</table>';
     }
     
+    //CALCUL DES METRIQUE LETS GO
 
-    $tableau = [1, 2, 3, 4, 5, 6 ,10];
+    $tableau = ['valeur'];
+    //$tableau = [1, 2, 3, 4, 5, 6 ,10];
+    
+
     // Calcul de la somme des éléments du tableau
     $somme = array_sum($tableau);
 
