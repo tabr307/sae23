@@ -35,11 +35,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<td>" . $row['date'] . "</td>";
     echo '</tr>';
 
-    echo '<tr>';
-    echo '<td>' . $salle . '</td>';
-    echo '<td>' .  $capteur . '</td>';
-    echo '<td>' .  $plage . '</td>';
-    echo '</tr>';
     echo '</table>';
     }
     
