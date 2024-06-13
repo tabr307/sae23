@@ -24,15 +24,56 @@ session_start();
             <?php echo "Bienvenue";
                 echo $_SESSION['pseudo'];?>
                 <br><br><br><br>
-                <form method="POST" action="login.php" align="center">
-                    <input type="radio" name="table" value="table" id="bt_table">
-                    <label for="reseau">une table</label>
-                    <input type="radio" name="bd" value="bd" id="bt_bd">
-                    <label for="reseau">une base de données</label>
-                    <input type="radio" name="val" value="val" id="bt_val">
-                    <label for="reseau">une valeur</label><br>
-                    <input type="submit" value="Soumettre">
-                </form>
+                <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
+    <fieldset>
+       <legend>Vos coordonnées</legend> <!-- Titre du fieldset -->
+	   <p>
+           <label for="nom">Nom : </label>
+           <input type="text" name="nom" id="nom" size="30" autofocus />
+	   </p>
+	   <p>
+           <label for="email">Adresse E-mail : </label>
+           <input type="email" name="email" id="email" size="50" required />
+	   </p>
+	   <label for="portable">N° téléphone portable : </label>
+       <input type="tel" name="portable" id="portable" size="14" maxlength="14" />
+    </fieldset>
+    <br />
+    <fieldset>
+       <legend>Vos compétences initiales en développement Web</legend> <!-- Titre du fieldset -->
+       <p>
+           Le Web, pour vous c'est :
+           <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">un réseau</label>
+           <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">un site géographique</label>
+           <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">une fonction </label>
+           <input type="radio" name="web" value="Autre" id="autre" /><label for="autre">Autre...</label>
+       </p>
+       <p>
+           <label for="precisions">Si "Autre", veuillez préciser :</label><br />
+           <textarea name="precisions" id="precisions" cols="40" rows="4"></textarea>
+       </p>
+	   <p>
+         <label for="site">Eventuellement - URL d'un site Web que vous avez développé : </label><br />
+         <input type="url" id="site" name="site" size="70" />
+       </p>
+		<label for="niveau">Niveau de qualification : </label>
+		<select id="niveau" name="niveau">
+			<option value="Néophyte" selected="selected">Néophyte</option>
+			<option value="Débutant">Débutant</option>
+			<option value="Confirmé">Confirmé</option>
+			<option value="Expert">Expert</option>
+		</select>
+    </fieldset>
+	<p>
+      Avant de continuer, vous devez vérifier ces informations ! <br />
+      <input type="checkbox" id="validation" name="validation" required />
+      <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
+	</p>  
+    <p>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Envoyer" />
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Effacer" />
+    </p>
+   </form>
         
             </section>
         </section>            
