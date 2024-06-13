@@ -45,56 +45,58 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-<section class="navbar">
-    <a class="active" href="index.php"><img src="ressources/logo.png" id="image1" alt="logo"></a> 
-    <section class="links">
-        <a class="right" href="gestion2projet.php">Gestion de Projet</a> 
-        <a class="right" href="consultation.php">Consultation</a> 
-        <a class="right" href="form.php">Gestion</a> 
-        <a class="right" href="form.php">Administration</a>
+    <section class="navbar">
+        <a class="active" href="index.php"><img src="ressources/logo.png" id="image1" alt="logo"></a> 
+        <section class="links">
+            <a class="right" href="gestion2projet.php">Gestion de Projet</a> 
+            <a class="right" href="consultation.php">Consultation</a> 
+            <a class="right" href="form.php">Gestion</a> 
+            <a class="right" href="form.php">Administration</a>
+        </section>
     </section>
-</section>
+    <section class="container">
+        <section class="content">
+            <h1>Tableau des Mesures par Salle</h1>
 
-<h2>Tableau des Mesures par Salle</h2>
+            <?php
+            // Afficher un tableau pour chaque salle
+            foreach ($mesures_par_salle as $salle => $mesures) {
+                // Limiter les résultats aux 5 dernières valeurs
+                $mesures_limited = array_slice($mesures, 0, 5);
 
-<?php
-// Afficher un tableau pour chaque salle
-foreach ($mesures_par_salle as $salle => $mesures) {
-    // Limiter les résultats aux 5 dernières valeurs
-    $mesures_limited = array_slice($mesures, 0, 5);
+                echo "<h1>Salle : $salle</h1>";
+                echo "<table>";
+                echo "<thead>";
+                echo "<tr>";
+                echo "<th>Unité</th>";
+                echo "<th>Valeur</th>";
+                echo "<th>Heure</th>";
+                echo "<th>Date</th>";
+                echo "<th>Bâtiment</th>";
+                echo "</tr>";
+                echo "</thead>";
+                echo "<tbody>";
 
-    echo "<h3>Salle : $salle</h3>";
-    echo "<table>";
-    echo "<thead>";
-    echo "<tr>";
-    echo "<th>Unité</th>";
-    echo "<th>Valeur</th>";
-    echo "<th>Heure</th>";
-    echo "<th>Date</th>";
-    echo "<th>Bâtiment</th>";
-    echo "</tr>";
-    echo "</thead>";
-    echo "<tbody>";
+                foreach ($mesures_limited as $row) {
+                    // Déterminer le bâtiment en fonction de l'id_capteur
+                    $batiment = ($row['id_capteur'] == 2 || $row['id_capteur'] == 3) ? 'RT' : 'INFO';
 
-    foreach ($mesures_limited as $row) {
-        // Déterminer le bâtiment en fonction de l'id_capteur
-        $batiment = ($row['id_capteur'] == 2 || $row['id_capteur'] == 3) ? 'RT' : 'INFO';
+                    // Afficher une ligne de tableau avec les données récupérées
+                    echo "<tr>";
+                    echo "<td>" . $row['unite'] . "</td>";
+                    echo "<td>" . $row['valeur'] . "</td>";
+                    echo "<td>" . $row['heure'] . "</td>";
+                    echo "<td>" . $row['date'] . "</td>";
+                    echo "<td>" . $batiment . "</td>";
+                    echo "</tr>";
+                }
 
-        // Afficher une ligne de tableau avec les données récupérées
-        echo "<tr>";
-        echo "<td>" . $row['unite'] . "</td>";
-        echo "<td>" . $row['valeur'] . "</td>";
-        echo "<td>" . $row['heure'] . "</td>";
-        echo "<td>" . $row['date'] . "</td>";
-        echo "<td>" . $batiment . "</td>";
-        echo "</tr>";
-    }
-
-    echo "</tbody>";
-    echo "</table>";
-}
-?>
-
+                echo "</tbody>";
+                echo "</table>";
+            }
+            ?>
+        </section>
+    </section>
 <footer>
     <ul>
         <li>Département Réseaux et Télécommunications</li>
