@@ -16,22 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
-    foreach ($mesures_par_salle as $salle => $mesures) {
-        // Limiter les résultats aux 5 dernières valeurs
-        $mesures_limited = array_slice($mesures, 0, 5);
-
-        echo "<h1>Salle : $salle</h1>";
-        echo "<table>";
-        echo "<thead>";
-        echo "<tr>";
-        echo "<th>Unité</th>";
-        echo "<th>Valeur</th>";
-        echo "<th>Heure</th>";
-        echo "<th>Date</th>";
-        echo "<th>Bâtiment</th>";
-        echo "</tr>";
-        echo "</thead>";
-        echo "<tbody>";
+   
     }
     echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
@@ -53,8 +38,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '</table>';
     }
     
-    
-    
+
+    $tableau = [1, 2, 3, 4, 5, 6 ,10];
+    // Calcul de la somme des éléments du tableau
+    $somme = array_sum($tableau);
+
+    // Calcul du nombre d'éléments dans le tableau
+    $nombre_elements = count($tableau);
+
+    // Calcul de la moyenne
+    if ($nombre_elements > 0) {
+    $moyenne = $somme / $nombre_elements;
+    }
+
+    // Utilisation de la fonction min() pour trouver la valeur minimale
+    $minimum = min($tableau);
+    $maximum = max($tableau);
+
+    echo '<h1>Les métriques</h1>';
+    echo '<h3>Affichage de la moyenne, le min et le max des salles</h3>';
+    echo'<table>';   
+    echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>';
+    echo '<tr>';
+    echo '<td>' . $salle . '</td>';
+    echo '<td>' . $capteur . '</td>';
+    echo '<td>' . $plage . '</td>';
+    echo '</tr>'; 
+    echo '<tr>';
+    echo '<td>' . $moyenne . '</td>';
+    echo '<td>' . $minimum . '</td>';
+    echo '<td>' . $maximum . '</td>';
+    echo '</tr>'; 
+    echo '</table>';
     
     echo '<style>
     table {
@@ -95,7 +110,7 @@ tbody tr:hover {
     background-color: #f1f1f1;
 } </style>';
     
-}    
+   
 
 // Libérer les ressources de la requête
 mysqli_free_result($resultat);
