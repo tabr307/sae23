@@ -25,12 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Redirection vers le formulaire avec un message d'erreur
-        echo "Y a tel truc qui va pas"
+        echo "Y a tel truc qui va pas";
         exit();
     }
 } else {
     // Redirection vers le formulaire si l'accès n'est pas via POST
-    echo "accès non via post"
+    echo "accès non via post";
     exit();
 }
 
