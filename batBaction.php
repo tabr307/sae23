@@ -16,32 +16,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
-    //$val1 = ;
-    $mesures_par_salle = [];
+    foreach ($mesures_par_salle as $salle => $mesures) {
+        // Limiter les résultats aux 5 dernières valeurs
+        $mesures_limited = array_slice($mesures, 0, 5);
 
-while ($row = mysqli_fetch_assoc($resultat)) {
-    // Déterminer la salle en fonction de l'id_capteur
-    switch ($row['id_capteur']) {
-        case 1:
-            $salle = "B112";
-            break;
-        case 2:
-            $salle = "E210";
-            break;
-        case 3:
-            $salle = "E004";
-            break;
-        case 4:
-            $salle = "B109";
-            break;
-        default:
-            $salle = "Inconnue"; // Valeur par défaut si l'id_capteur ne correspond pas
+        echo "<h1>Salle : $salle</h1>";
+        echo "<table>";
+        echo "<thead>";
+        echo "<tr>";
+        echo "<th>Unité</th>";
+        echo "<th>Valeur</th>";
+        echo "<th>Heure</th>";
+        echo "<th>Date</th>";
+        echo "<th>Bâtiment</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
     }
-
-    // Ajouter la ligne de résultat au tableau de la salle correspondante
-    $mesures_par_salle[$salle][] = $row;
-}
-
     echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
     echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
