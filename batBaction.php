@@ -10,7 +10,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
-
+    echo '<table>';
+    echo '<tr><th>Salle</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
+    echo '<tr>';
+    echo '<td>' . $salle . '</td>';
+    echo '<td>' . $capteur . '</td>';
+    echo '<td>' . $plage . '</td>';
+    echo '</tr>';
+    echo '</table>';
     
     
     if (in_array($salle, $validSalles) && in_array($capteur, $validCapteurs) && in_array($plage, $validPlages)) {

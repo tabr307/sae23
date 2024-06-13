@@ -26,7 +26,7 @@ session_start();
                 <br><br><br><br>
                 <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
     <fieldset>
-       <legend>Sur quoi souhaitez vous influer</legend> <!-- Titre du fieldset -->
+       <legend>Valeurs</legend> <!-- Titre du fieldset -->
        <p>
            <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">une table</label>
            <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">la base de données</label>
