@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Liste des choix valides
     $validSalles = ["salle1", "salle2"];
@@ -10,14 +11,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
+    //connection bd
     include("mysql.php");
-
+    //la requete sql que je veux faire
     $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
-
+    //éxécution de la requète
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
    
-    }
+    }   //tableau html pour identifier les choix du form
     echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
     echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
@@ -26,7 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '<td>' . $capteur . '</td>';
     echo '<td>' . $plage . '</td>';
     echo '</tr>';
+
+    //Utilisation de POST pour recup les bonnes donnée ?
     
+    //boucle pour afficher les données récupérées
     foreach ($resultat as $row) {
 
     echo '<tr>';
@@ -55,6 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $minimum = min($tableau);
     $maximum = max($tableau);
 
+    //tableau pour afficher moyenne, min et max
     echo '<h1>Les métriques</h1>';
     echo '<h3>Affichage de la moyenne, le min et le max des salles</h3>';
     echo'<table>';   
@@ -71,6 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo '</tr>'; 
     echo '</table>';
     
+    //partie style pour les tableaux
     echo '<style>
     table {
     border-collapse: collapse;
