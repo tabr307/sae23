@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     echo '<h1>Tableu du Gestionnaire </h1>';
     echo '<table>';
-    echo '<tr><th>Salle</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
+    echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
     echo '<tr>';
     echo '<td>' . $salle . '</td>';
     echo '<td>' . $capteur . '</td>';
