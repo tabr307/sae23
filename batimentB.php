@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!--le formulaire -->
+<!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -21,7 +21,7 @@
                 <p class="bienvenue">Bienvenue au batB</p>
             </section>
            
-            <form method="POST" action="batBaction.php" align="center">
+            <form method="POST" action="Infogest.php" align="center">
               
             <!-- Champ de sélection pour la salle -->
                 <label for="salle Info">Sélectionnez une salle :</label>
@@ -51,6 +51,7 @@
 
                 <button type="submit"> Soumettre </button>
             </form>
+    
 
 
         </section>
