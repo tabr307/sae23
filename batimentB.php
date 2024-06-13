@@ -23,7 +23,7 @@
             
            
            
-            <form method="POST" action=".php" align="center">
+            <form method="POST" action="batBaction.php" align="center">
               
             <!-- Champ de sélection pour la salle -->
                 <label for="salle Info">Sélectionnez une salle :</label>
@@ -45,9 +45,9 @@
                 <!-- Champ de sélection pour la plage temporelle -->
                 <label for="plage">Sélectionnez une plage temporelle :</label>
                 <select id="plage" name="plage">
-                <option value="matin">30 min</option>
-                <option value="après-midi">1 heure</option>
-                <option value="soir">3 heures</option>
+                <option value="30min">30 min</option>
+                <option value="1h">1 heure</option>
+                <option value="3h">3 heures</option>
                 </select>
         <br><br>
 
