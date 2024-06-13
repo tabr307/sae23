@@ -15,8 +15,8 @@ mqtt_config = {
 # MySQL database configuration
 db_config = {
     'user': 'python',
-    'password': 'passp',
-    'host': 'localhost',
+    'password': 'whzjWL5Z65yb8JYp',
+    'host': '127.0.0.1',
     'database': 'sae23'
 }
 
@@ -58,7 +58,7 @@ def on_message(client, userdata, msg):
 
         # Insert room data if it doesn't exist
         add_salle = ("INSERT INTO salle (nom_salle, id_batiment) VALUES (%s, %s) "
-                        "ON DUPLICATE KEY UPDATE id_salle=LAST_INSERT_ID(id_salle)")
+                     "ON DUPLICATE KEY UPDATE id_salle=LAST_INSERT_ID(id_salle)")
         cursor.execute(add_salle, (device_info['room'], id_batiment))
         id_salle = cursor.lastrowid
 
