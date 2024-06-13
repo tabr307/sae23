@@ -25,12 +25,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     } else {
         // Redirection vers le formulaire avec un message d'erreur
-        header("Location: gestion.php?error=invalid_choice");
+        echo "Y a tel truc qui va pas"
         exit();
     }
 } else {
     // Redirection vers le formulaire si l'accès n'est pas via POST
-    header("Location: gestion.php");
+    echo "accès non via post"
     exit();
 }
 
