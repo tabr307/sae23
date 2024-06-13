@@ -16,7 +16,7 @@ mqtt_config = {
 db_config = {
     'user': 'python',
     'password': 'passp',
-    'host': 'localhost',
+    'host': '127.0.0.1',
     'database': 'sae23'
 }
 
