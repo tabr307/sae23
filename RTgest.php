@@ -8,6 +8,6 @@
 <body>
     <h1>Bienvenue sur la Page 1</h1>
     <p>Ceci est le contenu de la page 1.</p>
-    <a href="RTform.php">Retour à la page de choix</a>
+    <a href="batimentB.php">Retour à la page de choix</a>
 </body>
 </html>
