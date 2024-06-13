@@ -59,14 +59,14 @@ tbody tr:hover {
 } </style>';
     
     
-    if (in_array($salle, $validSalles) && in_array($capteur, $validCapteurs) && in_array($plage, $validPlages)) {
-        header('Location: Infogest.php');
-        exit();
-    } else {
+   // if (in_array($salle, $validSalles) && in_array($capteur, $validCapteurs) && in_array($plage, $validPlages)) {
+    //    header('Location: Infogest.php');
+  //      exit();
+  //  } else {
         // Redirection vers le formulaire avec un message d'erreur
-        header("Location: gestion.php?error=invalid_choice");
-        exit();
-    }
+   //     header("Location: gestion.php?error=invalid_choice");
+    //   exit();
+  //  }
 } else {
     // Redirection vers le formulaire si l'accès n'est pas via POST
     header("Location: gestion.php");
