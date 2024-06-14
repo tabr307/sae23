@@ -18,7 +18,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     //éxécution de la requète
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
-   
+     // Initialisation des variables pour stocker la somme et le nombre de lignes
+$somme = 0;
+$nb_lignes = 0;
+$min = PHP_INT_MAX;
+$max = PHP_INT_MIN;
+
     }   //tableau html pour identifier les choix du form
     echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
@@ -31,18 +36,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Utilisation de POST pour recup les bonnes donnée ?
     
-    $row = mysqli_fetch_array($resultat);
+    //$row = mysqli_fetch_array($resultat);
     //boucle pour afficher les données récupérées
-    foreach ($resultat as $row) {
+   // foreach ($resultat as $row) {
 
-    echo '<tr>';
-    echo "<td>" . $row['valeur'] . "</td>";
-    echo "<td>" . $row['heure'] . "</td>";
-    echo "<td>" . $row['date'] . "</td>";
-    echo '</tr>';
+//    echo '<tr>';
+  //  echo "<td>" . $row['valeur'] . "</td>";
+  //  echo "<td>" . $row['heure'] . "</td>";
+  //  echo "<td>" . $row['date'] . "</td>";
+  //  echo '</tr>';
 
-    echo '</table>';
+
+
+    while ($row = mysqli_fetch_array($resultat)) {
+        // Affichage des données dans le tableau
+        echo "<tr>";
+        echo "<td>". $row['valeur']. "</td>";
+        echo "<td>". $row['heure']. "</td>";
+        echo "<td>". $row['date']. "</td>";
+        echo "</tr>";
+          // Ajout de la valeur à la somme
+    $somme += $row['valeur'];
+    // Incrémentation du nombre de lignes
+    $nb_lignes++;
+    if ($row['valeur'] < $min) {
+        $min = $row['valeur'];
     }
+    if ($row['valeur'] > $max) {
+        $max = $row['valeur'];
+    }
+
+    }
+    $moyenne = $somme / $nb_lignes;
+    echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
+    echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
+    echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
+    echo '</table>';
+  //  }
     
     //CALCUL DES METRIQUE LETS GO
 

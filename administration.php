@@ -24,59 +24,30 @@ session_start();
             <?php echo "Bienvenue ";
                 echo $_SESSION['pseudo'];?>
                 <br><br><br><br>
-                <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
-    <fieldset>
-       <legend>Valeurs</legend> <!-- Titre du fieldset -->
-       <p>        <label for="capteur">Sélectionnez un type de  :</label><br>
-                  <select id="capteur" name="capteur">
-                  <option value="temperature">Température</option>
-                  <option value="humidite">Humidité</option>
-                  <option value="pression">Pression</option>
-                  <option value="luminosite">Luminosité</option>
-                  </select><br>
-                <input type="url" id="site" name="site" size="70" placeholder="id de valeur"/><br>
-                <input type="url" id="site" name="site" size="70" placeholder="unité"/><br>
-                <input type="url" id="site" name="site" size="70" placeholder="valeur à ajouter/modifier"/><br>
-                <input type="url" id="site" name="site" size="70" placeholder="date AAAA-MM-JJ"/><br>
-                <input type="url" id="site" name="site" size="70" placeholder="heure HH-MM-SS"/><br>
-                <input type="url" id="site" name="site" size="70" placeholder="id capteur"/><br>
-                <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">supprimer</label>
-                <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">modifier</label>
-                <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">ajouter</label>
-        </p>
-    </fieldset>
-    <br />
-    <fieldset>
-       <legend>Vos compétences initiales en développement Web</legend> <!-- Titre du fieldset -->
-       <p>
- 
-       </p>
-       <p>
-           <label for="precisions">Si "Autre", veuillez préciser :</label><br />
-           <textarea name="precisions" id="precisions" cols="40" rows="4"></textarea>
-       </p>
-	   <p>
-         <label for="site">Eventuellement - URL d'un site Web que vous avez développé : </label><br />
-         <input type="url" id="site" name="site" size="70" />
-       </p>
-		<label for="niveau">Niveau de qualification : </label>
-		<select id="niveau" name="niveau">
-			<option value="Néophyte" selected="selected">Néophyte</option>
-			<option value="Débutant">Débutant</option>
-			<option value="Confirmé">Confirmé</option>
-			<option value="Expert">Expert</option>
-		</select>
-    </fieldset>
-	<p>
-      Avant de continuer, vous devez vérifier ces informations ! <br />
-      <input type="checkbox" id="validation" name="validation" required />
-      <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
-	</p>  
-    <p>
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Envoyer" />
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Effacer" />
-    </p>
-   </form>
+            <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
+                <fieldset>
+                    <legend>Valeurs</legend> <!-- Titre du fieldset -->
+                        <p> <label for="capteur">Sélectionnez un type de  :</label><br>
+                            <select id="capteur" name="capteur">
+                            <option value="temperature">Température</option>
+                            <option value="humidite">Humidité</option>
+                            <option value="pression">Pression</option>
+                            <option value="luminosite">Luminosité</option>
+                            </select><br>
+                            <input type="text" id="id_val" name="id_val" size="70" placeholder="id de valeur"/><br>
+                            <input type="text" id="unit" name="unit" size="70" placeholder="unité"/><br>
+                            <input type="text" id="val" name="val" size="70" placeholder="valeur à ajouter/modifier"/><br>
+                            <input type="text" id="date" name="date" size="70" placeholder="date AAAA-MM-JJ"/><br>
+                            <input type="text" id="time" name="time" size="70" placeholder="heure HH-MM-SS"/><br>
+                            <input type="text" id="id_cap" name="id_cap" size="70" placeholder="id capteur"/><br>
+                            <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">supprimer</label>
+                            <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">modifier</label>
+                            <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">ajouter</label>
+                        </p>
+                </fieldset>
+                <br />
+                <fieldset>
+            </form>
         
             </section>
         </section>            
