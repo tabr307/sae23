@@ -1,7 +1,7 @@
 CREATE TABLE batiment (
     id_batiment INTEGER PRIMARY KEY AUTO_INCREMENT,
     nom_batiment VARCHAR(50) UNIQUE,
-    login VARCHAR(20) UNIQUE,
+    pseudo VARCHAR(20) UNIQUE,
     mdp VARCHAR(50)
 );
 
@@ -22,11 +22,11 @@ CREATE TABLE capteur (
 CREATE TABLE mesures (
     id_mesure INTEGER PRIMARY KEY AUTO_INCREMENT,
     unite VARCHAR(50),
-	valeur FLOAT,
-	heure TIME,            -- We can add this option to lighten the python code on newer versions of mysql -> DEFAULT CURRENT_TIME
-	date DATE,             -- We can add this option to lighten the python code on newer versions of mysql -> DEFAULT CURRENT_DATE
-	id_capteur INTEGER,
-	FOREIGN KEY (id_capteur) REFERENCES capteur(id_capteur)
+    valeur FLOAT,
+    heure TIME,            -- We can add this option to lighten the python code on newer versions of mysql -> DEFAULT CURRENT_TIME
+    date DATE,             -- We can add this option to lighten the python code on newer versions of mysql -> DEFAULT CURRENT_DATE
+    id_capteur INTEGER,
+    FOREIGN KEY (id_capteur) REFERENCES capteur(id_capteur)
 );
 
 CREATE TABLE administration (
