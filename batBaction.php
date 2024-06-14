@@ -16,6 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    // $pression = $_POST['Pression'];
    // $luminosite = $_POST["Luminosité"];
 }
+     // Initialisation des variables pour stocker la somme et le nombre de lignes
+$somme = 0;
+$nb_lignes = 0;
+$min = PHP_INT_MIN;
+$max = PHP_INT_MAX;
+
     //connection bd
     include("mysql.php");
     //la requete sql que je veux faire
@@ -67,41 +73,33 @@ while ($row = mysqli_fetch_array($resultat)) {
     echo "<td>". $row[1]. "</td>";
     echo "<td>". $row[2]. "</td>";
     echo "</tr>";
-}
+             //Ajout de la valeur à la somme
+    $somme += $row['valeur'];
+    // Incrémentation du nombre de lignes
+   $nb_lignes++;
+   if ($row['valeur'] < $min) {
+      $min = $row['valeur'];
+   }
+    if ($row['valeur'] > $max) {
+        $max = $row['valeur'];
+    }
+
+    }
+    $moyenne = $somme / $nb_lignes;
+    echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
+    echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
+    echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
+
 echo "</table>";
 
+// Libérer les ressources de la requête
+mysqli_free_result($resultat);
 // Fermeture de la connexion à la base de données
 mysqli_close($id_bd);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     //éxécution de la requète
  //   $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
-     // Initialisation des variables pour stocker la somme et le nombre de lignes
-//$somme = 0;
-//$nb_lignes = 0;
-//$min = PHP_INT_MIN;
-//$max = PHP_INT_MAX;
 
 //    }   //tableau html pour identifier les choix du form
 //    echo '<h1>Tableau du Gestionnaire </h1>';
@@ -121,29 +119,10 @@ mysqli_close($id_bd);
   //      echo "<td>". $row['heure']. "</td>";
  //       echo "<td>". $row['date']. "</td>";
  //       echo "</tr>";
-          // Ajout de la valeur à la somme
-  //  $somme += $row['valeur'];
- //   // Incrémentation du nombre de lignes
-  //  $nb_lignes++;
- ////   if ($row['valeur'] < $min) {
- //       $min = $row['valeur'];
- //   }
- //   if ($row['valeur'] > $max) {
-//        $max = $row['valeur'];
- //   }
-
- //   }
- //   $moyenne = $somme / $nb_lignes;
- //   echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
-//    echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
- //   echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
+  
 //    echo '</table>';
   //  }
-    // Libérer les ressources de la requête
-//mysqli_free_result($resultat);
-
-// Fermer la connexion à la base de données
-//mysqli_close($id_bd);
+   
 
     //partie style pour les tableaux
     echo '<style>
