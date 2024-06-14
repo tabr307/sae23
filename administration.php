@@ -27,13 +27,13 @@ session_start();
                 <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
     <fieldset>
        <legend>Valeurs</legend> <!-- Titre du fieldset -->
-       <p>        <label for="capteur">Sélectionnez un type de  :</label>
+       <p>        <label for="capteur">Sélectionnez un type de  :</label><br>
                   <select id="capteur" name="capteur">
                   <option value="temperature">Température</option>
                   <option value="humidite">Humidité</option>
                   <option value="pression">Pression</option>
                   <option value="luminosite">Luminosité</option>
-                  </select>
+                  </select><br>
            <input type="url" id="site" name="site" size="70" placeholder="Valeur"/>
            <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">une table</label>
            <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">la base de données</label>
