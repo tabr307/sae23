@@ -117,7 +117,7 @@ mysqli_close($id_bd);
 <head>
   <meta charset="utf-8">
   <title>le style</title>
-  <link rel="stylesheet" href="./style/style.css">
+  <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 </html>
