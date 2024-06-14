@@ -4,8 +4,8 @@ After=network.target
 
 [Service]
 User=rt
-WorkingDirectory=/home/rt/sae23/mqtt-client-script
-ExecStart=/bin/bash -c "source /home/rt/sae23/mqtt-client-script/.venv/bin/activate && python3 /home/rt/sae23/mqtt-client-script/main.py"
+WorkingDirectory=/home/rt/SAE23/mqtt-client-script
+ExecStart=/bin/bash -c "source /home/rt/SAE23/mqtt-client-script/.venv/bin/activate && python3 /home/rt/SAE23/mqtt-client-script/main.py"
 Restart=always
 
 [Install]
