@@ -55,7 +55,8 @@ session_start();
   
                   <button type="submit"> Soumettre </button>
               </form>
-
+			<p> Si vous preferez acceder à la page gestion avec l'approche nodered/grafana, cliquez sur ce lien : </p>
+		<a href="gestionRT_nodered.php" target="_blank">Gestion approche nodered bat E</a>
         </section>
     </section>
         <aside id="last">

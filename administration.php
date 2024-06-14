@@ -73,7 +73,7 @@ session_start();
             </fieldset>
             Avant de continuer, vous devez vérifier ces informations ! <br />
             <input type="checkbox" id="validation" name="validation" required />
-            <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
+            <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
             <input type="submit" value="Envoyer" align="center"/>
             &nbsp;<input type="reset" value="Cancel" align="center"/><br>
         </form>
