@@ -12,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $plage = $_POST["plage"];
 
     $temperature = $_POST['temperature'];
+    $humidite = $_POST['humidité'];
+    $pression = $_POST['pression'];
+    $luminosite = $_POST['luminosité'];
 
     //connection bd
     include("mysql.php");
@@ -19,12 +22,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
 
     // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
-if ($type_de_donnee == "temperature") {
-    $requete .= " WHERE type_de_donnee = 'temperature'";
-//} elseif ($temperature == "humidite") {
- //   $requete .= " WHERE type_de_donnee = 'humidite'";
-//} elseif ($temperature == "pression") {
-    $requete .= " WHERE type_de_donnee = 'pression'";
+if ($temperature == "temperature") {
+    $requete .= " WHERE temperature = 'temperature'";
+} elseif ($humidite == "humidité") {
+    $requete .= " WHERE humidite = 'humidité'";
+} elseif ($pression == "pression") {
+    $requete .= " WHERE pression = 'pression'";
+} elseif ($luminosite == "luminosité") {
+    $requete .= " WHERE luminosite = 'luminosité'";
 }
     //éxécution de la requète
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
