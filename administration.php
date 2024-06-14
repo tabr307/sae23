@@ -41,9 +41,9 @@ session_start();
                         <input type="text" id="time" name="time" size="70" placeholder="heure HH:MM:SS"/><br>
                     </p>
                     <p required>    
-                        <input type="checkbox" id="supp" name="supp"/><label for="reseau">supprimer</label>
-                        <input type="checkbox" id="modif" name="modif"/><label for="siteg">modifier</label>
-                        <input type="checkbox" id="add" name="add"/><label for="fonction">ajouter</label>
+                        <input type="radio" name="suppr" value="Autre" id="suppr" /><label for="reseau">supprimer</label>
+                        <input type="radio" name="mod" value="Autre" id="mod" /><label for="siteg">modifier</label>
+                        <input type="radio" name="add" value="Autre" id="add" /><label for="fonction">ajouter</label>
                     </p>
                     <p>
                         Avant de continuer, vous devez vérifier ces informations ! <br />
