@@ -55,17 +55,19 @@ body{
   width: 50%;
   height: 2700px;
   margin-left: 25%;
+  text-align: center;
 }
 
 .content{
   width: 100%;
   text-align: justify;
   text-align-last: center;
+  margin-top: 100px;
 
 }
 
 #titre1{
-  padding-top: 5%;
+  padding-top: 2.5%;
   font-size: 50px;
 }
 
@@ -132,3 +134,45 @@ footer ul li:last-child
   float:right;
   text-align: right;
 }
+
+#titre32{
+  margin-top:5%;
+}
+
+.image{
+  margin-left:0%;
+  width: 700px;
+}
+
+table{
+	width:100%;
+	border-collapse: collapse;
+}
+
+caption{
+	background-color:black;
+	color:white;
+	padding:20px;
+	font-weight:bold;
+	
+}
+
+th{
+	background-color:grey;
+	color:white;
+	padding:10px;
+	border: 1px solid black;
+}
+
+td{
+	padding:10px;
+	background-color : white;
+	border: 1px solid black;
+}
+
+td:last-child{ 
+	width:100px;
+}
+
+.right{
+text-align:right;}
