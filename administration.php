@@ -43,9 +43,9 @@ session_start();
                         <input type="text" id="ch4" name="ch4" size="70" placeholder="champ4"/><br>
                         <input type="text" id="ch5" name="ch5" size="70" placeholder="champ5"/><br>
                         <input type="text" id="ch6" name="ch6" size="70" placeholder="champ6"/><br>
-                        <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer</label>
-                        <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
-                        <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter</label>
+                        <input type="radio" name="suppr" value="suppr" id="suppr" /><label for="suppr">supprimer</label>
+                        <input type="radio" name="mod" value="mod" id="mod" /><label for="mod">modifier</label>
+                        <input type="radio" name="add" value="add" id="add" /><label for="add">ajouter</label>
                     </p>  
             </fieldset>
 
@@ -67,9 +67,19 @@ session_start();
                         <input type="text" id="champ4" name="champ4" size="70" placeholder="champ4"/><br>
                         <input type="text" id="champ5" name="champ5" size="70" placeholder="champ5"/><br>
                         <input type="text" id="champ6" name="champ6" size="70" placeholder="champ6"/><br>
-                        <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer la table</label>
-                        <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
-                        <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter une table</label>
+                        <input type="radio" name="suppr1" value="suppr1" id="suppr1" /><label for="suppr">supprimer la table</label>
+                        <input type="radio" name="mod1" value="mod1" id="mod1" /><label for="mod">modifier</label>
+                        <input type="radio" name="add1" value="add1" id="add1" /><label for="add">ajouter une table</label>
+                    </p>
+            </fieldset>
+            <fieldset>
+                    <legend>Base de données</legend> <!-- Titre du fieldset -->
+                    <p> 
+                        <input type="radio" name="oui" value="oui" id="oui" /><label for="mod">Supprimer la BD pour de bon </label>
+                        <input type="radio" name="non" value="non" id="non" /><label for="add">Ne pas la supprimer</label><br>
+                        Êtes vous bien sur de votre choix ?  <br />
+                        <input type="checkbox" id="validation" name="validation" required />
+                        <label for="validation">Oui, je souhaite bel et bien supprimer la base de données</label><br>
                     </p>
             </fieldset>
             Avant de continuer, vous devez vérifier ces informations ! <br />
