@@ -109,5 +109,15 @@ mysqli_free_result($resultat);
 // Closing the database connection
 mysqli_close($id_bd);
 
-    
+
+    //style section for table
 ?>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>le style</title>
+  <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+</html>

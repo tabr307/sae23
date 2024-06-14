@@ -1,5 +1,6 @@
 <?php
 	session_start();
+    include ("mysql.php");
     $table = $_POST['capteur'];
     $ch1 = $_POST['ch1'];
     $ch2 = $_POST['ch2'];
@@ -9,9 +10,9 @@
     $ch6 = $_POST['ch6'];
 
     // Récupérer la valeur du bouton radio sélectionné
-    $action = '';
     if (isset($_POST['suppr'])) {
         $action = $_POST['suppr'];
+        mysqli_query($id_bd, "DELETE FROM `$table` WHERE ")
     } elseif (isset($_POST['mod'])) {
         $action = $_POST['mod'];
     } elseif (isset($_POST['add'])) {
