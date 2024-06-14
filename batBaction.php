@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     //CALCUL DES METRIQUE LETS GO
 
-    $tableau = ['valeur'];
+    $tableau = $row['valeur'];
     //$tableau = [1, 2, 3, 4, 5, 6 ,10];
     
 
@@ -65,21 +65,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $maximum = max($tableau);
 
     //tableau pour afficher moyenne, min et max
-    echo '<h1>Les métriques</h1>';
+    echo '<h1>Les metriques</h1>';
     echo '<h3>Affichage de la moyenne, le min et le max des salles</h3>';
     echo'<table>';   
-    echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>';
-    echo '<tr>';
-    echo '<td>' . $salle . '</td>';
-    echo '<td>' . $capteur . '</td>';
-    echo '<td>' . $plage . '</td>';
-    echo '</tr>'; 
+    echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>'; 
     echo '<tr>';
     echo '<td>' . $moyenne . '</td>';
     echo '<td>' . $minimum . '</td>';
     echo '<td>' . $maximum . '</td>';
     echo '</tr>'; 
     echo '</table>';
+
+
+
+
+    for ($i = 0; $i < 10; $i++) {
+        echo "<div>Répétition numéro : " . ($i + 1) . "</div>";
+        echo "<ul>";
+        foreach ($resultat as $row) {
+            echo "<li>";
+            foreach ($row as $key => $value) {
+                echo "<strong>$key:</strong> $value<br>";
+            }
+            echo "</li>";
+        }
+        echo "</ul><hr>";
+    }
     
     //partie style pour les tableaux
     echo '<style>
