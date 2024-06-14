@@ -11,10 +11,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
-    $temperature = $_POST['temperature'];
-    $humidite = $_POST['humidité'];
+    $temperature = $_POST["temperature"];
+    $humidite = $_POST["humidité"];
     $pression = $_POST['pression'];
-    $luminosite = $_POST['luminosité'];
+    $luminosite = $_POST["luminosité"];
 
     //connection bd
     include("mysql.php");
@@ -37,8 +37,8 @@ if ($temperature == "temperature") {
      // Initialisation des variables pour stocker la somme et le nombre de lignes
 $somme = 0;
 $nb_lignes = 0;
-$min = PHP_INT_MAX;
-$max = PHP_INT_MIN;
+$min = PHP_INT_MIN;
+$max = PHP_INT_MAX;
 
     }   //tableau html pour identifier les choix du form
     echo '<h1>Tableau du Gestionnaire </h1>';
@@ -89,40 +89,6 @@ $max = PHP_INT_MIN;
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
     echo '</table>';
   //  }
-    
-    //CALCUL DES METRIQUE LETS GO
-
-    $tableau = $row['valeur'];
-    //$tableau = [1, 2, 3, 4, 5, 6 ,10];
-    
-
-    // Calcul de la somme des éléments du tableau
-    $somme = array_sum($tableau);
-
-    // Calcul du nombre d'éléments dans le tableau
-    $nombre_elements = count($tableau);
-
-    // Calcul de la moyenne
-    if ($nombre_elements > 0) {
-    $moyenne = $somme / $nombre_elements;
-    }
-
-    // Utilisation de la fonction min() pour trouver la valeur minimale
-    $minimum = min($tableau);
-    $maximum = max($tableau);
-
-    //tableau pour afficher moyenne, min et max
-    echo '<h1>Les metriques</h1>';
-    echo '<h3>Affichage de la moyenne, le min et le max des salles</h3>';
-    echo'<table>';   
-    echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>'; 
-    echo '<tr>';
-    echo '<td>' . $moyenne . '</td>';
-    echo '<td>' . $min . '</td>';
-    echo '<td>' . $max . '</td>';
-    echo '</tr>'; 
-    echo '</table>';
-
     
     //partie style pour les tableaux
     echo '<style>
