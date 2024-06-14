@@ -31,6 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     //Utilisation de POST pour recup les bonnes donnée ?
     
+    $row = mysqli_fetch_array($resultat);
     //boucle pour afficher les données récupérées
     foreach ($resultat as $row) {
 
@@ -79,8 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    for ($i = 0; $i < 10; $i++) {
-        echo "<div>Répétition numéro : " . ($i + 1) . "</div>";
+    for ($i = 0; $i < 1; $i++) {
         echo "<ul>";
         foreach ($resultat as $row) {
             echo "<li>";
