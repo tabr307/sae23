@@ -24,17 +24,18 @@ session_start();
             <?php echo "Bienvenue ";
                 echo $_SESSION['pseudo'];?>
                 <br><br><br><br>
+                <img class=".image" src="ressources/bd.png" alt="bd">
             <form action="admin_bd.php" method="post">
                 <fieldset>
                     <legend>Valeurs</legend> <!-- Titre du fieldset -->
                     <p> 
                         <label for="capteur">Sélectionnez la table a modifier :</label><br>
                         <select id="capteur" name="capteur">
-                            <option value="temperature">administration</option>
-                            <option value="humidite">atiment</option>
-                            <option value="pression">capteur</option>
-                            <option value="luminosite">mesures</option>
-                            <option value="luminosite">salle</option>
+                            <option value="admin">administration</option>
+                            <option value="batiment">batiment</option>
+                            <option value="capteur">capteur</option>
+                            <option value="mesures">mesures</option>
+                            <option value="salle">salle</option>
                         </select><br>
                         <input type="text" id="ch1" name="ch1" size="70" placeholder="champ1"/><br>
                         <input type="text" id="ch2" name="ch2" size="70" placeholder="champ2"/><br>
