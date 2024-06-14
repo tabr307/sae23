@@ -15,72 +15,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    // $humidite = $_POST["Humidité"];
    // $pression = $_POST['Pression'];
    // $luminosite = $_POST["Luminosité"];
-
-    //connection bd
-    include("mysql.php");
-    //la requete sql que je veux faire
-    $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
-
- 
-    // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
-
-   if ($capteur == "temperature") {
-$requete .= " WHERE capteur = 'temperature'";
-} elseif ($capteur == "humidité") {
-    $requete .= " WHERE capteur = 'humidité'";
-} elseif ($capteur == "pression") {
-   $requete .= " WHERE capteur = 'pression'";
-} elseif ($capteur == "luminosité") {
-    $requete .= " WHERE capteur = 'luminosité'";
 }
-
-    //éxécution de la requète
-    $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
-
      // Initialisation des variables pour stocker la somme et le nombre de lignes
 $somme = 0;
 $nb_lignes = 0;
 $min = PHP_INT_MIN;
 $max = PHP_INT_MAX;
 
-    }   //tableau html pour identifier les choix du form
-    echo '<h1>Tableau du Gestionnaire </h1>';
-    echo '<table>';
-    echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
-    echo '<tr>';
-    echo '<td>' . $salle . '</td>';
-    echo '<td>' . $capteur . '</td>';
-    echo '<td>' . $plage . '</td>';
-    echo '</tr>';
+    //connection bd
+    include("mysql.php");
+    //la requete sql que je veux faire
+  //  $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
 
-    //Utilisation de POST pour recup les bonnes donnée ?
-    
-    //$row = mysqli_fetch_array($resultat);
-    //boucle pour afficher les données récupérées
-   // foreach ($resultat as $row) {
+ 
+    // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
 
-//    echo '<tr>';
-  //  echo "<td>" . $row['valeur'] . "</td>";
-  //  echo "<td>" . $row['heure'] . "</td>";
-  //  echo "<td>" . $row['date'] . "</td>";
-  //  echo '</tr>';
+//   if ($capteur == "temperature") {
+//   $requete .= " WHERE capteur = 'temperature'";
+//   } elseif ($capteur == "humidité") {
+ //      $requete .= " WHERE capteur = 'humidité'";
+//   } elseif ($capteur == "pression") {
+ //     $requete .= " WHERE capteur = 'pression'";
+//   } elseif ($capteur == "luminosité") {
+ //      $requete .= " WHERE capteur = 'luminosité'";
+//   }
 
+// Définition de la requête SQL de base
+if ($capteur == "temperature") {
+    $query = "SELECT temperature, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+} elseif ($capteur == "humidite") {
+    $query = "SELECT humidite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+} elseif ($capteur == "pression") {
+    $query = "SELECT pression, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+} elseif ($capteur == "luminosite") {
+    $query = "SELECT luminosite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+}
 
+// Préparation de la requête SQL
+$stmt = mysqli_prepare($id_bd, $query);
 
-    while ($row = mysqli_fetch_array($resultat)) {
-        // Affichage des données dans le tableau
-        echo "<tr>";
-        echo "<td>". $row['valeur']. "</td>";
-        echo "<td>". $row['heure']. "</td>";
-        echo "<td>". $row['date']. "</td>";
-        echo "</tr>";
-          // Ajout de la valeur à la somme
+// Liaison des valeurs sélectionnées à la requête
+mysqli_stmt_bind_param($stmt, "ss", $salle, $capteur);
+
+// Exécution de la requête SQL
+mysqli_stmt_execute($stmt);
+
+// Récupération des résultats
+$resultat = mysqli_stmt_get_result($stmt);
+
+// Traitement des données
+echo "<table>";
+echo "<tr><th>Valeur</th><th>Heure</th><th>Date</th></tr>";
+while ($row = mysqli_fetch_array($resultat)) {
+    // Affichage des données dans le tableau
+    echo "<tr>";
+    echo "<td>". $row[0]. "</td>";
+    echo "<td>". $row[1]. "</td>";
+    echo "<td>". $row[2]. "</td>";
+    echo "</tr>";
+             //Ajout de la valeur à la somme
     $somme += $row['valeur'];
     // Incrémentation du nombre de lignes
-    $nb_lignes++;
-    if ($row['valeur'] < $min) {
-        $min = $row['valeur'];
-    }
+   $nb_lignes++;
+   if ($row['valeur'] < $min) {
+      $min = $row['valeur'];
+   }
     if ($row['valeur'] > $max) {
         $max = $row['valeur'];
     }
@@ -90,13 +89,40 @@ $max = PHP_INT_MAX;
     echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
     echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
-    echo '</table>';
-  //  }
-    // Libérer les ressources de la requête
-mysqli_free_result($resultat);
 
-// Fermer la connexion à la base de données
+echo "</table>";
+
+// Libérer les ressources de la requête
+mysqli_free_result($resultat);
+// Fermeture de la connexion à la base de données
 mysqli_close($id_bd);
+
+    //éxécution de la requète
+ //   $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
+
+
+//    }   //tableau html pour identifier les choix du form
+//    echo '<h1>Tableau du Gestionnaire </h1>';
+ //   echo '<table>';
+ //   echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
+ ////   echo '<tr>';
+ //   echo '<td>' . $salle . '</td>';
+ //   echo '<td>' . $capteur . '</td>';
+//    echo '<td>' . $plage . '</td>';
+ //   echo '</tr>';
+
+   
+ //   while ($row = mysqli_fetch_array($resultat)) {
+        // Affichage des données dans le tableau
+ //       echo "<tr>";
+ //       echo "<td>". $row['valeur']. "</td>";
+  //      echo "<td>". $row['heure']. "</td>";
+ //       echo "<td>". $row['date']. "</td>";
+ //       echo "</tr>";
+  
+//    echo '</table>';
+  //  }
+   
 
     //partie style pour les tableaux
     echo '<style>
