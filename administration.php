@@ -29,7 +29,7 @@ session_start();
                 <fieldset>
                     <legend>Valeurs</legend> <!-- Titre du fieldset -->
                     <p> 
-                        <label for="capteur">Sélectionnez la table a modifier :</label><br>
+                        <label for="capteur">Sélectionnez la table dans laquelle modifier vos valeurs :</label><br>
                         <select id="capteur" name="capteur">
                             <option value="admin">administration</option>
                             <option value="batiment">batiment</option>
@@ -52,20 +52,21 @@ session_start();
             <fieldset>
                     <legend>Tables</legend> <!-- Titre du fieldset -->
                     <p> 
-                        <label for="capteur">Sélectionnez un type de  :</label><br>
+                        <label for="capteur">Sélectionnez la table :</label><br>
                         <select id="capteur" name="capteur">
-                            <option value="temperature">Température</option>
-                            <option value="humidite">Humidité</option>
-                            <option value="pression">Pression</option>
-                            <option value="luminosite">Luminosité</option>
+                            <option value="admin1">administration</option>
+                            <option value="batiment1">batiment</option>
+                            <option value="capteur1">capteur</option>
+                            <option value="mesures1">mesures</option>
+                            <option value="salle1">salle</option>
                         </select><br>
                         <input type="text" id="unit" name="unit" size="70" placeholder="pressure, temperature, humidity, co2, illumination"/><br>
                         <input type="text" id="val" name="val" size="70" placeholder="valeur à ajouter/modifier"/><br>
                         <input type="text" id="date" name="date" size="70" placeholder="date AAAA-MM-JJ"/><br>
                         <input type="text" id="time" name="time" size="70" placeholder="heure HH:MM:SS"/><br>
-                        <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer</label>
+                        <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer la table</label>
                         <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
-                        <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter</label>
+                        <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter une table</label>
                     </p>
             </fieldset>
             <input type="submit" value="Envoyer" align="center"/>
