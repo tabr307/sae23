@@ -20,7 +20,7 @@ db_config = {
     'database': 'sae23'
 }
 
-############################################### SCRIPT PART ############################################### 
+############################################### SCRIPT PART ########################################################### 
 
 # for room in mqtt_config['rooms']:
 def on_connect(client, userdata, flags, reason_code, properties):
@@ -35,50 +35,49 @@ def on_message(client, userdata, msg):
     timestamp = datetime.now()
 
     print(f"Message received on topic {msg.topic} at {timestamp.time()} : {payload}")
-    # Extract data from the payload
     sensor_data = payload[0]
     device_info = payload[1]
     
-    # Connect to the MySQL database
+    # Connection to the DB
     cnx = mysql.connector.connect(**db_config)
     cursor = cnx.cursor()
 
     try:
-        # Insert building data if it doesn't exist
-        add_batiment = ("INSERT INTO batiment (nom_batiment) VALUES (%s) "
-                        "ON DUPLICATE KEY UPDATE id_batiment=LAST_INSERT_ID(id_batiment)")
-        cursor.execute(add_batiment, (device_info['Building'],))
-        id_batiment = cursor.lastrowid
-        
-        # Retrieve id_batiment if the building already exists
-        if cursor.rowcount == 0:
-            select_batiment = ("SELECT id_batiment FROM batiment WHERE nom_batiment = %s")
-            cursor.execute(select_batiment, (device_info['Building'],))
-            id_batiment = cursor.fetchone()[0]
+        # Check if the building already exists
+        select_batiment = ("SELECT id_batiment FROM batiment WHERE nom_batiment = %s")
+        cursor.execute(select_batiment, (device_info['Building'],))
+        result = cursor.fetchone()
+        if result:
+            id_batiment = result[0]
+        else:
+            # Insert new building if it doesn't exist
+            add_batiment = ("INSERT INTO batiment (nom_batiment) VALUES (%s)")
+            cursor.execute(add_batiment, (device_info['Building'],))
+            id_batiment = cursor.lastrowid
 
-        # Insert room data if it doesn't exist
-        add_salle = ("INSERT INTO salle (nom_salle, id_batiment) VALUES (%s, %s) "
-                     "ON DUPLICATE KEY UPDATE id_salle=LAST_INSERT_ID(id_salle)")
-        cursor.execute(add_salle, (device_info['room'], id_batiment))
-        id_salle = cursor.lastrowid
+        # Check if the room already exists
+        select_salle = ("SELECT id_salle FROM salle WHERE nom_salle = %s AND id_batiment = %s")
+        cursor.execute(select_salle, (device_info['room'], id_batiment))
+        result = cursor.fetchone()
+        if result:
+            id_salle = result[0]
+        else:
+            # Insert new room if it doesn't exist
+            add_salle = ("INSERT INTO salle (nom_salle, id_batiment) VALUES (%s, %s)")
+            cursor.execute(add_salle, (device_info['room'], id_batiment))
+            id_salle = cursor.lastrowid
 
-        # Retrieve id_salle if the room already exists
-        if cursor.rowcount == 0:
-            select_salle = ("SELECT id_salle FROM salle WHERE nom_salle = %s AND id_batiment = %s")
-            cursor.execute(select_salle, (device_info['room'], id_batiment))
-            id_salle = cursor.fetchone()[0]
-
-        # Insert sensor data if it doesn't exist
-        add_capteur = ("INSERT INTO capteur (nom_capteur, id_salle) VALUES (%s, %s) "
-                       "ON DUPLICATE KEY UPDATE id_capteur=LAST_INSERT_ID(id_capteur)")
-        cursor.execute(add_capteur, (device_info['deviceName'], id_salle))
-        id_capteur = cursor.lastrowid
-
-        # Retrieve id_capteur if the sensor already exists
-        if cursor.rowcount == 0:
-            select_capteur = ("SELECT id_capteur FROM capteur WHERE nom_capteur = %s AND id_salle = %s")
-            cursor.execute(select_capteur, (device_info['deviceName'], id_salle))
-            id_capteur = cursor.fetchone()[0]
+        # Check if the sensor already exists
+        select_capteur = ("SELECT id_capteur FROM capteur WHERE nom_capteur = %s AND id_salle = %s")
+        cursor.execute(select_capteur, (device_info['deviceName'], id_salle))
+        result = cursor.fetchone()
+        if result:
+            id_capteur = result[0]
+        else:
+            # Insert new sensor if it doesn't exist
+            add_capteur = ("INSERT INTO capteur (nom_capteur, id_salle) VALUES (%s, %s)")
+            cursor.execute(add_capteur, (device_info['deviceName'], id_salle))
+            id_capteur = cursor.lastrowid
 
         # Insert measurements
         add_mesure = ("INSERT INTO mesures (unite, valeur, heure, date, id_capteur) "
@@ -88,7 +87,6 @@ def on_message(client, userdata, msg):
             cursor.execute(add_mesure, (metric, sensor_data[metric], timestamp.time(), timestamp.date(), id_capteur))
             print(f"Inserted {metric} value: {sensor_data[metric]} for capteur id: {id_capteur}")
 
-        # Commit the transaction
         cnx.commit()
     except Exception as e:
         print(f"Error processing message: {e}")
