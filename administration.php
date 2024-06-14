@@ -24,7 +24,7 @@ session_start();
             <?php echo "Bienvenue ";
                 echo $_SESSION['pseudo'];?>
                 <br><br><br><br>
-                <img src="ressources/bd.png" alt="bd">
+                <img class="image" src="ressources/bd.png" alt="bd">
             <form action="admin_bd.php" method="post">
                 <fieldset>
                     <legend>Valeurs</legend> <!-- Titre du fieldset -->

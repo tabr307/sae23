@@ -20,7 +20,7 @@
             <section class="content">
                 <h1 id="titre32"> Le GANTT final</h1>
                 
-                <img class=".image"  src="ressources/gantt.PNG" alt="gantt">
+                <img class="image"  src="ressources/gantt.PNG" alt="gantt">
                 
                 <p class="texte">
                 Ici, nous observons le Gantt prévisionnel réalisé pour le livrable 1. <br>
@@ -34,7 +34,7 @@
                 <h1>Screen GitHub</h1>
                 
                 
-                <img class=".image" src="ressources/github.PNG" alt="gihub">
+                <img class="image" src="ressources/github.PNG" alt="gihub">
 				<p class="texte">
 				Github est un outil très pratique qui nous a permis de pouvoir collaborer plus facilement. <br>
 				En effet, il permet de pourvoir chacun travailler sur notre partie du code, et de rester au courant de qui à édité quoi et quand, afin de ne
