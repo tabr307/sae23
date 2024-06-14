@@ -76,10 +76,10 @@ session_start();
                     <legend>Base de données</legend> <!-- Titre du fieldset -->
                     <p> 
                         <input type="radio" name="oui" value="oui" id="oui" /><label for="mod">Supprimer la BD pour de bon </label>
-                        <input type="radio" name="non" value="non" id="non" /><label for="add">Ne pas la supprimer</label><br>
-                        Êtes vous bien sur de votre choix ?  <br />
+                        <input type="radio" name="non" value="non" id="non" /><label for="add">Ne pas la supprimer</label><br><br>
+                        Êtes vous bien sur de votre choix ?  <br>
                         <input type="checkbox" id="validation" name="validation" required />
-                        <label for="validation">Oui, je souhaite bel et bien supprimer la base de données</label><br>
+                        <label for="validation">Oui, je suis sur de mon choix</label><br>
                     </p>
             </fieldset>
             Avant de continuer, vous devez vérifier ces informations ! <br />
