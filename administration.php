@@ -27,7 +27,14 @@ session_start();
                 <form name="inscription" action="mailto:machin@truc.fr?subject=Formulaire_Web" method="post" enctype="text/plain">
     <fieldset>
        <legend>Valeurs</legend> <!-- Titre du fieldset -->
-       <p>
+       <p>        <label for="capteur">Sélectionnez un type de  :</label>
+                  <select id="capteur" name="capteur">
+                  <option value="temperature">Température</option>
+                  <option value="humidite">Humidité</option>
+                  <option value="pression">Pression</option>
+                  <option value="luminosite">Luminosité</option>
+                  </select>
+           <input type="url" id="site" name="site" size="70" placeholder="Valeur"/>
            <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">une table</label>
            <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">la base de données</label>
            <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">Une valeur </label>
@@ -37,11 +44,7 @@ session_start();
     <fieldset>
        <legend>Vos compétences initiales en développement Web</legend> <!-- Titre du fieldset -->
        <p>
-           Le Web, pour vous c'est :
-           <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">un réseau</label>
-           <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">un site géographique</label>
-           <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">une fonction </label>
-           <input type="radio" name="web" value="Autre" id="autre" /><label for="autre">Autre...</label>
+ 
        </p>
        <p>
            <label for="precisions">Si "Autre", veuillez préciser :</label><br />
