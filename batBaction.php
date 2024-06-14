@@ -16,56 +16,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    // $pression = $_POST['Pression'];
    // $luminosite = $_POST["Luminosité"];
 }
+
+
+    //connection bd
+    include("mysql.php");
+    //la requete sql que je veux faire
+    $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
+
+  //éxécution de la requète
+  $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
+
+    // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
+
+   if ($capteur == "temperature") {
+   $requete .= " WHERE capteur = 'temperature'";
+   } elseif ($capteur == "humidité") {
+       $requete .= " WHERE capteur = 'humidité'";
+   } elseif ($capteur == "pression") {
+      $requete .= " WHERE capteur = 'pression'";
+   } elseif ($capteur == "luminosité") {
+       $requete .= " WHERE capteur = 'luminosité'";
+   }
+
+// Définition de la requête SQL de base
+//if ($capteur == "temperature") {
+ //   $query = "SELECT temperature, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+//} elseif ($capteur == "humidite") {
+///    $query = "SELECT humidite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+//} elseif ($capteur == "pression") {
+ //   $query = "SELECT pression, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+//} elseif ($capteur == "luminosite") {
+ //   $query = "SELECT luminosite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
+//}
+
      // Initialisation des variables pour stocker la somme et le nombre de lignes
+
 $somme = 0;
 $nb_lignes = 0;
 $min = PHP_INT_MIN;
 $max = PHP_INT_MAX;
 
-    //connection bd
-    include("mysql.php");
-    //la requete sql que je veux faire
-  //  $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
+ //tableau html pour identifier les choix du form
+ echo '<h1>Tableau du Gestionnaire </h1>';
+ echo '<table>';
+ echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
+echo '<tr>';
+ echo '<td>' . $salle . '</td>';
+echo '<td>' . $capteur . '</td>';
+ echo '<td>' . $plage . '</td>';
+ echo '</tr>';
 
- 
-    // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
-
-//   if ($capteur == "temperature") {
-//   $requete .= " WHERE capteur = 'temperature'";
-//   } elseif ($capteur == "humidité") {
- //      $requete .= " WHERE capteur = 'humidité'";
-//   } elseif ($capteur == "pression") {
- //     $requete .= " WHERE capteur = 'pression'";
-//   } elseif ($capteur == "luminosité") {
- //      $requete .= " WHERE capteur = 'luminosité'";
-//   }
-
-// Définition de la requête SQL de base
-if ($capteur == "temperature") {
-    $query = "SELECT temperature, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
-} elseif ($capteur == "humidite") {
-    $query = "SELECT humidite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
-} elseif ($capteur == "pression") {
-    $query = "SELECT pression, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
-} elseif ($capteur == "luminosite") {
-    $query = "SELECT luminosite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
-}
-
-// Préparation de la requête SQL
-$stmt = mysqli_prepare($id_bd, $query);
-
-// Liaison des valeurs sélectionnées à la requête
-mysqli_stmt_bind_param($stmt, "ss", $salle, $capteur);
-
-// Exécution de la requête SQL
-mysqli_stmt_execute($stmt);
-
-// Récupération des résultats
-$resultat = mysqli_stmt_get_result($stmt);
-
-// Traitement des données
-echo "<table>";
-echo "<tr><th>Valeur</th><th>Heure</th><th>Date</th></tr>";
 while ($row = mysqli_fetch_array($resultat)) {
     // Affichage des données dans le tableau
     echo "<tr>";
@@ -97,21 +97,6 @@ mysqli_free_result($resultat);
 // Fermeture de la connexion à la base de données
 mysqli_close($id_bd);
 
-    //éxécution de la requète
- //   $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
-
-
-//    }   //tableau html pour identifier les choix du form
-//    echo '<h1>Tableau du Gestionnaire </h1>';
- //   echo '<table>';
- //   echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
- ////   echo '<tr>';
- //   echo '<td>' . $salle . '</td>';
- //   echo '<td>' . $capteur . '</td>';
-//    echo '<td>' . $plage . '</td>';
- //   echo '</tr>';
-
-   
  //   while ($row = mysqli_fetch_array($resultat)) {
         // Affichage des données dans le tableau
  //       echo "<tr>";
