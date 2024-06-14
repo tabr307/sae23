@@ -54,6 +54,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             <a class="right" href="form.php">Administration</a>
         </section>
     </section>
+    
     <section class="container">
         <section class="content">
             <h1>Tableau des Mesures par Salle</h1>
