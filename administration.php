@@ -35,7 +35,11 @@ session_start();
                   <option value="luminosite">Luminosité</option>
                   </select><br>
                 <input type="url" id="site" name="site" size="70" placeholder="id de valeur"/><br>
+                <input type="url" id="site" name="site" size="70" placeholder="unité"/><br>
                 <input type="url" id="site" name="site" size="70" placeholder="valeur à ajouter/modifier"/><br>
+                <input type="url" id="site" name="site" size="70" placeholder="date AAAA-MM-JJ"/><br>
+                <input type="url" id="site" name="site" size="70" placeholder="heure HH-MM-SS"/><br>
+                <input type="url" id="site" name="site" size="70" placeholder="id capteur"/><br>
                 <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">supprimer</label>
                 <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">modifier</label>
                 <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">ajouter</label>
