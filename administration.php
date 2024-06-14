@@ -34,10 +34,10 @@ session_start();
                   <option value="pression">Pression</option>
                   <option value="luminosite">Luminosité</option>
                   </select><br>
-           <input type="url" id="site" name="site" size="70" placeholder="Valeur"/><br>
-           <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">une table</label>
-           <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">la base de données</label>
-           <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">Une valeur </label>
+                <input type="url" id="site" name="site" size="70" placeholder="Valeur"/><br>
+                <input type="radio" name="web" value="reseau" id="reseau" /><label for="reseau">supprimer</label>
+                <input type="radio" name="web" value="site" id="siteg" /><label for="siteg">modifier</label>
+                <input type="radio" name="web" value="fonction" id="fonction" /><label for="fonction">ajouter</label>
         </p>
     </fieldset>
     <br />

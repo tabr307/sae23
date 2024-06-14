@@ -1,14 +1,14 @@
 <?php
-// Inclusion du fichier de connexion MySQL
+// include of the login script
 include("mysql.php");
 
-// Requête SQL pour récupérer les données souhaitées
-$requete = "SELECT unite, valeur, heure, date, id_capteur FROM mesures ORDER BY heure DESC LIMIT 20";
+// sql request to get the required data
+$requete = "SELECT unite, valeur, heure, date, id_capteur FROM mesures ORDER BY id_mesure DESC LIMIT 20";
 
-// Exécution de la requête
+// request execution
 $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
-// Classer les résultats par salle
+// sorting of the results
 $mesures_par_salle = [];
 
 while ($row = mysqli_fetch_assoc($resultat)) {
@@ -27,14 +27,14 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             $salle = "B109";
             break;
         default:
-            $salle = "Inconnue"; // Valeur par défaut si l'id_capteur ne correspond pas
+            $salle = "Inconnue"; // in case if "salle" is unknown
     }
 
-    // Ajouter la ligne de résultat au tableau de la salle correspondante
+    //add the result in the table (in the right room)
     $mesures_par_salle[$salle][] = $row;
 }
 
-// Début de la structure HTML
+// html code
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -60,9 +60,9 @@ while ($row = mysqli_fetch_assoc($resultat)) {
             <h1>Tableau des Mesures par Salle</h1>
 
             <?php
-            // Afficher un tableau pour chaque salle
+            // create a table for each room
             foreach ($mesures_par_salle as $salle => $mesures) {
-                // Limiter les résultats aux 5 dernières valeurs
+                // limit the result to the last 5 values
                 $mesures_limited = array_slice($mesures, 0, 5);
 
                 echo "<h1>Salle : $salle</h1>";
@@ -79,7 +79,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                 echo "<tbody>";
 
                 foreach ($mesures_limited as $row) {
-                    // Déterminer le bâtiment en fonction de l'id_capteur
+                    // determine the building depending on id_capteur
                     $batiment = ($row['id_capteur'] == 2 || $row['id_capteur'] == 3) ? 'RT' : 'INFO';
 
                     // Afficher une ligne de tableau avec les données récupérées
@@ -109,9 +109,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 </html>
 
 <?php
-// Libérer les ressources de la requête
+// closing the connexion
 mysqli_free_result($resultat);
-
-// Fermer la connexion à la base de données
 mysqli_close($id_bd);
 ?>
