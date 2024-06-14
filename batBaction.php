@@ -11,6 +11,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
+    // Définition de la plage temporelle en fonction de la sélection
+switch ($plage) {
+    case '30min':
+        $limit = 3;
+        $plage_debut = date('Y-m-d H:i:s', strtotime('-30 minutes'));
+        $plage_fin = date('Y-m-d H:i:s');
+        break;
+    case '1h':
+        $limit = 6;
+        $plage_debut = date('Y-m-d H:i:s', strtotime('-1 hour'));
+        $plage_fin = date('Y-m-d H:i:s');
+        break;
+    case '3h':
+        $limit = 18;
+        $plage_debut = date('Y-m-d H:i:s', strtotime('-3 hours'));
+        $plage_fin = date('Y-m-d H:i:s');
+        break;
+    default:
+        $limit = 6;
+        $plage_debut = date('Y-m-d H:i:s', strtotime('-1 hour'));
+        $plage_fin = date('Y-m-d H:i:s');
+}
+
    // $temperature = $_POST["Température"];
    // $humidite = $_POST["Humidité"];
    // $pression = $_POST['Pression'];
