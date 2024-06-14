@@ -1,4 +1,4 @@
-<!DOCTYPE html> <!--le formulaire -->
+<!DOCTYPE html><!--le formulaire -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -26,17 +26,17 @@
             <!-- Champ de sélection pour la salle -->
                 <label for="salle">Sélectionnez une salle :</label>
                 <select id="salle" name="salle">
-                <option value="salle1">Salle B365</option>
-                <option value="salle2">Salle B520</option>
+                <option value="B112">Salle B112</option>
+                <option value="B109">Salle B109</option>
                 </select>
         <br><br>
                 <!-- Champ de sélection pour le type de capteur -->
                 <label for="capteur">Sélectionnez un type de capteur :</label>
                 <select id="capteur" name="capteur">
                 <option value="temperature">Température</option>
-                <option value="humidité">Humidité</option>
+                <option value="humidite">Humidité</option>
                 <option value="pression">Pression</option>
-                <option value="luminosité">Luminosité</option>
+                <option value="luminosite">Luminosité</option>
                 </select>
         <br><br>
 
@@ -51,6 +51,7 @@
 
                 <button type="submit"> Soumettre </button>
             </form>
+    
 
 
         </section>

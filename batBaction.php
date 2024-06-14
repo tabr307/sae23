@@ -1,4 +1,5 @@
 <?php
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Liste des choix valides
     $validSalles = ["salle1", "salle2"];
@@ -10,15 +11,88 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
-    echo '<h1>Tableu du Gestionnaire </h1>';
+    //connection bd
+    include("mysql.php");
+    //la requete sql que je veux faire
+    $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
+    //éxécution de la requète
+    $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
+
+   
+    }   //tableau html pour identifier les choix du form
+    echo '<h1>Tableau du Gestionnaire </h1>';
     echo '<table>';
-    echo '<tr><th>Salle</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
+    echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
     echo '<tr>';
     echo '<td>' . $salle . '</td>';
     echo '<td>' . $capteur . '</td>';
     echo '<td>' . $plage . '</td>';
     echo '</tr>';
+
+    //Utilisation de POST pour recup les bonnes donnée ?
+    
+    //boucle pour afficher les données récupérées
+    foreach ($resultat as $row) {
+
+    echo '<tr>';
+    echo "<td>" . $row['valeur'] . "</td>";
+    echo "<td>" . $row['heure'] . "</td>";
+    echo "<td>" . $row['date'] . "</td>";
+    echo '</tr>';
+
     echo '</table>';
+    }
+    
+    //CALCUL DES METRIQUE LETS GO
+
+    $tableau = $row['valeur'];
+    //$tableau = [1, 2, 3, 4, 5, 6 ,10];
+    
+
+    // Calcul de la somme des éléments du tableau
+    $somme = array_sum($tableau);
+
+    // Calcul du nombre d'éléments dans le tableau
+    $nombre_elements = count($tableau);
+
+    // Calcul de la moyenne
+    if ($nombre_elements > 0) {
+    $moyenne = $somme / $nombre_elements;
+    }
+
+    // Utilisation de la fonction min() pour trouver la valeur minimale
+    $minimum = min($tableau);
+    $maximum = max($tableau);
+
+    //tableau pour afficher moyenne, min et max
+    echo '<h1>Les metriques</h1>';
+    echo '<h3>Affichage de la moyenne, le min et le max des salles</h3>';
+    echo'<table>';   
+    echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>'; 
+    echo '<tr>';
+    echo '<td>' . $moyenne . '</td>';
+    echo '<td>' . $minimum . '</td>';
+    echo '<td>' . $maximum . '</td>';
+    echo '</tr>'; 
+    echo '</table>';
+
+
+
+
+    for ($i = 0; $i < 10; $i++) {
+        echo "<div>Répétition numéro : " . ($i + 1) . "</div>";
+        echo "<ul>";
+        foreach ($resultat as $row) {
+            echo "<li>";
+            foreach ($row as $key => $value) {
+                echo "<strong>$key:</strong> $value<br>";
+            }
+            echo "</li>";
+        }
+        echo "</ul><hr>";
+    }
+    
+    //partie style pour les tableaux
     echo '<style>
     table {
     border-collapse: collapse;
@@ -59,10 +133,10 @@ tbody tr:hover {
 } </style>';
     
    
-} else {
-    // Redirection vers le formulaire si l'accès n'est pas via POST
-    header("Location: gestion.php");
-    exit();
-}
 
+// Libérer les ressources de la requête
+mysqli_free_result($resultat);
+
+// Fermer la connexion à la base de données
+mysqli_close($id_bd);
 ?>
