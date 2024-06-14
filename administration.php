@@ -60,6 +60,7 @@ session_start();
                             <option value="mesures1">mesures</option>
                             <option value="salle1">salle</option>
                         </select><br>
+                        <input type="text" id="champ0" name="champ0" size="70" placeholder="Nom de la table a créer"/><br>
                         <input type="text" id="champ1" name="champ1" size="70" placeholder="comment apppeler le premier champ"/><br>
                         <input type="text" id="champ2" name="champ2" size="70" placeholder="champ2"/><br>
                         <input type="text" id="champ3" name="champ3" size="70" placeholder="champ3"/><br>
