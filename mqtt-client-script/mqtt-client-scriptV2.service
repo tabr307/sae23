@@ -1,0 +1,14 @@
+[Unit]
+Description=mqtt-client-scriptV2
+After=network.target
+
+[Service]
+ExecStart=/bin/bash -c 'source /home/rt/sae23/mqtt-client-script/.venv/bin/activate && exec python3 /home/rt/sae23/mqtt-client-script/mainV2.py'
+WorkingDirectory=/home/rt/sae23/mqtt-client-script
+User=rt
+Group=rt
+Restart=always
+Environment="PATH=/home/rt/sae23/mqtt-client-script/.venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+
+[Install]
+WantedBy=multi-user.target
