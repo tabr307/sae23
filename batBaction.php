@@ -1,37 +1,37 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Liste des choix valides
+    // List of valid choices
     $validSalles = ["salle1", "salle2"];
     $validCapteurs = ["temperature", "humidité", "pression", "luminosité"];
     $validPlages = ["30min", "1h", "3h"];
     
-    // Récupération des valeurs soumises
+    // Recovery of submitted values
     $salle = $_POST["salle"];
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
-    // Définition de la plage temporelle en fonction de la sélection
+    // Definition of time range according to selection
 switch ($plage) {
     case '30min':
         $limit = 3;
-        $plage_debut = date('Y-m-d H:i:s', strtotime('-30 minutes'));
-        $plage_fin = date('Y-m-d H:i:s');
+      //  $plage_debut = date('Y-m-d H:i:s', strtotime('-30 minutes'));
+       // $plage_fin = date('Y-m-d H:i:s');
         break;
     case '1h':
         $limit = 6;
-        $plage_debut = date('Y-m-d H:i:s', strtotime('-1 hour'));
-        $plage_fin = date('Y-m-d H:i:s');
+       // $plage_debut = date('Y-m-d H:i:s', strtotime('-1 hour'));
+       // $plage_fin = date('Y-m-d H:i:s');
         break;
     case '3h':
         $limit = 18;
-        $plage_debut = date('Y-m-d H:i:s', strtotime('-3 hours'));
-        $plage_fin = date('Y-m-d H:i:s');
+      //  $plage_debut = date('Y-m-d H:i:s', strtotime('-3 hours'));
+       // $plage_fin = date('Y-m-d H:i:s');
         break;
     default:
-        $limit = 6;
-        $plage_debut = date('Y-m-d H:i:s', strtotime('-1 hour'));
-        $plage_fin = date('Y-m-d H:i:s');
+        $limit = 10;
+      //  $plage_debut = date('Y-m-d H:i:s', strtotime('-1 hour'));
+      //  $plage_fin = date('Y-m-d H:i:s');
 }
 
    // $temperature = $_POST["Température"];
@@ -41,15 +41,15 @@ switch ($plage) {
 }
 
 
-    //connection bd
+    //connection db
     include("mysql.php");
-    //la requete sql que je veux faire
-    $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
+    //the sql query I want to make
+    $requete = "SELECT unite, valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
 
-  //éxécution de la requète
+  //execution of the request
   $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
-    // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
+    // Add a WHERE clause depending on the value selected
 
    if ($capteur == "temperature") {
    $requete .= " WHERE capteur = 'temperature' AND salle = ? AND type_de_capteur = ?";
@@ -71,15 +71,14 @@ switch ($plage) {
 //} elseif ($capteur == "luminosite") {
  //   $query = "SELECT luminosite, heure, date FROM mesures WHERE salle = ? AND type_de_capteur = ?";
 //}
-
-     // Initialisation des variables pour stocker la somme et le nombre de lignes
-
+  
+// Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
 $min = PHP_INT_MIN;
 $max = PHP_INT_MAX;
 
- //tableau html pour identifier les choix du form
+ //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
  echo '<table>';
  echo '<tr><th>Salles</th><th>Type de capteur</th><th>Plage temporelle</th></tr>';
@@ -90,15 +89,16 @@ echo '<td>' . $capteur . '</td>';
  echo '</tr>';
 
 while ($row = mysqli_fetch_array($resultat)) {
-    // Affichage des données dans le tableau
+    // Displaying data in the table
     echo "<tr>";
     echo "<td>". $row[0]. "</td>";
     echo "<td>". $row[1]. "</td>";
     echo "<td>". $row[2]. "</td>";
+    echo "<td>". $row[3]. "</td>";
     echo "</tr>";
-             //Ajout de la valeur à la somme
+             //Add value to sum
     $somme += $row['valeur'];
-    // Incrémentation du nombre de lignes
+    // Incrementing the number of lines
    $nb_lignes++;
    if ($row['valeur'] < $min) {
       $min = $row['valeur'];
@@ -115,9 +115,9 @@ while ($row = mysqli_fetch_array($resultat)) {
 
 echo "</table>";
 
-// Libérer les ressources de la requête
+// Free up request resources
 mysqli_free_result($resultat);
-// Fermeture de la connexion à la base de données
+// Closing the database connection
 mysqli_close($id_bd);
 
  //   while ($row = mysqli_fetch_array($resultat)) {
@@ -132,7 +132,7 @@ mysqli_close($id_bd);
   //  }
    
 
-    //partie style pour les tableaux
+    //style section for table
     echo '<style>
     table {
     border-collapse: collapse;

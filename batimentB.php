@@ -1,4 +1,4 @@
-<!DOCTYPE html><!--le formulaire -->
+<!DOCTYPE html><!--the form -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -23,14 +23,14 @@
            
             <form method="POST" action="batBaction.php" align="center">
               
-            <!-- Champ de sélection pour la salle -->
+            <!-- Selection field for the room -->
                 <label for="salle">Sélectionnez une salle :</label>
                 <select id="salle" name="salle">
                 <option value="B112">Salle B112</option>
                 <option value="B109">Salle B109</option>
                 </select>
         <br><br>
-                <!-- Champ de sélection pour le type de capteur -->
+                <!-- Selection field for sensor type -->
                 <label for="capteur">Sélectionnez un type de capteur :</label>
                 <select id="capteur" name="capteur">
                 <option value="temperature">Température</option>
@@ -40,7 +40,7 @@
                 </select>
         <br><br>
 
-                <!-- Champ de sélection pour la plage temporelle -->
+                <!-- Time range selection field -->
                 <label for="plage">Sélectionnez une plage temporelle :</label>
                 <select id="plage" name="plage">
                 <option value="30min">30 min</option>
@@ -49,6 +49,7 @@
                 </select>
         <br><br>
 
+                <!--add a button to submit the form's choices -->
                 <button type="submit"> Soumettre </button>
             </form>
     
