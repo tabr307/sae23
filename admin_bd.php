@@ -19,7 +19,7 @@
     }
 
     // Afficher les valeurs récupérées
-    echo "Table sélectionnée : " . htmlspecialchars($capteur) . "<br>";
+    echo "Table selectionnee : " . htmlspecialchars($table) . "<br>";
     echo "Champ 1 : " . htmlspecialchars($ch1) . "<br>";
     echo "Champ 2 : " . htmlspecialchars($ch2) . "<br>";
     echo "Champ 3 : " . htmlspecialchars($ch3) . "<br>";
