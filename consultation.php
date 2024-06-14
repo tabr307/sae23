@@ -14,16 +14,16 @@ $mesures_par_salle = [];
 while ($row = mysqli_fetch_assoc($resultat)) {
     // Déterminer la salle en fonction de l'id_capteur
     switch ($row['id_capteur']) {
-        case 1:
+        case 2:
             $salle = "B112";
             break;
-        case 2:
+        case 3:
             $salle = "E210";
             break;
-        case 3:
+        case 4:
             $salle = "E004";
             break;
-        case 4:
+        case 1:
             $salle = "B109";
             break;
         default:
@@ -80,7 +80,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
 
                 foreach ($mesures_limited as $row) {
                     // determine the building depending on id_capteur
-                    $batiment = ($row['id_capteur'] == 2 || $row['id_capteur'] == 3) ? 'RT' : 'INFO';
+                    $batiment = ($row['id_capteur'] == 3 || $row['id_capteur'] == 4) ? 'RT' : 'INFO';
 
                     // Afficher une ligne de tableau avec les données récupérées
                     echo "<tr>";
