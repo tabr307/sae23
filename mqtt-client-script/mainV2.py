@@ -9,7 +9,7 @@ from datetime import datetime
 mqtt_config = {
     'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
-    'rooms': []
+    'rooms': ["E004", "E210", "B112", "B109"]
 }
 
 # MySQL database configuration
@@ -22,6 +22,7 @@ db_config = {
 
 ############################################### SCRIPT PART ########################################################### 
 
+# Update rooms
 def rooms_db():
     try:
         cnx = mysql.connector.connect(**db_config)
