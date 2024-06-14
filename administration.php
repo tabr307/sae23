@@ -35,15 +35,13 @@ session_start();
                             <option value="pression">Pression</option>
                             <option value="luminosite">Luminosité</option>
                         </select><br>
-                        <input type="text" id="unit" name="unit" size="70" placeholder="pressure, temperature, humidity, co2, ou illumination"/><br>
+                        <input type="text" id="unit" name="unit" size="70" placeholder="pressure, temperature, humidity, co2, illumination"/><br>
                         <input type="text" id="val" name="val" size="70" placeholder="valeur à ajouter/modifier"/><br>
                         <input type="text" id="date" name="date" size="70" placeholder="date AAAA-MM-JJ"/><br>
                         <input type="text" id="time" name="time" size="70" placeholder="heure HH:MM:SS"/><br>
-                    </p>
-                    <p required>    
-                        <input type="radio" name="suppr" value="Autre" id="suppr" /><label for="reseau">supprimer</label>
-                        <input type="radio" name="mod" value="Autre" id="mod" /><label for="siteg">modifier</label>
-                        <input type="radio" name="add" value="Autre" id="add" /><label for="fonction">ajouter</label>
+                        <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer</label>
+                        <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
+                        <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter</label>
                     </p>
                     <p>
                         Avant de continuer, vous devez vérifier ces informations ! <br />
