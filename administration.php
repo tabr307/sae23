@@ -60,10 +60,10 @@ session_start();
                             <option value="mesures1">mesures</option>
                             <option value="salle1">salle</option>
                         </select><br>
-                        <input type="text" id="unit" name="unit" size="70" placeholder="pressure, temperature, humidity, co2, illumination"/><br>
-                        <input type="text" id="val" name="val" size="70" placeholder="valeur à ajouter/modifier"/><br>
-                        <input type="text" id="date" name="date" size="70" placeholder="date AAAA-MM-JJ"/><br>
-                        <input type="text" id="time" name="time" size="70" placeholder="heure HH:MM:SS"/><br>
+                        <input type="text" id="champ1" name="champ1" size="70" placeholder="comment apppeler le premier champ"/><br>
+                        <input type="text" id="champ2" name="champ2" size="70" placeholder="champ2"/><br>
+                        <input type="text" id="champ3" name="champ3" size="70" placeholder="champ3"/><br>
+                        <input type="text" id="champ4" name="champ4" size="70" placeholder="champ4"/><br>
                         <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer la table</label>
                         <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
                         <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter une table</label>
