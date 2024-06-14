@@ -25,7 +25,7 @@ if ($type_de_donnee == "temperature") {
  //   $requete .= " WHERE type_de_donnee = 'humidite'";
 //} elseif ($temperature == "pression") {
     $requete .= " WHERE type_de_donnee = 'pression'";
-//}
+}
     //éxécution de la requète
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
