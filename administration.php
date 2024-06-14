@@ -52,10 +52,6 @@ session_start();
                         <input type="checkbox" id="validation" name="validation" required />
                         <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
                     </p>  
-                    <p>
-                        <input type="submit" value="Envoyer" align="center"/>
-                        &nbsp;<input type="reset" value="Cancel" align="center"/>
-                    </p>
             </fieldset>
 
             <fieldset>
