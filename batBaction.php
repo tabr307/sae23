@@ -109,45 +109,5 @@ mysqli_free_result($resultat);
 // Closing the database connection
 mysqli_close($id_bd);
 
-
-    //style section for table
-    echo '<style>
-    table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-thead {
-    background-color: #009879;
-    color: #ffffff;
-}
-
-thead th {
-    padding: 12px 15px;
-}
-
-tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
-
-tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
-
-tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-
-tbody td {
-    padding: 12px 15px;
-}
-
-tbody tr:hover {
-    background-color: #f1f1f1;
-} </style>';
     
 ?>

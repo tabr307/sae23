@@ -31,7 +31,7 @@ session_start();
                     <p> 
                         <label for="capteur">Sélectionnez la table dans laquelle modifier vos valeurs :</label><br>
                         <select id="capteur" name="capteur">
-                            <option value="admin">administration</option>
+                            <option value="administration">administration</option>
                             <option value="batiment">batiment</option>
                             <option value="capteur">capteur</option>
                             <option value="mesures">mesures</option>
@@ -52,13 +52,13 @@ session_start();
             <fieldset>
                     <legend>Tables</legend> <!-- Titre du fieldset -->
                     <p> 
-                        <label for="capteur">Sélectionnez la table :</label><br>
-                        <select id="capteur" name="capteur">
-                            <option value="admin1">administration</option>
-                            <option value="batiment1">batiment</option>
-                            <option value="capteur1">capteur</option>
-                            <option value="mesures1">mesures</option>
-                            <option value="salle1">salle</option>
+                        <label for="capteur1">Sélectionnez la table :</label><br>
+                        <select id="capteur1" name="capteur1">
+                            <option value="administration">administration</option>
+                            <option value="batiment">batiment</option>
+                            <option value="capteur">capteur</option>
+                            <option value="mesures">mesures</option>
+                            <option value="salle">salle</option>
                         </select><br>
                         <input type="text" id="champ0" name="champ0" size="70" placeholder="Nom de la table a créer"/><br>
                         <input type="text" id="champ1" name="champ1" size="70" placeholder="comment apppeler le premier champ"/><br>

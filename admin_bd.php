@@ -1,43 +1,34 @@
 <?php
 	session_start();
-	$_SESSION[""]=$_REQUEST["mdp"];  // Récupération du mot de passe
-	$motdep=$_SESSION["mdp"];
-	$_SESSION["pseudo"]=$_REQUEST["pseudo"];  // Récupération du pseudo
-	$pseudal=$_SESSION["pseudo"];
-	$_SESSION["auth"]=FALSE;
+    $table = $_POST['capteur'];
+    $ch1 = $_POST['ch1'];
+    $ch2 = $_POST['ch2'];
+    $ch3 = $_POST['ch3'];
+    $ch4 = $_POST['ch4'];
+    $ch5 = $_POST['ch5'];
+    $ch6 = $_POST['ch6'];
+
+    // Récupérer la valeur du bouton radio sélectionné
+    $action = '';
+    if (isset($_POST['suppr'])) {
+        $action = $_POST['suppr'];
+    } elseif (isset($_POST['mod'])) {
+        $action = $_POST['mod'];
+    } elseif (isset($_POST['add'])) {
+        $action = $_POST['add'];
+    }
+
+    // Afficher les valeurs récupérées
+    echo "Table sélectionnée : " . htmlspecialchars($capteur) . "<br>";
+    echo "Champ 1 : " . htmlspecialchars($ch1) . "<br>";
+    echo "Champ 2 : " . htmlspecialchars($ch2) . "<br>";
+    echo "Champ 3 : " . htmlspecialchars($ch3) . "<br>";
+    echo "Champ 4 : " . htmlspecialchars($ch4) . "<br>";
+    echo "Champ 5 : " . htmlspecialchars($ch5) . "<br>";
+    echo "Champ 6 : " . htmlspecialchars($ch6) . "<br>";
+    echo "Action : " . htmlspecialchars($action) . "<br>";
 
 	include ("mysql.php");
 
-	$requete = "SELECT * FROM `administration`";
-	$resultat = mysqli_query($id_bd, $requete)
-		or die("Execution de la requete impossible : $requete");	
-	$ligne = mysqli_fetch_row($resultat);
-
-	if ($motdep==$ligne[1] AND $pseudal==$ligne[0]){
-		$_SESSION["auth"]=TRUE;		
-        mysqli_close($id_bd);
-		header('Location:administration.php');
-		}
-	else{
-		$requete2 = "SELECT pseudo, mdp, nom_batiment FROM `batiment` WHERE pseudo='$pseudal'";
-		$resultat2 = mysqli_query($id_bd, $requete2)
-		or die("Execution de la requete impossible : $requete2");
-		$ligne2 = mysqli_fetch_row($resultat2);
-		if($motdep==$ligne2[1] AND $pseudal==$ligne2[0] AND $ligne2[2]=='B'){
-			$_SESSION["auth"]=TRUE;		
-        	mysqli_close($id_bd);
-			header('Location:batimentB.php');
-		}elseif($motdep==$ligne2[1] AND $pseudal==$ligne2[0] AND $ligne2[2]=='E'){
-		$_SESSION["auth"]=TRUE;		
-        mysqli_close($id_bd);
-		header('Location:batimentE.php');
 	
-		}else{
-			$_SESSION = array(); // Réinitialisation du tableau de session
-            session_destroy();   // Destruction de la session
-            unset($_SESSION);    // Destruction du tableau de session
-            mysqli_close($id_bd);
-            echo "Le couple login/mot de passe est errone...";
-		}
-	}
 ?>
