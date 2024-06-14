@@ -3,7 +3,7 @@ import json
 import mysql.connector
 from datetime import datetime
 
-############################################### CONNEXION & CONFIG PART ############################################### 
+############################################### CONNEXION & CONFIG PART ############################################## 
 
 # MQTT broker connexion configuration
 mqtt_config = {
@@ -20,7 +20,7 @@ db_config = {
     'database': 'sae23'
 }
 
-############################################### SCRIPT PART ########################################################### 
+############################################### SCRIPT PART ##########################################################
 
 # Update rooms
 def rooms_db():
