@@ -34,25 +34,6 @@
                 <iframe src="http://83.113.15.31:3000/d-solo/ddny9iezod8g0d/batiment-rt?orgId=1&from=1717757081591&to=1717778681591&panelId=6" width="500" height="500" frameborder="0"></iframe>
             </li>
         </ul>
-        <aside id="last">
-            <hr />
-            <p><em> Validation de la page HTML5 - CSS3 </em></p>
-            <a href="https://validator.w3.org/nu/?doc=http%3A%2F%2Flalue.atwebpages.com%2FTP_R109%2Frwd.html" target="_blank"> 
-                <img class= "image-responsive" src="images/html5-validator-badge-blue.png" alt="HTML5 Valide !" />
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <a href="http://jigsaw.w3.org/css-validator/validator?uri=http%3A%2F%2Flalue.atwebpages.com%2FTP_R109%2Fstyles%2Fstyle2RWD.css" target="_blank">
-                <img class= "image-responsive" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
-            </a>
-</aside>
-            
-<footer>
-            <ul>
-              <li>Département Réseaux et Télécommunications</li>
-              <li>Cazettes, Le Deunff, Muller, Lalue</li>
-              <li>BUT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            </ul>  
-</footer>
 
     </body>
 </html>
