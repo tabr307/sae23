@@ -1,7 +1,4 @@
-<!DOCTYPE html><!--le formulaire -->
-<?php
-session_start();
-?>
+<!DOCTYPE html><!--the form -->
 <html>
     <head>
         <meta charset="UTF-8">
@@ -21,20 +18,19 @@ session_start();
         </section>
         <section class="container">
             <section class="content">
-            <?php echo "Bienvenue au batB ";
-                echo $_SESSION['pseudo'];?>
-                <br><br><br><br>
+                <p class="bienvenue">Bienvenue au batB</p>
+            </section>
            
             <form method="POST" action="batBaction.php" align="center">
               
-            <!-- Champ de sélection pour la salle -->
+            <!-- Selection field for the room -->
                 <label for="salle">Sélectionnez une salle :</label>
                 <select id="salle" name="salle">
                 <option value="B112">Salle B112</option>
                 <option value="B109">Salle B109</option>
                 </select>
         <br><br>
-                <!-- Champ de sélection pour le type de capteur -->
+                <!-- Selection field for sensor type -->
                 <label for="capteur">Sélectionnez un type de capteur :</label>
                 <select id="capteur" name="capteur">
                 <option value="temperature">Température</option>
@@ -44,7 +40,7 @@ session_start();
                 </select>
         <br><br>
 
-                <!-- Champ de sélection pour la plage temporelle -->
+                <!-- Time range selection field -->
                 <label for="plage">Sélectionnez une plage temporelle :</label>
                 <select id="plage" name="plage">
                 <option value="30min">30 min</option>
@@ -53,13 +49,13 @@ session_start();
                 </select>
         <br><br>
 
+                <!--add a button to submit the form's choices -->
                 <button type="submit"> Soumettre </button>
             </form>
-    	<p> Si vous preferez acceder à la page gestion avec l'approche nodered/grafana, cliquez sur ce lien : </p>
-		<a href="gestionINFO_nodered.php" target="_blank">Gestion approche nodered bat B</a>
+    
+
 
         </section>
-    </section>
         <aside id="last">
             <hr />
             <p><em> Validation de la page HTML5 - CSS3 </em></p>
