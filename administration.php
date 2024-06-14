@@ -39,9 +39,11 @@ session_start();
                         <input type="text" id="val" name="val" size="70" placeholder="valeur à ajouter/modifier"/><br>
                         <input type="text" id="date" name="date" size="70" placeholder="date AAAA-MM-JJ"/><br>
                         <input type="text" id="time" name="time" size="70" placeholder="heure HH:MM:SS"/><br>
-                        <input type="checkbox" id="supp" name="supp" required /><label for="reseau">supprimer</label>
-                        <input type="checkbox" id="modif" name="modif" required /><label for="siteg">modifier</label>
-                        <input type="checkbox" id="add" name="add" required /><label for="fonction">ajouter</label>
+                    </p>
+                    <p required>    
+                        <input type="checkbox" id="supp" name="supp"/><label for="reseau">supprimer</label>
+                        <input type="checkbox" id="modif" name="modif"/><label for="siteg">modifier</label>
+                        <input type="checkbox" id="add" name="add"/><label for="fonction">ajouter</label>
                     </p>
                     <p>
                         Avant de continuer, vous devez vérifier ces informations ! <br />
