@@ -28,6 +28,38 @@ session_start();
                 <fieldset>
                     <legend>Valeurs</legend> <!-- Titre du fieldset -->
                     <p> 
+                        <label for="capteur">Sélectionnez la table a modifier :</label><br>
+                        <select id="capteur" name="capteur">
+                            <option value="temperature">administration</option>
+                            <option value="humidite">atiment</option>
+                            <option value="pression">capteur</option>
+                            <option value="luminosite">mesures</option>
+                            <option value="luminosite">salle</option>
+                        </select><br>
+                        <input type="text" id="ch1" name="ch1" size="70" placeholder="champ1"/><br>
+                        <input type="text" id="ch2" name="ch2" size="70" placeholder="champ2"/><br>
+                        <input type="text" id="ch3" name="ch3" size="70" placeholder="champ3"/><br>
+                        <input type="text" id="ch4" name="ch4" size="70" placeholder="champ4"/><br>
+                        <input type="text" id="ch5" name="ch5" size="70" placeholder="champ5"/><br>
+                        <input type="text" id="ch6" name="ch6" size="70" placeholder="champ6"/><br>
+                        <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer</label>
+                        <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
+                        <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter</label>
+                    </p>
+                    <p>
+                        Avant de continuer, vous devez vérifier ces informations ! <br />
+                        <input type="checkbox" id="validation" name="validation" required />
+                        <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
+                    </p>  
+                    <p>
+                        <input type="submit" value="Envoyer" align="center"/>
+                        &nbsp;<input type="reset" value="Cancel" align="center"/>
+                    </p>
+            </fieldset>
+
+            <fieldset>
+                    <legend>Tables</legend> <!-- Titre du fieldset -->
+                    <p> 
                         <label for="capteur">Sélectionnez un type de  :</label><br>
                         <select id="capteur" name="capteur">
                             <option value="temperature">Température</option>
@@ -52,7 +84,8 @@ session_start();
                         <input type="submit" value="Envoyer" align="center"/>
                         &nbsp;<input type="reset" value="Cancel" align="center"/>
                     </p>
-            </form>
+            </fieldset>
+        </form>
         
             </section>
         </section>            

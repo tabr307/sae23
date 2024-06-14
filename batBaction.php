@@ -11,26 +11,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
-    $temperature = $_POST["temperature"];
-    $humidite = $_POST["humidité"];
-    $pression = $_POST['pression'];
-    $luminosite = $_POST["luminosité"];
+   // $temperature = $_POST["Température"];
+   // $humidite = $_POST["Humidité"];
+   // $pression = $_POST['Pression'];
+   // $luminosite = $_POST["Luminosité"];
 
     //connection bd
     include("mysql.php");
     //la requete sql que je veux faire
     $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
 
+ 
     // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
-if ($temperature == "temperature") {
-    $requete .= " WHERE temperature = 'temperature'";
-} elseif ($humidite == "humidité") {
-    $requete .= " WHERE humidite = 'humidité'";
-} elseif ($pression == "pression") {
-    $requete .= " WHERE pression = 'pression'";
-} elseif ($luminosite == "luminosité") {
-    $requete .= " WHERE luminosite = 'luminosité'";
+
+   if ($capteur == "temperature") {
+$requete .= " WHERE capteur = 'temperature'";
+} elseif ($capteur == "humidité") {
+    $requete .= " WHERE capteur = 'humidité'";
+} elseif ($capteur == "pression") {
+   $requete .= " WHERE capteur = 'pression'";
+} elseif ($capteur == "luminosité") {
+    $requete .= " WHERE capteur = 'luminosité'";
 }
+
     //éxécution de la requète
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
@@ -89,7 +92,12 @@ $max = PHP_INT_MAX;
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
     echo '</table>';
   //  }
-    
+    // Libérer les ressources de la requête
+mysqli_free_result($resultat);
+
+// Fermer la connexion à la base de données
+mysqli_close($id_bd);
+
     //partie style pour les tableaux
     echo '<style>
     table {
@@ -130,11 +138,4 @@ tbody tr:hover {
     background-color: #f1f1f1;
 } </style>';
     
-   
-
-// Libérer les ressources de la requête
-mysqli_free_result($resultat);
-
-// Fermer la connexion à la base de données
-mysqli_close($id_bd);
 ?>
