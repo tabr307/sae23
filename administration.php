@@ -64,16 +64,18 @@ session_start();
                         <input type="text" id="champ2" name="champ2" size="70" placeholder="champ2"/><br>
                         <input type="text" id="champ3" name="champ3" size="70" placeholder="champ3"/><br>
                         <input type="text" id="champ4" name="champ4" size="70" placeholder="champ4"/><br>
+                        <input type="text" id="champ5" name="champ5" size="70" placeholder="champ5"/><br>
+                        <input type="text" id="champ6" name="champ6" size="70" placeholder="champ6"/><br>
                         <input type="radio" name="web" value="suppr" id="suppr" /><label for="suppr">supprimer la table</label>
                         <input type="radio" name="web" value="mod" id="mod" /><label for="mod">modifier</label>
                         <input type="radio" name="web" value="add" id="add" /><label for="add">ajouter une table</label>
                     </p>
             </fieldset>
-            <input type="submit" value="Envoyer" align="center"/>
-            &nbsp;<input type="reset" value="Cancel" align="center"/><br>
             Avant de continuer, vous devez vérifier ces informations ! <br />
             <input type="checkbox" id="validation" name="validation" required />
             <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
+            <input type="submit" value="Envoyer" align="center"/>
+            &nbsp;<input type="reset" value="Cancel" align="center"/><br>
         </form>
         
             </section>
