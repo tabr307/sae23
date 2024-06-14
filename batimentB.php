@@ -18,8 +18,9 @@
         </section>
         <section class="container">
             <section class="content">
-                <p class="bienvenue">Bienvenue au batB</p>
-            </section>
+            <?php echo "Bienvenue au batB ";
+                echo $_SESSION['pseudo'];?>
+                <br><br><br><br>
            
             <form method="POST" action="batBaction.php" align="center">
               
@@ -55,6 +56,7 @@
 
 
         </section>
+    </section>
         <aside id="last">
             <hr />
             <p><em> Validation de la page HTML5 - CSS3 </em></p>
