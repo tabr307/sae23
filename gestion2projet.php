@@ -22,10 +22,10 @@
                 
                 <img class=".image"  src="ressources/gantt.PNG" alt="gantt">
                 
-                <p>
+                <p class="texte">
                 Ici, nous observons le Gantt prévisionnel réalisé pour le livrable 1. <br>
                 En effet, nous avons essayé de planifier au mieux notre projet afin de ne pas perdre
-                du temps ou faire des erreurs inutiles. <br>
+                du temps. <br>
                 Or, bien que nos prévisions se sont avérées plutôt exactes, nous avons avons été
                 obligés de faire quelques changements afin d'optimiser notre avancée et palier aux 
                 problèmes rencontrés.
@@ -33,46 +33,75 @@
 
                 <h1>Screen GitHub</h1>
                 
-                <p>
-                Je vous laisse chosir les bon screen à mettre
-                <img class=".image" src="ressources/github.PNG" alt="gihb">
+                
+                <img class=".image" src="ressources/github.PNG" alt="gihub">
+				<p class="texte">
+				Github est un outil très pratique qui nous a permis de pouvoir collaborer plus facilement. <br>
+				En effet, il permet de pourvoir chacun travailler sur notre partie du code, et de rester au courant de qui à édité quoi et quand, afin de ne
+				pas modifier des anciennes version sans le vouloir.
                 </p>
+
+
 
                 <h1>Synthèses Personelles du groupe</h1>
+                <br>
                 
-                <p>
                 <h2>Synthèse Personelle d'Hélio LE DEUNFF</h2> 
-                <img class=".image" src="ressources/helio.png" alt="helio">
-                Pour ma part j'ai commencé par la création du gantt prévisionnel lors de la première séance. En effet, après avoir 
+				<p id="texte">
+                Pour ma part j'ai commencé par la création du gantt prévisionnel. En effet, après avoir 
                 discuté avec tous les membres du groupe et la révision du cahier des charges, j'ai pu mettre
-                au point un Gantt correcte est approuvé par l'équipe. <br>
-                Par la suite, lors de la même séance nous avons travaillé tous ensemble pour la création de notre base donnée PHPmyAdmin. <br>
-                Ensuite, je me suis occupé de la partie Docker avec Mathys. Nous avons travaillé ensemble lors
-                de la 2ème et 3ème séance. Ici, je me suis principalement occupé de la partie gestion des dockers et de la
-                base de données influxdb. <br>
-                Pour ce qui est de la 4ème séance, je me suis principalement occupé de la page "Gestion de projet" du site web,
-                j'ai avancé la partie informative de la page tandis que Valentin se chargeait de l'habillage et de la mise en page. <br>
-                Pour ce qui est de la 5 ème séance ... <br>
-                <h3>Conclusion :  </h3>
-                Pour conclure, j'ai essayé d'apporter mon aide de la manière la plus optimisé possible,
-                même si je n'ai pas été le plus actif sur la partie github et PHP.
+                au point un Gantt correct est approuvé par l'équipe. <br>
+                Par la suite, nous avons travaillé tous ensemble pour la création de notre base données PHPmyAdmin. <br>
+                Je me suis aussi occupé de la partie "des dockers" avec Mathys. Ici, je me suis principalement occupé de la partie gestion des dockers 
+                et de la base de données influxdb. <br>
+                J'ai poursuivi par le début de la création de la page "Gestion de projet" du site web, tandis que Valentin se chargeait de l'habillage
+                 et de la mise en page. <br> 
+			  Lors de la dernière séance jusqu'à la fin de la saé je me suis occupé de la partie web de la page gestion c'est à dire que j'ai
+			   crée la page permettant d'afficher les données selon un formulaire (et ajouter des métriques).
+                                          <br>
+                Conclusion : Je conclue cette expérience par un message positif car nous avons appris de nombreuses choses durant ces heures de saé,
+	         même si je ne suis pas très à l'aise avec le developpement j'ai fait de mon mieux pour aider le groupe. J'aimerai quand même évoquer le fait
+				 fait qu'il n'y avait pas assez de crénau de saé à mon goût. 
                 </p>
 
-                
+                <br>
 
                 
-                    <h2>Synthèse Personelle de Mathys CAZETTES</h2>
-                    <img class=".image" src="ressources/8155751-1400x933.jpg" alt="mathys">
+                <h2>Synthèse Personelle de Mathys CAZETTES</h2>
+          		<p class="texte">
+				Pour donner mon avis personnel sur cette saé : je trouve que c'est celle que j'ai preferée depuis le début de l'année. <br>
+				Malgré quelques petits pépins, comme par exemple les problèmes de connexion au broker depuis les salles, nous avons pu produire
+	 			un travail que je trouve satisfaisant et qui nous ressemble. <br>
+				Pour justifier mes dires, j'ai vraiment apprecié le travail d'équipe dans cette saé, car pour moi c'était la première ou nous étions en
+				groupe de 4. Nous avons su correctement nous organiser et communiquer pour synchroniser toutes nos compétances. <br>
+				Pour ce qui est de mon travail lors de ce projet, j'ai comme hélio l'as dit auparavant commencé par réaliser les dockers nodered, influxdb 
+				et grafana. Une fois tout cela terminé et fonctionnel, j'ai rejoint le reste de l'équipe pour continuer la création du site web : j'ai
+				pu produire la page consultation et finaliser la page que vous êtes en train de lire. <br>
+				Je conclus donc tout de même positivement sur cette saé, qui nous a apporté beaucoup de connaissances à chaqun, par le partage et la
+				 recherche.
+				</p>
+				<br>
                 
+                <h2>Synthèse Personelle de Valentin LALUE</h2>
+				<br>
+                <h2>Synthèse Personelle de Enzo MULLER</h2>
+				<p class="texte">
+				Pendant la SAE23, j'ai d'abord pris en charge la gestion de la base de données. Ensuite, j'ai développé un script Python pour alimenter les
+				 différentes tables de la base de données.
+				<br>
+				Nous avons rencontré plusieurs problèmes majeurs, notamment le réseau de l'IUT qui empêchait l'accès aux divers services nécessaires pour la
+				 SAE23 (tel que le Broker MQTT, Node-Red, Graphana, etc...). Cette situation a pénalisé l'ensemble de la promotion et nous a fait perdre un
+				 temps précieux. Nous avons du mettre en place des solutions alternatives pour accéder à ces services afin de pouvoir continuer à travailler
+				 sur la SAE. J'ai également rencontrés plusieurs problèmes de droits d'accès à la base de données, notamment avec le client qui exigeait une
+				 encryption des données alors que le serveur n'était pas configuré pour cela. 
+				<br>
+				Avec seulement deux semaines pour réaliser ce projet, en parallèle de plusieurs autres projets et évaluations, ces contretemps nous ont
+			 considérablement ralentis, nous empêchant d'atteindre un niveau de perfection satisfaisant. 
+				<br>
+			Malgré ces difficultés, j'ai apprécié cette SAE qui m'a permis, une fois de plus, d'améliorer mes compétences dans différents domaines de l'IoT.
+				</p>
 
-                
-                    <h2>Synthèse Personelle de Valentin LALUE</h2>
-                    <img class=".image" src="ressources/M6_0054095_0380bis-1140x856.jpg" alt="valentin">
-
-                    <h2>Synthèse Personelle de Enzo MULLER</h2>
-                    <img class=".image" src=".ressources/images.jfif" alt="enzo">
-
-                
+                <br>
                 <h1>Problèmes rencontrés et Solutions proposées</h1>
 
                 <table>
@@ -102,29 +131,21 @@
                     ip statique. Le problème a donc été résolu et nous avons pu continuer.
                     </td>
                     </tr>
-                    <tr>
-                    <td>Row 4, Data 1</td>
-                    <td>Row 4, Data 2</td>
-                    </tr>
-                    <tr>
-                    <td>Row 5, Data 1</td>
-                    <td>Row 5, Data 2</td>
-                    </tr>
-                    <tr>
-                    <td>Row 6, Data 1</td>
-                    <td>Row 6, Data 2</td>
-                    </tr>
-                    <tr>
-                    <td>Row 7, Data 1</td>
-                    <td>Row 7, Data 2</td>
-                    </tr>
                 </table>
+				<br> <br>
+
                 <h1>Conclusion : Degré de satisfaction du cahier des charges</h1>
 
-                <p> 
-                    Après une longue et intense discussion autour d'une table ronde, nous, le groupe, 
-                    sommes arrivées à la conclusion que notre avis sur le cahier des charges était plutôt positif.
-                    En effet, (arguments)
+                <p class="texte"> 
+                  Après une longue et intense discussion autour d'une table ronde, nous, le groupe, 
+                  sommes arrivées à la conclusion que notre avis sur le cahier des charges était plutôt complet et cohérant.
+                  En revanche, nous tenons à noter que plusieurs problèmes généraux sont survenus, notamment le réseau de l'IUT qui ne pouvait pas accéder
+				 aux différents services de la SAE23 (tel que MQTT, Node-Red, Graphana, etc...). Cette situation a pénalisé l'ensemble de la promotion
+				 et nous a fait perdre un temps précieux. Nous avons du mettre en place des solutions alternatives pour accéder à ces services afin de
+				 pouvoir continuer à travailler sur la SAE. Avec seulement deux semaines pour réaliser ce projet, en parallèle de plusieurs autres
+				 projets et évaluations, ce contretemps nous a considérablement ralentis, nous empêchant d'atteindre un niveau de perfection satisfaisant.
+				 Malgré ces difficultés, nous pouvons dire que nous avons apprécié cette SAE qui nous a permis, une fois de plus, d'améliorer nos
+				 compétences dans différents domaines de l'IoT.
                 </p>
                 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
           
