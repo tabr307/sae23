@@ -35,13 +35,13 @@ session_start();
                             <option value="pression">Pression</option>
                             <option value="luminosite">Luminosité</option>
                         </select><br>
-                        <input type="text" id="unit" name="unit" size="70" placeholder="unité pressure, temperature, humidity, co2, ou illumination"/><br>
+                        <input type="text" id="unit" name="unit" size="70" placeholder="pressure, temperature, humidity, co2, ou illumination"/><br>
                         <input type="text" id="val" name="val" size="70" placeholder="valeur à ajouter/modifier"/><br>
                         <input type="text" id="date" name="date" size="70" placeholder="date AAAA-MM-JJ"/><br>
                         <input type="text" id="time" name="time" size="70" placeholder="heure HH:MM:SS"/><br>
-                        <input type="checkbox" id="validation" name="validation" required /><label for="reseau">supprimer</label>
-                        <input type="checkbox" id="validation" name="validation" required /><label for="siteg">modifier</label>
-                        <input type="checkbox" id="validation" name="validation" required /><label for="fonction">ajouter</label>
+                        <input type="checkbox" id="supp" name="supp" required /><label for="reseau">supprimer</label>
+                        <input type="checkbox" id="modif" name="modif" required /><label for="siteg">modifier</label>
+                        <input type="checkbox" id="add" name="add" required /><label for="fonction">ajouter</label>
                     </p>
                     <p>
                         Avant de continuer, vous devez vérifier ces informations ! <br />
@@ -49,8 +49,8 @@ session_start();
                         <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label>
                     </p>  
                     <p>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Envoyer" />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Cancel" />
+                        <input type="submit" value="Envoyer" align="center"/>
+                        &nbsp;<input type="reset" value="Cancel" align="center"/>
                     </p>
             </form>
         
