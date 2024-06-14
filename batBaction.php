@@ -11,10 +11,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
 
+    $temperature = $_POST['temperature'];
+
     //connection bd
     include("mysql.php");
     //la requete sql que je veux faire
     $requete = "SELECT valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
+
+    // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
+if ($type_de_donnee == "temperature") {
+    $requete .= " WHERE type_de_donnee = 'temperature'";
+//} elseif ($temperature == "humidite") {
+ //   $requete .= " WHERE type_de_donnee = 'humidite'";
+//} elseif ($temperature == "pression") {
+    $requete .= " WHERE type_de_donnee = 'pression'";
+}
     //éxécution de la requète
     $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
 
@@ -102,25 +113,11 @@ $max = PHP_INT_MIN;
     echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>'; 
     echo '<tr>';
     echo '<td>' . $moyenne . '</td>';
-    echo '<td>' . $minimum . '</td>';
-    echo '<td>' . $maximum . '</td>';
+    echo '<td>' . $min . '</td>';
+    echo '<td>' . $max . '</td>';
     echo '</tr>'; 
     echo '</table>';
 
-
-
-
-    for ($i = 0; $i < 1; $i++) {
-        echo "<ul>";
-        foreach ($resultat as $row) {
-            echo "<li>";
-            foreach ($row as $key => $value) {
-                echo "<strong>$key:</strong> $value<br>";
-            }
-            echo "</li>";
-        }
-        echo "</ul><hr>";
-    }
     
     //partie style pour les tableaux
     echo '<style>
