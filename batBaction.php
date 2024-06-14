@@ -29,13 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Ajout d'une clause WHERE en fonction de la valeur sélectionnée
 
    if ($capteur == "temperature") {
-   $requete .= " WHERE capteur = 'temperature'";
+   $requete .= " WHERE capteur = 'temperature' AND salle = ? AND type_de_capteur = ?";
    } elseif ($capteur == "humidité") {
        $requete .= " WHERE capteur = 'humidité'";
    } elseif ($capteur == "pression") {
       $requete .= " WHERE capteur = 'pression'";
    } elseif ($capteur == "luminosité") {
-       $requete .= " WHERE capteur = 'luminosité'";
+       $requete .= " WHERE capteur = 'luminosité' AND salle = ? AND type_de_capteur = ?";
    }
 
 // Définition de la requête SQL de base
