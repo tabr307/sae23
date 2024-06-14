@@ -140,7 +140,8 @@ footer ul li:last-child
 }
 
 .image{
-  margin-left:0%;
+  margin-left:25%;
+  width: 20px;
 }
 
 table{
