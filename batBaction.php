@@ -74,6 +74,10 @@ echo '<tr>';
 echo '<td>' . $capteur . '</td>';
  echo '<td>' . $plage . '</td>';
  echo '</tr>';
+ echo '<tr>';
+ echo '<td colspan="3">' . $resultat .   '</td>';
+ echo '</tr>';
+
 
 while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL query executed on a MySQL database
     // Displaying data in the table
@@ -122,12 +126,6 @@ echo "</table>";
             <a class="right" href="form.php">Gestion</a> 
             <a class="right" href="form.php">Administration</a>
         </section>
-    </section>
-    
-    <section class="container">
-        <section class="content">
-            <h1>Tableau des Mesures par Salle</h1>
-            </section>
     </section>
 <footer>
     <ul>
