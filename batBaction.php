@@ -44,7 +44,7 @@ switch ($plage) {
 <head>
     <meta charset="UTF-8">
     <title>Tableau des Mesures par Salle</title>
-    <link href="non/styles/main.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -101,7 +101,7 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     echo "<tr>";
     echo "<td>". $row['valeur']. "</td>"; // $row[1] = the firt column of the line
     echo "<td>". $row['unite']. "</td>";
-    echo "<td>". $row[2]. "</td>";
+    echo "<td>". $row['heure']. "</td>";
     echo "</tr>";
              //Add value to sum
     $somme += $row['valeur'];
