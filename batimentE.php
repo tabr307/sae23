@@ -16,7 +16,7 @@ session_start();
             <a class="right" href="gestion2projet.php"> Gestion de Projet</a> 
             <a class="right" href="consultation.php"> Consultation</a> 
             <a class="right" href="form.php"> Gestion</a> 
-            <a class="right" href="form.php"> Administration</a>
+            <a class="right" href="admin/administration.php"> Administration</a>
             </section>
         </section>
         <section class="container">
