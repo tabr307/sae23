@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //accept only POST request
     // List of valid choices
     $validSalles = ["salle1", "salle2"];
@@ -82,8 +81,8 @@ $requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ?";
     // Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
-$min = PHP_INT_MIN; //define the fonction min
-$max = PHP_INT_MAX; //define the fonction max
+//$min = min($row['valeur']);   // PHP_INT_MIN; //define the fonction min
+//$max = max($row['valeur']);    //PHP_INT_MAX; //define the fonction max
 
  //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
@@ -111,6 +110,8 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
     // Incrementing the number of lines
    $nb_lignes++;
     $moyenne = $somme / $nb_lignes;
+    $min = min($row['valeur']);   // PHP_INT_MIN; //define the fonction min
+$max = max($row['valeur']); 
 
     if ($row['valeur'] < $min) {
         $min = $row['valeur'];
