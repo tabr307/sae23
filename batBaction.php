@@ -95,16 +95,13 @@ echo '<td>' . $capteur . '</td>';
  echo '<td colspan="3"> Les valeurs </td>';
  echo '</tr>';
 
-
-while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL query executed on a MySQL database
+//array
+while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL query executed on a MySQL database
     // Displaying data in the table
     echo "<tr>";
-    echo "<td>". $row[0]. "</td>"; // $row[1] = the firt column of the line
-    echo "<td>". $row[1]. "</td>";
+    echo "<td>". $row['valeur']. "</td>"; // $row[1] = the firt column of the line
+    echo "<td>". $row['unite']. "</td>";
     echo "<td>". $row[2]. "</td>";
-    echo "<td>". $row[3]. "</td>";
-    echo "<td>". $row[4]. "</td>";
-    echo "<td>". $row[5]. "</td>";
     echo "</tr>";
              //Add value to sum
     $somme += $row['valeur'];
