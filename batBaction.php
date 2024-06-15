@@ -62,8 +62,8 @@ switch ($plage) {
 // Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
-$min = PHP_INT_MIN; //define the fonction min
-$max = PHP_INT_MAX; //define the fonction max
+//$min = PHP_INT_MIN; //define the fonction min
+//$max = PHP_INT_MAX; //define the fonction max
 
  //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
@@ -75,7 +75,7 @@ echo '<td>' . $capteur . '</td>';
  echo '<td>' . $plage . '</td>';
  echo '</tr>';
  echo '<tr>';
- echo '<td colspan="3">' . $resultat .   '</td>';
+ echo '<td colspan="3"> Les valeurs </td>';
  echo '</tr>';
 
 
@@ -99,7 +99,8 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
       if ($row['valeur'] > $max) {
           $max = $row['valeur'];
       }
-
+      $min = PHP_INT_MIN; //define the fonction min
+      $max = PHP_INT_MAX; //define the fonction max
     echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
     echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
