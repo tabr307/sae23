@@ -81,6 +81,8 @@ $requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ? AN
     // Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
+$min = null;
+$max = null;
 
  //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
@@ -109,15 +111,22 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     // Incrementing the number of lines
    $nb_lignes++;
     $moyenne = $somme / $nb_lignes;
-    $min = min($row['valeur']); //define the fonction min
-    $max = max($row['valeur']); 
 
-    if ($row['valeur'] < $min) {
+    if ($min === null || $row['valeur'] < $min) {
         $min = $row['valeur'];
-     }
-      if ($row['valeur'] > $max) {
-          $max = $row['valeur'];
-      }
+    }
+    if ($max === null || $row['valeur'] > $max) {
+        $max = $row['valeur'];
+    }    
+    //$min = min($row['valeur']); //define the fonction min
+    //$max = max($row['valeur']); 
+
+   // if ($row['valeur'] < $min) {
+  //      $min = $row['valeur'];
+   //  }
+   //   if ($row['valeur'] > $max) {
+   //       $max = $row['valeur'];
+   //   }
 
     echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
     echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
