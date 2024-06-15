@@ -104,6 +104,42 @@ echo "</table>";
 
 }
 
+?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau des Mesures par Salle</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <section class="navbar">
+        <a class="active" href="index.php"><img src="ressources/logo.png" id="image1" alt="logo"></a> 
+        <section class="links">
+            <a class="right" href="gestion2projet.php">Gestion de Projet</a> 
+            <a class="right" href="consultation.php">Consultation</a> 
+            <a class="right" href="form.php">Gestion</a> 
+            <a class="right" href="form.php">Administration</a>
+        </section>
+    </section>
+    
+    <section class="container">
+        <section class="content">
+            <h1>Tableau des Mesures par Salle</h1>
+            </section>
+    </section>
+<footer>
+    <ul>
+        <li>Département Réseaux et Télécommunications</li>
+        <li>Cazettes, Le Deunff, Muller, Lalue</li>
+        <li>BUT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
+    </ul>  
+</footer>
+</body>
+</html>
+
+<?php
 // Free up request resources
 mysqli_free_result($resultat);
 // Closing the database connection
@@ -112,12 +148,3 @@ mysqli_close($id_bd);
 
     //style section for table
 ?>
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>le style</title>
-  <link rel="stylesheet" href="./styles/style.css">
-</head>
-
-</html>
