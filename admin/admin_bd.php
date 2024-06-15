@@ -1,6 +1,6 @@
 <?php
 	session_start();
-    include ("mysql.php");
+    include ("../mysql.php");
     $action = $_POST['capteur'];
     $ch1 = $_POST['ch1'];
     $ch2 = $_POST['ch2'];
