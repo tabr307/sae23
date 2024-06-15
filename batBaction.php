@@ -103,6 +103,7 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     echo "<td>". $row['unite']. "</td>";
     echo "<td>". $row['heure']. "</td>";
     echo "</tr>";
+}    
              //Add value to sum
     $somme += $row['valeur'];
     // Incrementing the number of lines
@@ -121,7 +122,7 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
     echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
-    }
+    
 echo "</table>";
 
 
