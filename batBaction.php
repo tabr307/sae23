@@ -57,6 +57,8 @@ switch ($plage) {
             <a class="right" href="form.php">Administration</a>
         </section>
     </section>
+    <section class="container">
+        <section class="content">
 <?php  
 //connection db
 include("mysql.php");
@@ -133,9 +135,11 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
     
 echo "</table>";
-
-
 ?>
+
+</section>
+</section>
+
 <footer>
     <ul>
         <li>Département Réseaux et Télécommunications</li>
