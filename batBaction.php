@@ -38,27 +38,6 @@ switch ($plage) {
 }
 
 
-    //connection db
-    include("mysql.php");
-    //the sql query I want to make
-    $requete = "SELECT unite, valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
-
-  //execution of the request
-  $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
-
-    // Add a WHERE clause depending on the value selected 
-    // display value temperature if temperature has been chose in the form
-
-   if ($capteur == "temperature") {
-   $requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ?";
-   } elseif ($capteur == "humidité") {
-       $requete .= " WHERE capteur = 'humidité'";
-   } elseif ($capteur == "pression") {
-      $requete .= " WHERE capteur = 'pression'";
-   } elseif ($capteur == "luminosité") {
-       $requete .= " WHERE capteur = 'luminosité' AND salle = ? AND luminosite = ?";
-   }
-
 ?>
 
 <!DOCTYPE html>
@@ -79,7 +58,27 @@ switch ($plage) {
             <a class="right" href="form.php">Administration</a>
         </section>
     </section>
-<?php    
+<?php  
+//connection db
+include("mysql.php");
+//the sql query I want to make
+$requete = "SELECT unite, valeur, heure, date FROM mesures ORDER BY heure DESC LIMIT 20";
+
+//execution of the request
+$resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impossible : $requete");
+
+// Add a WHERE clause depending on the value selected 
+// display value temperature if temperature has been chose in the form
+
+if ($capteur == "temperature") {
+$requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ?";
+} elseif ($capteur == "humidité") {
+   $requete .= " WHERE capteur = 'humidité'";
+} elseif ($capteur == "pression") {
+  $requete .= " WHERE capteur = 'pression'";
+} elseif ($capteur == "luminosité") {
+   $requete .= " WHERE capteur = 'luminosité' AND salle = ? AND luminosite = ?";
+}  
     // Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
@@ -144,7 +143,4 @@ echo "</table>";
 mysqli_free_result($resultat);
 // Closing the database connection
 mysqli_close($id_bd);
-
-
-    //style section for table
 ?>
