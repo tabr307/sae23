@@ -109,8 +109,8 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     // Incrementing the number of lines
    $nb_lignes++;
     $moyenne = $somme / $nb_lignes;
-    $min = min(array($row['valeur'])); //define the fonction min
-    $max = max(array($row['valeur'])); 
+    $min = min($row['valeur']); //define the fonction min
+    $max = max($row['valeur']); 
 
     if ($row['valeur'] < $min) {
         $min = $row['valeur'];
@@ -127,34 +127,6 @@ echo "</table>";
 
 
 ?>
-
-<!--<style>
-    table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    display: none;
-}
-
-table, th, td {
-    border: 1px solid #ccc;
-}
-
-th, td {
-    padding: 10px;
-    text-align: left;
-}
-
-th {
-    background-color: #f2f2f2;
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-</style> -->
-
-
 <footer>
     <ul>
         <li>Département Réseaux et Télécommunications</li>
