@@ -125,8 +125,9 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
 echo "</table>";
 
 }
+?>
 
-echo " <style>
+<!--<style>
     table {
     width: 100%;
     border-collapse: collapse;
@@ -150,9 +151,7 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-</style>";
-
-?>
+</style> -->
 
 
 <footer>
