@@ -126,9 +126,7 @@ echo "</table>";
 
 }
 
-?>
-
-<style>
+echo " <style>
     table {
     width: 100%;
     border-collapse: collapse;
@@ -152,7 +150,11 @@ th {
 tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-</style>
+</style>";
+
+?>
+
+
 <footer>
     <ul>
         <li>Département Réseaux et Télécommunications</li>
