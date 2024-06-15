@@ -106,7 +106,6 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
     echo "<td>". $row[0]. "</td>"; // $row[1] = the firt column of the line
     echo "<td>". $row[1]. "</td>";
     echo "<td>". $row[2]. "</td>";
-    echo "<td>". $row[3]. "</td>";
     echo "</tr>";
              //Add value to sum
     $somme += $row['valeur'];
