@@ -99,7 +99,7 @@ echo '<td>' . $capteur . '</td>';
 while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL query executed on a MySQL database
     // Displaying data in the table
     echo "<tr>";
-    echo "<td>". $row[0]. "</td>"; // $row[1] = the firt column of the line
+    echo "<td>". $row['valeur']. "</td>"; // $row[1] = the firt column of the line
     echo "<td>". $row[1]. "</td>";
     echo "<td>". $row[2]. "</td>";
     echo "</tr>";
