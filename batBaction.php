@@ -110,8 +110,8 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
     // Incrementing the number of lines
    $nb_lignes++;
     $moyenne = $somme / $nb_lignes;
-    $min = min($row['valeur']);   // PHP_INT_MIN; //define the fonction min
-$max = max($row['valeur']); 
+    $min = min(array($row['valeur']));   // PHP_INT_MIN; //define the fonction min
+$max = max(array($row['valeur'])); 
 
     if ($row['valeur'] < $min) {
         $min = $row['valeur'];
