@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //accept only POST request
     $salle = $_POST["salle"];
     $capteur = $_POST["capteur"];
     $plage = $_POST["plage"];
-
+}
     // Definition of time range according to selection
 switch ($plage) {
     case '30min':
@@ -34,7 +34,7 @@ switch ($plage) {
    // $humidite = $_POST["Humidité"];
    // $pression = $_POST['Pression'];
    // $luminosite = $_POST["Luminosité"];
-}
+
 
 
 ?>
@@ -70,13 +70,13 @@ $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impos
 // display value temperature if temperature has been chose in the form
 
 if ($capteur == "temperature") {
-$requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ?";
+$requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ? AND heure >=?";
 } elseif ($capteur == "humidité") {
    $requete .= " WHERE capteur = 'humidité'";
 } elseif ($capteur == "pression") {
   $requete .= " WHERE capteur = 'pression'";
 } elseif ($capteur == "luminosité") {
-   $requete .= " WHERE capteur = 'luminosité' AND salle = ? AND luminosite = ?";
+   $requete .= " WHERE capteur = 'luminosité' AND salle = ? AND luminosite = ? AND heure >=?";
 }  
     // Initialise variables to store the sum and the number of rows
 $somme = 0;
@@ -121,10 +121,10 @@ while ($row = mysqli_fetch_assoc($resultat)) { // browse the results of an SQL q
     echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
     echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
-
+    }
 echo "</table>";
 
-}
+
 ?>
 
 <!--<style>
