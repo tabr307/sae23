@@ -59,11 +59,32 @@ switch ($plage) {
        $requete .= " WHERE capteur = 'luminosité' AND salle = ? AND luminosite = ?";
    }
 
-// Initialise variables to store the sum and the number of rows
+?>
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Tableau des Mesures par Salle</title>
+    <link href="styles/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <section class="navbar">
+        <a class="active" href="index.php"><img src="ressources/logo.png" id="image1" alt="logo"></a> 
+        <section class="links">
+            <a class="right" href="gestion2projet.php">Gestion de Projet</a> 
+            <a class="right" href="consultation.php">Consultation</a> 
+            <a class="right" href="form.php">Gestion</a> 
+            <a class="right" href="form.php">Administration</a>
+        </section>
+    </section>
+<?php    
+    // Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
-//$min = PHP_INT_MIN; //define the fonction min
-//$max = PHP_INT_MAX; //define the fonction max
+$min = PHP_INT_MIN; //define the fonction min
+$max = PHP_INT_MAX; //define the fonction max
 
  //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
@@ -99,8 +120,7 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
       if ($row['valeur'] > $max) {
           $max = $row['valeur'];
       }
-      $min = PHP_INT_MIN; //define the fonction min
-      $max = PHP_INT_MAX; //define the fonction max
+
     echo "<tr><td colspan='3'>Moyenne : ". number_format($moyenne, 2). "</td></tr>";
     echo "<tr><td colspan='3'>Minimum : ". $min. "</td></tr>";
     echo "<tr><td colspan='3'>Maximum : ". $max. "</td></tr>";
@@ -110,24 +130,6 @@ echo "</table>";
 }
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <title>Tableau des Mesures par Salle</title>
-    <link href="styles/main.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
-<body>
-    <section class="navbar">
-        <a class="active" href="index.php"><img src="ressources/logo.png" id="image1" alt="logo"></a> 
-        <section class="links">
-            <a class="right" href="gestion2projet.php">Gestion de Projet</a> 
-            <a class="right" href="consultation.php">Consultation</a> 
-            <a class="right" href="form.php">Gestion</a> 
-            <a class="right" href="form.php">Administration</a>
-        </section>
-    </section>
 <footer>
     <ul>
         <li>Département Réseaux et Télécommunications</li>
