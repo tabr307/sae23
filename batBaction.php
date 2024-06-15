@@ -15,19 +15,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //accept only POST request
 switch ($plage) {
     case '30min':
         $limit = 3;
-      //  $plage_debut =  strtotime('-30 minutes'));
+        $plage_debut =  strtotime('-30 minutes');
         break;
     case '1h':
         $limit = 6;
-       // $plage_debut =  strtotime('-1 hour')); 
+        $plage_debut =  strtotime('-1 hour'); 
         break;
     case '3h':
         $limit = 18;
-      //  $plage_debut =  strtotime('-3 hours')); 
+        $plage_debut =  strtotime('-3 hours'); 
         break;
     default:
         $limit = 10;
-      //  $plage_debut = strtotime('-1 hour'));
+        $plage_debut = strtotime('-1 hour');
       
 }
 
