@@ -12,7 +12,7 @@
     // Récupérer la valeur du bouton radio sélectionné
     if (isset($_POST['suppr'])) {
         $action = $_POST['suppr'];
-        mysqli_query($id_bd, "DELETE FROM `$table` WHERE ")
+        mysqli_query($id_bd, "DELETE FROM `$table` WHERE ");
     } elseif (isset($_POST['mod'])) {
         $action = $_POST['mod'];
     } elseif (isset($_POST['add'])) {
