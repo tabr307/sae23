@@ -1,7 +1,4 @@
 <!DOCTYPE html>
-<?php
-session_start();
-?>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -16,14 +13,11 @@ session_start();
                 <a class="right" href="../gestion2projet.php"> Gestion de Projet</a> 
                 <a class="right" href="../consultation.php"> Consultation</a> 
                 <a class="right" href="../form.php"> Gestion</a> 
-                <a class="right" href="../form.php"> Administration</a>
+                <a class="right" href="administration.php"> Administration</a>
             </section>
         </section>
         <section class="container">
             <section class="content">
-            <?php echo "Bienvenue ";
-                echo $_SESSION['pseudo'];?>
-                <br><br><br><br>
                 <img class="image" src="../ressources/bd.png" alt="bd">
             <form action="admin_bd.php" method="post">
                 <fieldset>
