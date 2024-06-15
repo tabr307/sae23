@@ -127,6 +127,32 @@ echo "</table>";
 }
 
 ?>
+
+<style>
+    table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    display: none;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+</style>
 <footer>
     <ul>
         <li>Département Réseaux et Télécommunications</li>
