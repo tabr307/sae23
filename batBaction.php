@@ -44,7 +44,7 @@ switch ($plage) {
 <head>
     <meta charset="UTF-8">
     <title>Tableau des Mesures par Salle</title>
-    <link href="styles/main.css" rel="stylesheet">
+    <link href="non/styles/main.css" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
@@ -81,8 +81,6 @@ $requete .= " WHERE capteur = 'temperature' AND salle = ? AND temperature = ?";
     // Initialise variables to store the sum and the number of rows
 $somme = 0;
 $nb_lignes = 0;
-//$min = min($row['valeur']);   // PHP_INT_MIN; //define the fonction min
-//$max = max($row['valeur']);    //PHP_INT_MAX; //define the fonction max
 
  //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
@@ -110,8 +108,8 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
     // Incrementing the number of lines
    $nb_lignes++;
     $moyenne = $somme / $nb_lignes;
-    $min = min(array($row['valeur']));   // PHP_INT_MIN; //define the fonction min
-$max = max(array($row['valeur'])); 
+    $min = min(array($row['valeur'])); //define the fonction min
+    $max = max(array($row['valeur'])); 
 
     if ($row['valeur'] < $min) {
         $min = $row['valeur'];
