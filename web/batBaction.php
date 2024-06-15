@@ -65,11 +65,6 @@ $nb_lignes = 0;
 $min = PHP_INT_MIN; //define the fonction min
 $max = PHP_INT_MAX; //define the fonction max
 
-<<<<<<< HEAD
-    $tableau = $row['valeur'];
-    //$tableau = [1, 2, 3, 4, 5, 6 ,10];
-    
-=======
  //html table to identify the form's choices
  echo '<h1>Tableau du Gestionnaire </h1>';
  echo '<table>';
@@ -79,7 +74,6 @@ echo '<tr>';
 echo '<td>' . $capteur . '</td>';
  echo '<td>' . $plage . '</td>';
  echo '</tr>';
->>>>>>> efff4bd17111e56bd8e15bfb0cec764e6b825c58
 
 while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL query executed on a MySQL database
     // Displaying data in the table
@@ -108,46 +102,6 @@ while ($row = mysqli_fetch_array($resultat)) { // browse the results of an SQL q
 
 echo "</table>";
 
-<<<<<<< HEAD
-    //tableau pour afficher moyenne, min et max
-    echo '<h1>Les metriques</h1>';
-    echo '<h3>Affichage de la moyenne, le min et le max des salles</h3>';
-    echo'<table>';   
-    echo '<tr><th>Moyenne</th><th>Minimum</th><th>Maximum</th></tr>'; 
-    echo '<tr>';
-    echo '<td>' . $moyenne . '</td>';
-    echo '<td>' . $minimum . '</td>';
-    echo '<td>' . $maximum . '</td>';
-    echo '</tr>'; 
-    echo '</table>';
-
-
-
-
-    for ($i = 0; $i < 10; $i++) {
-        echo "<div>Répétition numéro : " . ($i + 1) . "</div>";
-        echo "<ul>";
-        foreach ($resultat as $row) {
-            echo "<li>";
-            foreach ($row as $key => $value) {
-                echo "<strong>$key:</strong> $value<br>";
-            }
-            echo "</li>";
-        }
-        echo "</ul><hr>";
-    }
-    
-    //partie style pour les tableaux
-    echo '<style>
-    table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 20px 0;
-    font-size: 18px;
-    text-align: left;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-=======
->>>>>>> efff4bd17111e56bd8e15bfb0cec764e6b825c58
 }
 
 // Free up request resources
