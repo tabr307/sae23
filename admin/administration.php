@@ -26,7 +26,6 @@
                         <label for="action_admin">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="action_admin" name="action_admin">
                             <option value="add">Ajouter</option>
-                            <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
                         <input type="text" id="pseudo_admin" name="pseudo_admin" size="70" placeholder="pseudo"/><br>
@@ -40,7 +39,6 @@
                         <label for="action_mes">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="action_mes" name="action_mes">
                             <option value="add">Ajouter</option>
-                            <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
                         <input type="text" id="id_mes" name="id_mes" size="70" placeholder="id_mesure - (1-200)"/><br>
@@ -57,7 +55,6 @@
                         <label for="action_cap">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="action_cap" name="action_cap">
                             <option value="add">Ajouter</option>
-                            <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
                         <input type="text" id="id_cap" name="id_cap" size="70" placeholder="id_capteur - (1-4)"/><br>
@@ -71,7 +68,6 @@
                         <label for="action_salle">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="action_salle" name="action_salle">
                             <option value="add">Ajouter</option>
-                            <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
                         <input type="text" id="id_salle" name="id_salle" size="70" placeholder="id_salle - (1-4)"/><br>
@@ -85,7 +81,6 @@
                         <label for="action_bat">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="action_bat" name="action_bat">
                             <option value="add">Ajouter</option>
-                            <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
                         <input type="text" id="id_bat" name="id_bat" size="70" placeholder="id_batiment - 1 ou 2"/><br>

@@ -49,9 +49,6 @@
     if ($action_admin == 'add' && !empty($pseudo_admin) && !empty($mdp_admin)) {//testing which action we want to do and if a field's empty
         $add_admin = "INSERT INTO administration (pseudo, mdp) VALUES ('$pseudo_admin', '$mdp_admin')";//the request which adds our infos to the right table
         mysqli_query($id_bd, $add_admin);//executing the request
-    } elseif ($action_admin == 'mod' && !empty($pseudo_admin) && !empty($mdp_admin)) {//testing which action we want to do and if a field's empty
-        $mod_admin = "UPDATE administration SET mdp='$mdp_admin' WHERE pseudo='$pseudo_admin'";//the request which adds our infos to the right table
-        mysqli_query($id_bd, $mod_admin);//executing the request
     } elseif ($action_admin == 'sup' && !empty($pseudo_admin)) {//testing which action we want to do and if a field's empty
         $sup_admin = "DELETE FROM administration WHERE pseudo='$pseudo_admin'";//the request which adds our infos to the right table
         mysqli_query($id_bd, $sup_admin);//executing the request
@@ -63,9 +60,6 @@
     if ($action_mes == 'add' && !empty($id_mes) && !empty($unit_mes) && !empty($val_mes) && !empty($date_mes) && !empty($heure_mes) && !empty($idcap_mes)) {
         $add_mes = "INSERT INTO mesures (id, unit, val, date, heure, idcap) VALUES ('$id_mes', '$unit_mes', '$val_mes', '$date_mes', '$heure_mes', '$idcap_mes')";
         mysqli_query($id_bd, $add_mes);
-    } elseif ($action_mes == 'mod' && !empty($id_mes) && !empty($unit_mes) && !empty($val_mes) && !empty($date_mes) && !empty($heure_mes) && !empty($idcap_mes)) {
-        $mod_mes = "UPDATE mesures SET unit='$unit_mes', val='$val_mes', date='$date_mes', heure='$heure_mes', idcap='$idcap_mes' WHERE id='$id_mes'";
-        mysqli_query($id_bd, $mod_mes);
     } elseif ($action_mes == 'sup' && !empty($id_mes)) {
         $sup_mes = "DELETE FROM mesures WHERE id='$id_mes'";
         mysqli_query($id_bd, $sup_mes);
@@ -76,10 +70,7 @@
     if ($action_cap == 'add' && !empty($id_cap) && !empty($nom_cap) && !empty($idsalle_cap)) {
         $add_cap = "INSERT INTO capteur (id, nom, idsalle) VALUES ('$id_cap', '$nom_cap', '$idsalle_cap')";
         mysqli_query($id_bd, $add_cap);
-    } elseif ($action_cap == 'modify' && !empty($id_cap) && !empty($nom_cap) && !empty($idsalle_cap)) {
-        $mod_cap = "UPDATE capteur SET nom='$nom_cap', idsalle='$idsalle_cap' WHERE id='$id_cap'";
-        mysqli_query($id_bd, $mod_cap);
-    } elseif ($action_cap == 'delete' && !empty($id_cap)) {
+    } elseif ($action_cap == 'sup' && !empty($id_cap)) {
         $sup_cap = "DELETE FROM capteur WHERE id='$id_cap'";
         mysqli_query($id_bd, $sup_cap);
     }//if a field is empty we don't execute anything
@@ -89,10 +80,7 @@
     if ($action_salle == 'add' && !empty($id_salle) && !empty($nom_salle) && !empty($idbat_salle)) {
         $add_salle = "INSERT INTO salle (id, nom, idbat) VALUES ('$id_salle', '$nom_salle', '$idbat_salle')";
         mysqli_query($id_bd, $add_salle);
-    } elseif ($action_salle == 'modify' && !empty($id_salle) && !empty($nom_salle) && !empty($idbat_salle)) {
-        $mod_salle = "UPDATE salle SET nom='$nom_salle', idbat='$idbat_salle' WHERE id='$id_salle'";
-        mysqli_query($id_bd, $mod_salle);
-    } elseif ($action_salle == 'delete' && !empty($id_salle)) {
+    } elseif ($action_salle == 'sup' && !empty($id_salle)) {
         $sup_salle = "DELETE FROM salle WHERE id='$id_salle'";
         mysqli_query($id_bd, $sup_salle);
     }//if a field is empty we don't execute anything
@@ -102,10 +90,7 @@
     if ($action_bat == 'add' && !empty($id_bat) && !empty($nom_bat) && !empty($pseudo_bat) && !empty($mdp_bat)) {
         $add_bat = "INSERT INTO batiment (id, nom, pseudo, mdp) VALUES ('$id_bat', '$nom_bat', '$pseudo_bat', '$mdp_bat')";
         mysqli_query($id_bd, $add_bat);
-    } elseif ($action_bat == 'modify' && !empty($id_bat) && !empty($nom_bat) && !empty($pseudo_bat) && !empty($mdp_bat)) {
-        $mod_bat = "UPDATE batiment SET nom='$nom_bat', pseudo='$pseudo_bat', mdp='$mdp_bat' WHERE id='$id_bat'";
-        mysqli_query($id_bd, $mod_bat);
-    } elseif ($action_bat == 'delete' && !empty($id_bat)) {
+    } elseif ($action_bat == 'sup' && !empty($id_bat)) {
         $sup_bat = "DELETE FROM batiment WHERE id='$id_bat'";
         mysqli_query($id_bd, $sup_bat);
     }//if a field is empty we don't execute anything

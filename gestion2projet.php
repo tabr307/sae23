@@ -74,7 +74,7 @@
 	 			un travail que je trouve satisfaisant et qui nous ressemble. <br>
 				Pour justifier mes dires, j'ai vraiment apprecié le travail d'équipe dans cette saé, car pour moi c'était la première ou nous étions en
 				groupe de 4. Nous avons su correctement nous organiser et communiquer pour synchroniser toutes nos compétances. <br>
-				Pour ce qui est de mon travail lors de ce projet, j'ai comme hélio l'as dit auparavant commencé par réaliser les dockers nodered, influxdb 
+				Pour ce qui est de mon travail lors de ce projet, j'ai comme hélio l'as dit auparavant, commencé par réaliser les dockers nodered, influxdb 
 				et grafana. Une fois tout cela terminé et fonctionnel, j'ai rejoint le reste de l'équipe pour continuer la création du site web : j'ai
 				pu produire la page consultation et finaliser la page que vous êtes en train de lire. <br>
 				Je conclus donc tout de même positivement sur cette saé, qui nous a apporté beaucoup de connaissances à chaqun, par le partage et la
@@ -83,6 +83,12 @@
 				<br>
                 
                 <h2>Synthèse Personelle de Valentin LALUE</h2>
+                Cette SAÉ a pour moi été la plus intéressante de l'année de part la quantité de tâches différentes, que ce soit gestion de projet, gestion de BDD ou 
+                encore développement web cette SAÉ est très riche et m'a personellement appris beaucoup. Elle m'a également fait découvrir l'outil git/github qui je pense, 
+                me servira énormément dans le futur. C'est pour moi la SAÉ qui a également été la mieux organisée ce semestre, cahier des charges clair, dates de rendus claires, 
+                mais tout de même avec beaucoup d'ouverture, on peut attaquer le problème comme on le souhaite sans être pour autant livrés a nous même. Ça fait du bien de bénéficier
+                d'une telle organisation comparer aux autres SAÉ qui ont été un peu plus compliquées a mettre en place. Nous sommes plutôt satisfaits du travail que nous avons fourni
+                et de nous mêmes, c'est pour moi un bilan très positif pour cette SAÉ ! 
 				<br>
                 <h2>Synthèse Personelle de Enzo MULLER</h2>
 				<p class="texte">
