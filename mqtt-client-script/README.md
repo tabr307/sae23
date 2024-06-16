@@ -27,5 +27,5 @@ La première version récupère les payloads des salles présentent dans la list
 
 ### Version 2
 
-La seconde version récupère une première fois les payloads des salles présentent dans la liste "rooms" du dictionnaire "mqtt_config" telle qu'une première boucle de découverte. Dans un second temps, le script va en suite récupérer seulement les payloads des salles présentent dans la DB. Cela évite de récupérer les payloads des salles qui sont potentiellement supprimée.
+Le script va en suite récupérer seulement les payloads des salles présentent dans la DB. Cela évite de récupérer les payloads des salles qui sont potentiellement supprimée.
 ```
