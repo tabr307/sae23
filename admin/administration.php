@@ -51,49 +51,49 @@
                         <input type="text" id="idcap_mes" name="idcap_mes" size="70" placeholder="id_capteur"/><br>
                     </p>  
                 </fieldset>
-                <!--<fieldset>
+                <fieldset>
                     <legend>Capteur</legend> 
                     <p> 
-                        <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
-                        <select id="capteur" name="capteur">
-                            <option value="administration">Ajouter</option>
-                            <option value="batiment">Modifier</option>
-                            <option value="capteur">Supprimer</option>
+                        <label for="action_cap">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <select id="action_cap" name="action_cap">
+                            <option value="add">Ajouter</option>
+                            <option value="mod">Modifier</option>
+                            <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="ch1" name="ch1" size="70" placeholder="id_capteur"/><br>
-                        <input type="text" id="ch2" name="ch2" size="70" placeholder="nom_capteur"/><br>
-                        <input type="text" id="ch3" name="ch3" size="70" placeholder="id_salle"/><br>
+                        <input type="text" id="id_cap" name="id_cap" size="70" placeholder="id_capteur"/><br>
+                        <input type="text" id="nom_cap" name="nom_cap" size="70" placeholder="nom_capteur"/><br>
+                        <input type="text" id="idsalle_cap" name="idsalle_cap" size="70" placeholder="id_salle"/><br>
                     </p>  
                 </fieldset>
                 <fieldset>
                     <legend>Salle</legend>
                     <p> 
-                        <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
-                        <select id="capteur" name="capteur">
-                            <option value="administration">Ajouter</option>
-                            <option value="batiment">Modifier</option>
-                            <option value="capteur">Supprimer</option>
+                        <label for="action_salle">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <select id="action_salle" name="action_salle">
+                            <option value="add">Ajouter</option>
+                            <option value="mod">Modifier</option>
+                            <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="ch1" name="ch1" size="70" placeholder="id_salle"/><br>
-                        <input type="text" id="ch2" name="ch2" size="70" placeholder="nom_salle"/><br>
-                        <input type="text" id="ch3" name="ch3" size="70" placeholder="id_batiment"/><br>
+                        <input type="text" id="id_salle" name="id_salle" size="70" placeholder="id_salle"/><br>
+                        <input type="text" id="nom_salle" name="nom_salle" size="70" placeholder="nom_salle"/><br>
+                        <input type="text" id="idbat_salle" name="idbat_salle" size="70" placeholder="id_batiment"/><br>
                     </p>  
                 </fieldset>
                 <fieldset>
                     <legend>Batiment</legend> 
                     <p> 
-                        <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
-                        <select id="capteur" name="capteur">
-                            <option value="administration">Ajouter</option>
-                            <option value="batiment">Modifier</option>
-                            <option value="capteur">Supprimer</option>
+                        <label for="action_bat">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <select id="action_bat" name="action_bat">
+                            <option value="add">Ajouter</option>
+                            <option value="mod">Modifier</option>
+                            <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="ch1" name="ch1" size="70" placeholder="id_batiment"/><br>
-                        <input type="text" id="ch2" name="ch2" size="70" placeholder="nom_batiment"/><br>
-                        <input type="text" id="ch3" name="ch3" size="70" placeholder="pseudo"/><br>
-                        <input type="text" id="ch4" name="ch4" size="70" placeholder="mdp"/><br>
+                        <input type="text" id="id_bat" name="id_bat" size="70" placeholder="id_batiment"/><br>
+                        <input type="text" id="nom_bat" name="nom_bat" size="70" placeholder="nom_batiment"/><br>
+                        <input type="text" id="pseudo_bat" name="pseudo_bat" size="70" placeholder="pseudo"/><br>
+                        <input type="text" id="mdp_bat" name="mdp_bat" size="70" placeholder="mdp"/><br>
                     </p>  
-                </fieldset> -->
+                </fieldset> 
             Avant de continuer, vous devez vérifier ces informations ! <br />
             <input type="checkbox" id="validation" name="validation" required />
             <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
