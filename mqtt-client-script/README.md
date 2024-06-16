@@ -1,5 +1,4 @@
-# SAE23 branch "development-enzo"
-
+# mqtt-client-script
 ## Fichier .service
 
 Les fichiers ".service" permettent d'exécuter le script python en arrière plan et de l'exécuter dès le démarrage de la machine avec "systemctl".
