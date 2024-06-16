@@ -60,7 +60,7 @@
     echo "id de batiment : " . htmlspecialchars($id_bat) . "<br>";
     echo "nom de batiment : " . htmlspecialchars($nom_bat) . "<br>";
     echo "pseudo gestionnaire batiment : " . htmlspecialchars($pseudo_bat) . "<br>";
-    echo "mdp gestionnaire batiment : " . htmlspecialchars($mdp_bat)
+    echo "mdp gestionnaire batiment : " . htmlspecialchars($mdp_bat) ."<br>";
     echo "action a realiser : " . htmlspecialchars($action_bat) . "<br>";
     echo "------------------------------------------------------" . "<br>";
 ?>
