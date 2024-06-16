@@ -29,8 +29,8 @@
                             <option value="batiment">Modifier</option>
                             <option value="capteur">Supprimer</option>
                         </select><br>
-                        <input type="text" id="ch1" name="pseudo_admin" size="70" placeholder="pseudo"/><br>
-                        <input type="text" id="ch2" name="mdp_admin" size="70" placeholder="mdp"/><br>
+                        <input type="text" id="pseudo_admin" name="pseudo_admin" size="70" placeholder="pseudo"/><br>
+                        <input type="text" id="mdp_admin" name="mdp_admin" size="70" placeholder="mdp"/><br>
                     </p>  
                 </fieldset>
 
