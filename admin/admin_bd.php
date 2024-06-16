@@ -55,7 +55,9 @@
     } elseif ($action_admin == 'sup' && !empty($pseudo_admin)) {//testing which action we want to do and if a field's empty
         $sup_admin = "DELETE FROM administration WHERE pseudo='$pseudo_admin'";//the request which adds our infos to the right table
         mysqli_query($id_bd, $sup_admin);//executing the request
-    }//if a field is empty we don't execute anything
+    }echo "Erreur"
+    //if a field is empty we don't execute anything
+    
     
     // Table mesures
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
