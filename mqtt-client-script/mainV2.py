@@ -9,7 +9,6 @@ from datetime import datetime
 mqtt_config = {
     'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
-    'initial_rooms': ["E004", "E210", "B112", "B109"],
     'rooms': []
 }
 
@@ -30,9 +29,11 @@ def rooms_db():
         cursor = cnx.cursor()
         cursor.execute("SELECT nom_salle FROM salle")
         db_rooms = [room[0] for room in cursor.fetchall()]
-
         mqtt_config['rooms'] = list(set(db_rooms))
-        
+
+        client.unsubscribe("#")
+        on_connect(client, userdata, flags, reason_code, properties)
+
     except mysql.connector.Error as err:
         print(f"Error: {err}")
     finally:
@@ -106,15 +107,16 @@ def on_message(client, userdata, msg):
 
         cnx.commit()
 
+        # After each payload it updating rooms from the DB
+        rooms_db()
+
         # After initial discovery loop, update rooms list from DB only
         if 'initial_rooms' in mqtt_config:
+            update_rooms_from_db()
             del mqtt_config['initial_rooms']
             # Resubscribe to the new list of rooms
-        
-        # After each payload treath it unsubscribe to all topics to update it with new rooms
-        client.unsubscribe("#")
-        rooms_db()
-        on_connect(client, userdata, flags, reason_code)
+            client.unsubscribe("#")
+            on_connect(client, userdata, flags, reason_code)
 
     except Exception as e:
         print(f"Error processing message: {e}")
@@ -123,7 +125,8 @@ def on_message(client, userdata, msg):
         cursor.close()
         cnx.close()
 
-mqtt_config['rooms'] = mqtt_config['initial_rooms']
+# Call the function initially to populate mqtt_config['rooms']
+rooms_db()
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
