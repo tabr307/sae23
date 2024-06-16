@@ -34,8 +34,8 @@
                     </p>  
                 </fieldset>
 
-                <fieldset>
-                    <legend>Mesures</legend> <!-- Titre du fieldset -->
+                <!-- <fieldset>
+                    <legend>Mesures</legend> 
                     <p> 
                         <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="capteur" name="capteur">
@@ -52,7 +52,7 @@
                     </p>  
                 </fieldset>
                 <fieldset>
-                    <legend>Capteur</legend> <!-- Titre du fieldset -->
+                    <legend>Capteur</legend> 
                     <p> 
                         <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="capteur" name="capteur">
@@ -66,7 +66,7 @@
                     </p>  
                 </fieldset>
                 <fieldset>
-                    <legend>Salle</legend> <!-- Titre du fieldset -->
+                    <legend>Salle</legend>
                     <p> 
                         <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="capteur" name="capteur">
@@ -80,7 +80,7 @@
                     </p>  
                 </fieldset>
                 <fieldset>
-                    <legend>Batiment</legend> <!-- Titre du fieldset -->
+                    <legend>Batiment</legend> 
                     <p> 
                         <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="capteur" name="capteur">
@@ -93,7 +93,7 @@
                         <input type="text" id="ch3" name="ch3" size="70" placeholder="pseudo"/><br>
                         <input type="text" id="ch4" name="ch4" size="70" placeholder="mdp"/><br>
                     </p>  
-                </fieldset>
+                </fieldset> -->
             Avant de continuer, vous devez vérifier ces informations ! <br />
             <input type="checkbox" id="validation" name="validation" required />
             <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
