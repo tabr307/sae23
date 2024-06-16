@@ -50,15 +50,15 @@
 				<p id="texte">
                 Pour ma part j'ai commencé par la création du gantt prévisionnel. En effet, après avoir 
                 discuté avec tous les membres du groupe et la révision du cahier des charges, j'ai pu mettre
-                au point un Gantt correct est approuvé par l'équipe. <br>
-                Par la suite, nous avons travaillé tous ensemble pour la création de notre base données PHPmyAdmin. <br>
+                au point un Gantt correct est approuvé par l'équipe. 
+                Par la suite, nous avons travaillé tous ensemble pour la création de notre base données PHPmyAdmin. 
                 Je me suis aussi occupé de la partie "des dockers" avec Mathys. Ici, je me suis principalement occupé de la partie gestion des dockers 
-                et de la base de données influxdb. <br>
+                et de la base de données influxdb. 
                 J'ai poursuivi par le début de la création de la page "Gestion de projet" du site web, tandis que Valentin se chargeait de l'habillage
-                 et de la mise en page. <br> 
+                 et de la mise en page. 
 			  Lors de la dernière séance jusqu'à la fin de la saé je me suis occupé de la partie web de la page gestion c'est à dire que j'ai
 			   crée la page permettant d'afficher les données selon un formulaire (et ajouter des métriques).
-                                          <br>
+                <br>                          
                 Conclusion : Je conclue cette expérience par un message positif car nous avons appris de nombreuses choses durant ces heures de saé,
 	         même si je ne suis pas très à l'aise avec le developpement j'ai fait de mon mieux pour aider le groupe. J'aimerai quand même évoquer le fait
 				 fait qu'il n'y avait pas assez de crénau de saé à mon goût. 
@@ -69,14 +69,14 @@
                 
                 <h2>Synthèse Personelle de Mathys CAZETTES</h2>
           		<p class="texte">
-				Pour donner mon avis personnel sur cette saé : je trouve que c'est celle que j'ai preferée depuis le début de l'année. <br>
+				Pour donner mon avis personnel sur cette saé : je trouve que c'est celle que j'ai preferée depuis le début de l'année. 
 				Malgré quelques petits pépins, comme par exemple les problèmes de connexion au broker depuis les salles, nous avons pu produire
-	 			un travail que je trouve satisfaisant et qui nous ressemble. <br>
+	 			un travail que je trouve satisfaisant et qui nous ressemble. 
 				Pour justifier mes dires, j'ai vraiment apprecié le travail d'équipe dans cette saé, car pour moi c'était la première ou nous étions en
-				groupe de 4. Nous avons su correctement nous organiser et communiquer pour synchroniser toutes nos compétances. <br>
+				groupe de 4. Nous avons su correctement nous organiser et communiquer pour synchroniser toutes nos compétances. 
 				Pour ce qui est de mon travail lors de ce projet, j'ai comme hélio l'as dit auparavant, commencé par réaliser les dockers nodered, influxdb 
 				et grafana. Une fois tout cela terminé et fonctionnel, j'ai rejoint le reste de l'équipe pour continuer la création du site web : j'ai
-				pu produire la page consultation et finaliser la page que vous êtes en train de lire. <br>
+				pu produire la page consultation et finaliser la page que vous êtes en train de lire. 
 				Je conclus donc tout de même positivement sur cette saé, qui nous a apporté beaucoup de connaissances à chaqun, par le partage et la
 				 recherche.
 				</p>
