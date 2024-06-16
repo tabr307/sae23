@@ -9,7 +9,8 @@ from datetime import datetime
 mqtt_config = {
     'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
-    'rooms': ["E004", "E210", "B112", "B109"]
+    'initial_rooms': ["E004", "E210", "B112", "B109"],
+    'rooms': []
 }
 
 # MySQL database configuration
@@ -28,7 +29,9 @@ def rooms_db():
         cnx = mysql.connector.connect(**db_config)
         cursor = cnx.cursor()
         cursor.execute("SELECT nom_salle FROM salle")
-        mqtt_config['rooms'] = list(set(mqtt_config['rooms'] + [room[0] for room in cursor.fetchall()]))
+        db_rooms = [room[0] for room in cursor.fetchall()]
+
+        mqtt_config['rooms'] = list(set(db_rooms))
         
     except mysql.connector.Error as err:
         print(f"Error: {err}")
