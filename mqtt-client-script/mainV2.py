@@ -35,13 +35,9 @@ def rooms_db():
         
     except mysql.connector.Error as err:
         print(f"Error: {err}")
-        mqtt_config['rooms'] = []
     finally:
         cursor.close()
         cnx.close()
-        
-# Call the function initially to populate mqtt_config['rooms']
-rooms_db()
 
 # Subscribing to the topics for room in mqtt_config['rooms']:
 def on_connect(client, userdata, flags, reason_code, properties):
@@ -109,12 +105,27 @@ def on_message(client, userdata, msg):
             print(f"Inserted {metric} value: {sensor_data[metric]} for capteur id: {id_capteur}")
 
         cnx.commit()
+
+        # After initial discovery loop, update rooms list from DB only
+        if 'initial_rooms' in mqtt_config:
+            update_rooms_from_db()
+            del mqtt_config['initial_rooms']
+            # Resubscribe to the new list of rooms
+            client.unsubscribe("#")
+            on_connect(client, userdata, flags, reason_code)
+
     except Exception as e:
         print(f"Error processing message: {e}")
         cnx.rollback()
     finally:
         cursor.close()
         cnx.close()
+
+
+# Call the function initially to populate mqtt_config['rooms']
+rooms_db()
+
+mqtt_config['rooms'] = mqtt_config['initial_rooms']
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
