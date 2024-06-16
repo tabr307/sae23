@@ -23,8 +23,8 @@
                 <fieldset>
                     <legend>Administration</legend> <!-- Titre du fieldset -->
                     <p> 
-                        <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
-                        <select id="capteur" name="capteur">
+                        <label for="action_admin">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <select id="action_admin" name="action_admin">
                             <option value="add">Ajouter</option>
                             <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
@@ -34,24 +34,24 @@
                     </p>  
                 </fieldset>
 
-                <!-- <fieldset>
+                 <fieldset>
                     <legend>Mesures</legend> 
                     <p> 
-                        <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
-                        <select id="capteur" name="capteur">
-                            <option value="administration">Ajouter</option>
-                            <option value="batiment">Modifier</option>
-                            <option value="capteur">Supprimer</option>
+                        <label for="action_mes">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <select id="action_mes" name="action_mes">
+                            <option value="add">Ajouter</option>
+                            <option value="mod">Modifier</option>
+                            <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="ch1" name="ch1" size="70" placeholder="id_mesure"/><br>
-                        <input type="text" id="ch2" name="ch2" size="70" placeholder="unite"/><br>
-                        <input type="text" id="ch3" name="ch3" size="70" placeholder="valeur"/><br>
-                        <input type="text" id="ch4" name="ch4" size="70" placeholder="date"/><br>
-                        <input type="text" id="ch5" name="ch5" size="70" placeholder="heure"/><br>
-                        <input type="text" id="ch6" name="ch6" size="70" placeholder="id_capteur"/><br>
+                        <input type="text" id="id_mes" name="id_mes" size="70" placeholder="id_mesure"/><br>
+                        <input type="text" id="unit_mes" name="unit_mes" size="70" placeholder="unite"/><br>
+                        <input type="text" id="val_mes" name="val_mes" size="70" placeholder="valeur"/><br>
+                        <input type="text" id="date_mes" name="date_mes" size="70" placeholder="date"/><br>
+                        <input type="text" id="heure_mes" name="heure_mes" size="70" placeholder="heure"/><br>
+                        <input type="text" id="idcap_mes" name="idcap_mes" size="70" placeholder="id_capteur"/><br>
                     </p>  
                 </fieldset>
-                <fieldset>
+                <!--<fieldset>
                     <legend>Capteur</legend> 
                     <p> 
                         <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
