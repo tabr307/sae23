@@ -1,4 +1,4 @@
-Authname "Admin"
-AuthType Basic
+AuthName "Administration"                 
+AuthType Basic    
 AuthUserFile /opt/lampp/etc/.htpasswd-users
 require valid-user

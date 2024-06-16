@@ -12,7 +12,7 @@ $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impos
 $mesures_par_salle = [];
 
 while ($row = mysqli_fetch_assoc($resultat)) {
-    // Déterminer la salle en fonction de l'id_capteur
+    // determine the room depending on id_capteur
     switch ($row['id_capteur']) {
         case 2:
             $salle = "B112";
@@ -45,15 +45,15 @@ while ($row = mysqli_fetch_assoc($resultat)) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <section class="navbar">
-        <a class="active" href="index.php"><img src="ressources/logo.png" id="image1" alt="logo"></a> 
-        <section class="links">
-            <a class="right" href="gestion2projet.php">Gestion de Projet</a> 
-            <a class="right" href="consultation.php">Consultation</a> 
-            <a class="right" href="form.php">Gestion</a> 
-            <a class="right" href="form.php">Administration</a>
+<section class="navbar">
+            <a class="active" href="index.php"><img src="ressources/logo.png" id="image1"alt="logo"></a> 
+            <section class="links">
+            <a class="right" href="gestion2projet.php"> Gestion de Projet</a> 
+            <a class="right" href="consultation.php"> Consultation</a> 
+            <a class="right" href="form.php"> Gestion</a> 
+            <a class="right" href="admin/administration.php"> Administration</a>
+            </section>
         </section>
-    </section>
     
     <section class="container">
         <section class="content">
@@ -82,7 +82,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                     // determine the building depending on id_capteur
                     $batiment = ($row['id_capteur'] == 3 || $row['id_capteur'] == 4) ? 'RT' : 'INFO';
 
-                    // Afficher une ligne de tableau avec les données récupérées
+                    // print every table line according to the values
                     echo "<tr>";
                     echo "<td>" . $row['unite'] . "</td>";
                     echo "<td>" . $row['valeur'] . "</td>";

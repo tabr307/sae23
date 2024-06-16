@@ -1,4 +1,0 @@
-Authname "consult"
-AuthType Basic
-AuthUserFile /opt/lampp/etc/.htpasswd-users
-require valid-user
