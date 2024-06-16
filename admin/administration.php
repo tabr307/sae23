@@ -33,14 +33,8 @@
                         <input type="text" id="mdp_admin" name="mdp_admin" size="70" placeholder="mdp"/><br>
                     </p>  
                 </fieldset>
-                Avant de continuer, vous devez vérifier ces informations ! <br />
-                <input type="checkbox" id="validation" name="validation" required />
-                <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
-                <input type="submit" value="Envoyer" align="center"/>
-                &nbsp;<input type="reset" value="Cancel" align="center"/><br>
-            </form>
-            <form action="admin_bd.php" method="post">     
-                <fieldset>
+
+                 <fieldset>
                     <legend>Mesures</legend> 
                     <p> 
                         <label for="action_mes">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
@@ -57,13 +51,6 @@
                         <input type="text" id="idcap_mes" name="idcap_mes" size="70" placeholder="id_capteur"/><br>
                     </p>  
                 </fieldset>
-                Avant de continuer, vous devez vérifier ces informations ! <br />
-                <input type="checkbox" id="validation" name="validation" required />
-                <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
-                <input type="submit" value="Envoyer" align="center"/>
-                &nbsp;<input type="reset" value="Cancel" align="center"/><br>
-            </form>
-            <form action="admin_bd.php" method="post">
                 <fieldset>
                     <legend>Capteur</legend> 
                     <p> 
@@ -78,13 +65,6 @@
                         <input type="text" id="idsalle_cap" name="idsalle_cap" size="70" placeholder="id_salle"/><br>
                     </p>  
                 </fieldset>
-                Avant de continuer, vous devez vérifier ces informations ! <br />
-                <input type="checkbox" id="validation" name="validation" required />
-                <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
-                <input type="submit" value="Envoyer" align="center"/>
-                &nbsp;<input type="reset" value="Cancel" align="center"/><br>
-            </form>
-            <form action="admin_bd.php" method="post">
                 <fieldset>
                     <legend>Salle</legend>
                     <p> 
@@ -99,13 +79,6 @@
                         <input type="text" id="idbat_salle" name="idbat_salle" size="70" placeholder="id_batiment"/><br>
                     </p>  
                 </fieldset>
-                Avant de continuer, vous devez vérifier ces informations ! <br />
-                <input type="checkbox" id="validation" name="validation" required />
-                <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
-                <input type="submit" value="Envoyer" align="center"/>
-                &nbsp;<input type="reset" value="Cancel" align="center"/><br>
-            </form>
-            <form action="admin_bd.php" method="post">
                 <fieldset>
                     <legend>Batiment</legend> 
                     <p> 
@@ -121,12 +94,12 @@
                         <input type="text" id="mdp_bat" name="mdp_bat" size="70" placeholder="mdp"/><br>
                     </p>  
                 </fieldset> 
-                Avant de continuer, vous devez vérifier ces informations ! <br />
-                <input type="checkbox" id="validation" name="validation" required />
-                <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
-                <input type="submit" value="Envoyer" align="center"/>
-                &nbsp;<input type="reset" value="Cancel" align="center"/><br>
-            </form>
+            Avant de continuer, vous devez vérifier ces informations ! <br />
+            <input type="checkbox" id="validation" name="validation" required />
+            <label for="validation">Oui, j'ai pas relu et j'envoie sans le moindre doute !</label><br>
+            <input type="submit" value="Envoyer" align="center"/>
+            &nbsp;<input type="reset" value="Cancel" align="center"/><br>
+        </form>
         
             </section>
         </section>            
