@@ -58,37 +58,37 @@
     // Table mesures
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
     if ($action_mes == 'add' && !empty($id_mes) && !empty($unit_mes) && !empty($val_mes) && !empty($date_mes) && !empty($heure_mes) && !empty($idcap_mes)) {
-        $add_mes = "INSERT INTO mesures (id, unit, val, date, heure, idcap) VALUES ('$id_mes', '$unit_mes', '$val_mes', '$date_mes', '$heure_mes', '$idcap_mes')";
+        $add_mes = "INSERT INTO mesures (id_mesure, unite, valeur, date, heure, id_capteur) VALUES ('$id_mes', '$unit_mes', '$val_mes', '$date_mes', '$heure_mes', '$idcap_mes')";
         mysqli_query($id_bd, $add_mes);
     } elseif ($action_mes == 'sup' && !empty($id_mes)) {
-        $sup_mes = "DELETE FROM mesures WHERE id='$id_mes'";
+        $sup_mes = "DELETE FROM mesures WHERE id_mesure='$id_mes'";
         mysqli_query($id_bd, $sup_mes);
     }else{}//if a field is empty we don't execute anything
 
     // Table capteur
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
     if ($action_cap == 'add' && !empty($id_cap) && !empty($nom_cap) && !empty($idsalle_cap)) {
-        $add_cap = "INSERT INTO capteur (id, nom, idsalle) VALUES ('$id_cap', '$nom_cap', '$idsalle_cap')";
+        $add_cap = "INSERT INTO capteur (id_capteur, nom_capteur, id_salle) VALUES ('$id_cap', '$nom_cap', '$idsalle_cap')";
         mysqli_query($id_bd, $add_cap);
     } elseif ($action_cap == 'sup' && !empty($id_cap)) {
-        $sup_cap = "DELETE FROM capteur WHERE id='$id_cap'";
+        $sup_cap = "DELETE FROM capteur WHERE id_capteur='$id_cap'";
         mysqli_query($id_bd, $sup_cap);
     }else{}//if a field is empty we don't execute anything
     
     // Table salle
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
     if ($action_salle == 'add' && !empty($id_salle) && !empty($nom_salle) && !empty($idbat_salle)) {
-        $add_salle = "INSERT INTO salle (id, nom, idbat) VALUES ('$id_salle', '$nom_salle', '$idbat_salle')";
+        $add_salle = "INSERT INTO salle (id_salle, nom_salle, id_batiment) VALUES ('$id_salle', '$nom_salle', '$idbat_salle')";
         mysqli_query($id_bd, $add_salle);
     } elseif ($action_salle == 'sup' && !empty($id_salle)) {
-        $sup_salle = "DELETE FROM salle WHERE id='$id_salle'";
+        $sup_salle = "DELETE FROM salle WHERE id_salle='$id_salle'";
         mysqli_query($id_bd, $sup_salle);
     }else{}//if a field is empty we don't execute anything
     
     // Table batiment
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
     if ($action_bat == 'add' && !empty($id_bat) && !empty($nom_bat) && !empty($pseudo_bat) && !empty($mdp_bat)) {
-        $add_bat = "INSERT INTO batiment (id, nom, pseudo, mdp) VALUES ('$id_bat', '$nom_bat', '$pseudo_bat', '$mdp_bat')";
+        $add_bat = "INSERT INTO batiment (id_batiment, nom_batiment, pseudo, mdp) VALUES ('$id_bat', '$nom_bat', '$pseudo_bat', '$mdp_bat')";
         mysqli_query($id_bd, $add_bat);
     } elseif ($action_bat == 'sup' && !empty($id_bat)) {
         $sup_bat = "DELETE FROM batiment WHERE id='$id_bat'";

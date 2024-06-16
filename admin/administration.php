@@ -23,7 +23,7 @@
                 <fieldset>
                     <legend>Administration</legend> <!-- Titre du fieldset -->
                     <p> 
-                        <label for="action_admin">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <label for="action_admin">Sélectionnez les valeurs à ajouter/supprimer : </label><br>
                         <select id="action_admin" name="action_admin">
                             <option value="add">Ajouter</option>
                             <option value="sup">Supprimer</option>
@@ -36,7 +36,7 @@
                  <fieldset>
                     <legend>Mesures</legend> 
                     <p> 
-                        <label for="action_mes">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <label for="action_mes">Sélectionnez les valeurs à ajouter/supprimer : </label><br>
                         <select id="action_mes" name="action_mes">
                             <option value="add">Ajouter</option>
                             <option value="sup">Supprimer</option>
@@ -52,7 +52,7 @@
                 <fieldset>
                     <legend>Capteur</legend> 
                     <p> 
-                        <label for="action_cap">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <label for="action_cap">Sélectionnez les valeurs à ajouter/supprimer : </label><br>
                         <select id="action_cap" name="action_cap">
                             <option value="add">Ajouter</option>
                             <option value="sup">Supprimer</option>
@@ -65,7 +65,7 @@
                 <fieldset>
                     <legend>Salle</legend>
                     <p> 
-                        <label for="action_salle">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <label for="action_salle">Sélectionnez les valeurs à ajouter/supprimer : </label><br>
                         <select id="action_salle" name="action_salle">
                             <option value="add">Ajouter</option>
                             <option value="sup">Supprimer</option>
@@ -78,7 +78,7 @@
                 <fieldset>
                     <legend>Batiment</legend> 
                     <p> 
-                        <label for="action_bat">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
+                        <label for="action_bat">Sélectionnez les valeurs à ajouter/supprimer : </label><br>
                         <select id="action_bat" name="action_bat">
                             <option value="add">Ajouter</option>
                             <option value="sup">Supprimer</option>
