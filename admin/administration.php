@@ -83,8 +83,8 @@
                             <option value="add">Ajouter</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="id_bat" name="id_bat" size="70" placeholder="id_batiment - 1 ou 2"/><br>
-                        <input type="text" id="nom_bat" name="nom_bat" size="70" placeholder="nom_batiment - E ou B"/><br>
+                        <input type="text" id="id_bat" name="id_bat" size="70" placeholder="id_batiment"/><br>
+                        <input type="text" id="nom_bat" name="nom_bat" size="70" placeholder="nom_batiment"/><br>
                         <input type="text" id="pseudo_bat" name="pseudo_bat" size="70" placeholder="pseudo"/><br>
                         <input type="text" id="mdp_bat" name="mdp_bat" size="70" placeholder="mdp"/><br>
                     </p>  
