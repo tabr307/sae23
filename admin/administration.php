@@ -25,9 +25,9 @@
                     <p> 
                         <label for="capteur">Sélectionnez les valeurs à ajouter/modifier/supprimer : </label><br>
                         <select id="capteur" name="capteur">
-                            <option value="administration">Ajouter</option>
-                            <option value="batiment">Modifier</option>
-                            <option value="capteur">Supprimer</option>
+                            <option value="add">Ajouter</option>
+                            <option value="mod">Modifier</option>
+                            <option value="sup">Supprimer</option>
                         </select><br>
                         <input type="text" id="pseudo_admin" name="pseudo_admin" size="70" placeholder="pseudo"/><br>
                         <input type="text" id="mdp_admin" name="mdp_admin" size="70" placeholder="mdp"/><br>
