@@ -4,7 +4,7 @@
 
 Les fichiers ".service" permettent d'exécuter le script python en arrière plan et de l'exécuter dès le démarrage de la machine avec "systemctl".
 
-```console 
+```sh 
 # Activer l'exécution du script au démarrage de la machine
 sudo systemctl enable mqtt-client-scriptV2.service
 
@@ -17,6 +17,6 @@ sudo systemctl start mqtt-client-scriptV2.service
 
 Ce fichier contient toutes les librairies à installer que requiert le script python. Il suffit d'exécuter la commande ci-dessous pour installer automatiquement toutes les librairies nécessaires.
 
-```console
+```sh
 pip install -r requirements.txt
 ```
