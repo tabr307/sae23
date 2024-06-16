@@ -2,8 +2,8 @@
 	session_start();
     include ("../mysql.php");
     $action = $_POST['capteur'];
-    $ch1 = $_POST['ch1'];
-    $ch2 = $_POST['ch2'];
+    $ch1 = $_POST['pseudo_admin'];
+    $ch2 = $_POST['mdp_admin'];
     $ch3 = $_POST['ch3'];
     $ch4 = $_POST['ch4'];
     $ch5 = $_POST['ch5'];
