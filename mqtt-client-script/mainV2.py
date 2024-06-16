@@ -9,7 +9,6 @@ from datetime import datetime
 mqtt_config = {
     'broker': 'mqtt.iut-blagnac.fr',
     'port': 1883,
-    'initial_rooms': ["E004", "E210", "B112", "B109"],
     'rooms': []
 }
 
@@ -30,9 +29,11 @@ def rooms_db():
         cursor = cnx.cursor()
         cursor.execute("SELECT nom_salle FROM salle")
         db_rooms = [room[0] for room in cursor.fetchall()]
-
         mqtt_config['rooms'] = list(set(db_rooms))
-        
+
+        client.unsubscribe("#")
+        on_connect(client, userdata, flags, reason_code, properties)
+
     except mysql.connector.Error as err:
         print(f"Error: {err}")
     finally:
@@ -105,6 +106,9 @@ def on_message(client, userdata, msg):
             print(f"Inserted {metric} value: {sensor_data[metric]} for capteur id: {id_capteur}")
 
         cnx.commit()
+
+        # After each payload it updating
+        rooms_db()
 
         # After initial discovery loop, update rooms list from DB only
         if 'initial_rooms' in mqtt_config:
