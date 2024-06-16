@@ -43,12 +43,12 @@
                             <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="id_mes" name="id_mes" size="70" placeholder="id_mesure"/><br>
-                        <input type="text" id="unit_mes" name="unit_mes" size="70" placeholder="unite"/><br>
-                        <input type="text" id="val_mes" name="val_mes" size="70" placeholder="valeur"/><br>
-                        <input type="text" id="date_mes" name="date_mes" size="70" placeholder="date"/><br>
-                        <input type="text" id="heure_mes" name="heure_mes" size="70" placeholder="heure"/><br>
-                        <input type="text" id="idcap_mes" name="idcap_mes" size="70" placeholder="id_capteur"/><br>
+                        <input type="text" id="id_mes" name="id_mes" size="70" placeholder="id_mesure - (1-200)"/><br>
+                        <input type="text" id="unit_mes" name="unit_mes" size="70" placeholder="unite - pressure, temperature, humidity, co2, illumination"/><br>
+                        <input type="text" id="val_mes" name="val_mes" size="70" placeholder="valeur - (1-999)"/><br>
+                        <input type="text" id="heure_mes" name="heure_mes" size="70" placeholder="heure - HH:MM:SS"/><br>
+                        <input type="text" id="date_mes" name="date_mes" size="70" placeholder="date - AAAA-MM-JJ"/><br>
+                        <input type="text" id="idcap_mes" name="idcap_mes" size="70" placeholder="id_capteur - (1-4)"/><br>
                     </p>  
                 </fieldset>
                 <fieldset>
@@ -60,9 +60,9 @@
                             <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="id_cap" name="id_cap" size="70" placeholder="id_capteur"/><br>
+                        <input type="text" id="id_cap" name="id_cap" size="70" placeholder="id_capteur - (1-4)"/><br>
                         <input type="text" id="nom_cap" name="nom_cap" size="70" placeholder="nom_capteur"/><br>
-                        <input type="text" id="idsalle_cap" name="idsalle_cap" size="70" placeholder="id_salle"/><br>
+                        <input type="text" id="idsalle_cap" name="idsalle_cap" size="70" placeholder="id_salle - (1-4)"/><br>
                     </p>  
                 </fieldset>
                 <fieldset>
@@ -74,9 +74,9 @@
                             <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="id_salle" name="id_salle" size="70" placeholder="id_salle"/><br>
-                        <input type="text" id="nom_salle" name="nom_salle" size="70" placeholder="nom_salle"/><br>
-                        <input type="text" id="idbat_salle" name="idbat_salle" size="70" placeholder="id_batiment"/><br>
+                        <input type="text" id="id_salle" name="id_salle" size="70" placeholder="id_salle - (1-4)"/><br>
+                        <input type="text" id="nom_salle" name="nom_salle" size="70" placeholder="nom_salle - B109, B112, E210, E004"/><br>
+                        <input type="text" id="idbat_salle" name="idbat_salle" size="70" placeholder="id_batiment - 1 ou 2"/><br>
                     </p>  
                 </fieldset>
                 <fieldset>
@@ -88,8 +88,8 @@
                             <option value="mod">Modifier</option>
                             <option value="sup">Supprimer</option>
                         </select><br>
-                        <input type="text" id="id_bat" name="id_bat" size="70" placeholder="id_batiment"/><br>
-                        <input type="text" id="nom_bat" name="nom_bat" size="70" placeholder="nom_batiment"/><br>
+                        <input type="text" id="id_bat" name="id_bat" size="70" placeholder="id_batiment - 1 ou 2"/><br>
+                        <input type="text" id="nom_bat" name="nom_bat" size="70" placeholder="nom_batiment - E ou B"/><br>
                         <input type="text" id="pseudo_bat" name="pseudo_bat" size="70" placeholder="pseudo"/><br>
                         <input type="text" id="mdp_bat" name="mdp_bat" size="70" placeholder="mdp"/><br>
                     </p>  

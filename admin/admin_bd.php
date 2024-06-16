@@ -55,9 +55,7 @@
     } elseif ($action_admin == 'sup' && !empty($pseudo_admin)) {//testing which action we want to do and if a field's empty
         $sup_admin = "DELETE FROM administration WHERE pseudo='$pseudo_admin'";//the request which adds our infos to the right table
         mysqli_query($id_bd, $sup_admin);//executing the request
-    }else{//if a field is empty we don't execute anything
-        echo "Erreur";
-    }
+    }//if a field is empty we don't execute anything
     
     
     // Table mesures
@@ -71,9 +69,7 @@
     } elseif ($action_mes == 'sup' && !empty($id_mes)) {
         $sup_mes = "DELETE FROM mesures WHERE id='$id_mes'";
         mysqli_query($id_bd, $sup_mes);
-    }else{//if a field is empty we don't execute anything
-        echo "Erreur";
-    }
+    }//if a field is empty we don't execute anything
 
     // Table capteur
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
@@ -86,9 +82,7 @@
     } elseif ($action_cap == 'delete' && !empty($id_cap)) {
         $sup_cap = "DELETE FROM capteur WHERE id='$id_cap'";
         mysqli_query($id_bd, $sup_cap);
-    }else{//if a field is empty we don't execute anything
-        echo "Erreur";
-    }
+    }//if a field is empty we don't execute anything
     
     // Table salle
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
@@ -101,9 +95,7 @@
     } elseif ($action_salle == 'delete' && !empty($id_salle)) {
         $sup_salle = "DELETE FROM salle WHERE id='$id_salle'";
         mysqli_query($id_bd, $sup_salle);
-    }else{//if a field is empty we don't execute anything
-        echo "Erreur";
-    }
+    }//if a field is empty we don't execute anything
     
     // Table batiment
     //we just do the same commands for each table but with the values of the field, if one field is empty nothing will be executed
@@ -116,9 +108,7 @@
     } elseif ($action_bat == 'delete' && !empty($id_bat)) {
         $sup_bat = "DELETE FROM batiment WHERE id='$id_bat'";
         mysqli_query($id_bd, $sup_bat);
-    }else{//if a field is empty we don't execute anything
-        echo "Erreur";
-    }
+    }//if a field is empty we don't execute anything
       
 
     // Afficher les valeurs récupérées
