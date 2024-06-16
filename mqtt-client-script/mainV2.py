@@ -107,7 +107,7 @@ def on_message(client, userdata, msg):
 
         cnx.commit()
 
-        # After each payload it updating
+        # After each payload it updating rooms from the DB
         rooms_db()
 
         # After initial discovery loop, update rooms list from DB only
@@ -125,11 +125,8 @@ def on_message(client, userdata, msg):
         cursor.close()
         cnx.close()
 
-
 # Call the function initially to populate mqtt_config['rooms']
 rooms_db()
-
-mqtt_config['rooms'] = mqtt_config['initial_rooms']
 
 mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
 mqttc.on_connect = on_connect
