@@ -15,12 +15,12 @@
    
 
     // Afficher les valeurs récupérées
-    echo "----------------table administration-----------------"
+    echo "----------------table administration-----------------";
     echo "pseudo : " . htmlspecialchars($pseudo_admin) . "<br>";
     echo "mot de passe : " . htmlspecialchars($mdp_admin) . "<br>";
     echo "action a realiser: " . htmlspecialchars($action_admin) . "<br>";
-    echo "------------------------------------------------------"
-    echo "--------------------table mesures---------------------"
+    echo "------------------------------------------------------";
+    echo "--------------------table mesures---------------------";
     echo "id de mesure : " . htmlspecialchars($id_mes) . "<br>";
     echo "unite de mesure : " . htmlspecialchars($unit_mes) . "<br>";
     echo "valeur de mesure : " . htmlspecialchars($val_mes) . "<br>";
@@ -28,6 +28,6 @@
     echo "heure de mesure : " . htmlspecialchars($heure_mes) . "<br>";
     echo "id capteur de mesure : " . htmlspecialchars($idcap_mes) . "<br>";
     echo "action a realiser :" . htmlspecialchars($action_mes) . "<br>";
-    echo "------------------------------------------------------"
+    echo "------------------------------------------------------";
 	
 ?>
