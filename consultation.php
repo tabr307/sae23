@@ -12,7 +12,7 @@ $resultat = mysqli_query($id_bd, $requete) or die("Execution de la requete impos
 $mesures_par_salle = [];
 
 while ($row = mysqli_fetch_assoc($resultat)) {
-    // Déterminer la salle en fonction de l'id_capteur
+    // determine the room depending on id_capteur
     switch ($row['id_capteur']) {
         case 2:
             $salle = "B112";
@@ -82,7 +82,7 @@ while ($row = mysqli_fetch_assoc($resultat)) {
                     // determine the building depending on id_capteur
                     $batiment = ($row['id_capteur'] == 3 || $row['id_capteur'] == 4) ? 'RT' : 'INFO';
 
-                    // Afficher une ligne de tableau avec les données récupérées
+                    // print every table line according to the values
                     echo "<tr>";
                     echo "<td>" . $row['unite'] . "</td>";
                     echo "<td>" . $row['valeur'] . "</td>";
