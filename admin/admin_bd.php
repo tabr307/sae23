@@ -91,7 +91,7 @@
         $add_bat = "INSERT INTO batiment (id_batiment, nom_batiment, pseudo, mdp) VALUES ('$id_bat', '$nom_bat', '$pseudo_bat', '$mdp_bat')";
         mysqli_query($id_bd, $add_bat);
     } elseif ($action_bat == 'sup' && !empty($id_bat)) {
-        $sup_bat = "DELETE FROM batiment WHERE id='$id_bat'";
+        $sup_bat = "DELETE FROM batiment WHERE id_batiment='$id_bat'";
         mysqli_query($id_bd, $sup_bat);
     }else{}//if a field is empty we don't execute anything
       
