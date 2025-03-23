@@ -7,17 +7,17 @@ from datetime import datetime
 
 # MQTT broker connexion configuration
 mqtt_config = {
-    'broker': 'mqtt.iut-blagnac.fr',
-    'port': 1883,
+    'broker': brokeraddress,
+    'port': x,
     'rooms': []
 }
 
 # MySQL database configuration
 db_config = {
-    'user': 'python',
-    'password': 'whzjWL5Z65yb8JYp',
-    'host': '127.0.0.1',
-    'database': 'sae23'
+    'user': username,
+    'password': password,
+    'host': hostip,
+    'database': dbname
 }
 
 ############################################### SCRIPT PART ##########################################################
