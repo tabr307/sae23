@@ -70,13 +70,5 @@
                 <img class= "image-responsive" src="http://jigsaw.w3.org/css-validator/images/vcss-blue" alt="CSS Valide !" />
             </a>
           </aside>
-            
-          <footer>
-            <ul>
-              <li>Département Réseaux et Télécommunications</li>
-              <li>Cazettes, Le Deunff, Muller, Lalue</li>
-              <li>BUT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-            </ul>  
-          </footer>
     </body>
 </html>
