@@ -98,12 +98,5 @@
         
             </section>
         </section>            
-            <footer>
-                <ul>
-                    <li>Département Réseaux et Télécommunications</li>
-                    <li>Cazettes, Le Deunff, Muller, Lalue</li>
-                    <li>BUT1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</li>
-                </ul>  
-          </footer>
     </body>
 </html>
