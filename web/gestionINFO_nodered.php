@@ -20,18 +20,18 @@
         <ul>
             <li>
                 <h3>Temperature<h3>
-                    <iframe src="http://83.113.15.31:3000/d-solo/bdnykz0c2ap6of/batiment-info?orgId=1&from=1717755169675&to=1717776769675&panelId=1" width="500" height="500" frameborder="0"></iframe>
-                    <iframe src="http://83.113.15.31:3000/d-solo/bdnykz0c2ap6of/batiment-info?orgId=1&from=1717755192485&to=1717776792485&panelId=4" width="500" height="500" frameborder="0"></iframe>
+                <iframe width="500" height="500" frameborder="0"></iframe>
+                <iframe width="500" height="500" frameborder="0"></iframe>
             </li>
             <li>
                 <h3>CO2</h3>
-                <iframe src="http://83.113.15.31:3000/d-solo/bdnykz0c2ap6of/batiment-info?orgId=1&from=1717755762754&to=1717777362754&panelId=3" width="500" height="500" frameborder="0"></iframe>
-                <iframe src="http://83.113.15.31:3000/d-solo/bdnykz0c2ap6of/batiment-info?orgId=1&from=1717755776559&to=1717777376559&panelId=5" width="500" height="500" frameborder="0"></iframe>
+                <iframe width="500" height="500" frameborder="0"></iframe>
+                <iframe width="500" height="500" frameborder="0"></iframe>
             </li>
             <li>
                 <h3>Humidité</h3>
-                <iframe src="http://83.113.15.31:3000/d-solo/bdnykz0c2ap6of/batiment-info?orgId=1&from=1717756195287&to=1717777795287&panelId=2" width="500" height="500" frameborder="0"></iframe>
-                <iframe src="http://83.113.15.31:3000/d-solo/bdnykz0c2ap6of/batiment-info?orgId=1&from=1717756222087&to=1717777822087&panelId=6" width="500" height="500" frameborder="0"></iframe>
+                <iframe width="500" height="500" frameborder="0"></iframe>
+                <iframe width="500" height="500" frameborder="0"></iframe>
             </li>
         </ul>
 
